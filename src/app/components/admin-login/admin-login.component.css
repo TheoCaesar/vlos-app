@@ -1,0 +1,251 @@
+.main {
+  background-image: url(https://cdn.elearningindustry.com/wp-content/uploads/2019/08/a-learning-designers-frist-meeting-with-a-client.jpg);
+  background-size: cover;
+  background-repeat: no-repeat;
+  min-width: 750px;
+  width: 100vw;
+  height: 100vh;
+  padding-top: 50px;
+}
+
+.card {
+  position: absolute;
+  width: 650px;
+  height: 850px;
+  /* margin: 50px 0; */
+  padding: 10px 70px;
+  right: 50px;
+  background-color: white;
+
+
+  border-radius: 10px;
+  box-shadow: 6px 6px 5px -4px rgba(219, 208, 208, 0.75);
+}
+
+.logo {
+  background-image: url("../../../assets/Picture1.png");
+  background-size: contain;
+  background-repeat: no-repeat;
+  margin: 35px 0;
+  background-position: 50%;
+}
+
+.card > p {
+  margin: 20px auto;
+}
+
+ p#welcome {
+  font-size: 26px;
+  font-weight: bold;
+  margin-top: 50px;
+}
+
+p#welcome > span {
+  color: var(--solv-blue)
+}
+
+#welcome + p {
+  font-size: 24px;
+}
+
+.card p:nth-child(4) {
+  color: var(--solv-blue);
+  font-weight: bold;
+  margin-top: 25px;
+}
+
+
+form {
+  margin: 50px auto;
+}
+
+input[type="text"], input[type="password"]  {
+  display: inline-block;
+  width: 100%;
+  border: none;
+  border-bottom: 1pt solid black;
+  height: 60px;
+  margin-bottom: 20px;
+  font-size: 18px;
+  padding: 15px;
+}
+
+select  {
+  /* display: inline-block; */
+  width: 100%;
+  border: none;
+  border-bottom: 1pt solid black;
+  height: 60px;
+  margin-bottom: 30px;
+  font-size: 18px;
+  color: var(--solv-blue);
+  font-weight: bold;
+  letter-spacing: 1px;
+  padding: 15px;
+
+}
+
+select option {
+  font-size: 18px;
+  color: var(--solv-blue);
+  background-color: var(--solv-orange);
+}
+
+/* select option:checked {
+  background-color:var(--solv-blue) ;
+  color: white;
+} */
+
+select + section {
+  margin: 20px auto;
+  font-size: 13px;
+  letter-spacing: 0.3px;
+}
+
+section div {
+  float:  left;
+}
+
+section p {
+  float: right;
+}
+
+section p:hover{
+  cursor: pointer;
+}
+
+section span {
+  clear: both;
+}
+
+
+input[type='checkbox'] {
+  margin-right: 20px;
+}
+
+button {
+  clear: both;
+  margin: 50px auto 50px;
+  width: 100%;
+  height: 40px;
+  background-color: var(--solv-blue);
+  border: none;
+  color: white;
+  /* font-weight: bold; */
+  font-size: 18px;
+  letter-spacing: 0.9px;
+  border-radius: 9px;
+  cursor: pointer;
+}
+
+form + p {
+  color: var(--solv-orange);
+  text-align: center;
+  font-size: 12px;
+}
+
+.links span {
+  color: var(--solv-blue);
+  margin: 0 5px;
+}
+
+@media screen and (min-width: 750px) and (max-width: 1200px) {
+  .card {
+    position:static;
+    margin: 10px auto;
+    padding: 10px 70px;
+  }
+}
+
+/* Media query for screen sizes 577px to 768px */
+@media screen and (min-width: 577px) and (max-width: 750px) {
+  .card {
+    position: static;
+    width: 80%;
+    height: 750px;
+    margin: 0 auto;
+  }
+
+  .logo {
+    font-size: 36px;
+  }
+
+  #welcome {
+    font-size: 18px;
+  }
+
+  form {
+    margin-top: 20px;
+  }
+
+  input[type="text"],
+  input[type="password"],
+  select {
+    width: 100%;
+    margin-bottom: 10px;
+  }
+
+  button {
+    margin-bottom: 5px;
+  }
+
+  .links {
+    font-size: 14px;
+  }
+}
+
+@media screen and (max-width: 576px) {
+  .main {
+    padding: 10px;
+  }
+
+  .card {
+    position: static;
+    padding: 5% 10vw;
+    margin: 10vh auto;
+    width: 80%;
+    height: 80vh;
+  }
+
+  .logo {
+    font-size: 48px; /* Reduce the logo font size */
+  }
+
+  div.card > p:nth-of-type(1) ,   p:nth-of-type(2) {
+    display: none;
+  }
+
+  p:nth-of-type(3) {
+    text-align: center;
+    color: var(--solv-blue);
+  }
+
+  form {
+    margin-top: 10px 10px ;
+  }
+
+  input[type="text"],
+  input[type="password"],
+  select {
+    width: 100%;
+    margin-bottom: 8px;
+  }
+
+  button {
+    margin: 20px auto;
+    width: 100%;
+  }
+
+  .links {
+    font-size: 12px; /* Adjust the font size of the links */
+  }
+}
+/* Extra Small (xs): 0px to 576px - This range is typically for mobile devices in portrait mode. */
+
+/* Small (sm): 577px to 768px - Covers small devices in landscape mode and larger smartphones. */
+
+/* Medium (md): 769px to 992px - Targets tablets and larger mobile devices in landscape mode. */
+
+/* Large (lg): 993px to 1200px - Suitable for laptops and smaller desktop screens. */
+
+/* Extra Large (xl): 1201px and above - Covers larger desktop screens and monitors. */
