@@ -1,44 +1,32 @@
 /* .main {
-  /* background-image: url("../../../assets/a-learning-designers-frist-meeting-with-a-client.jpg");
-  background-size: contain;
-  background-repeat: no-repeat; */
-  /* min-width: 750px;
+  background-image: url("../../../assets/a-learning-designers-frist-meeting-with-a-client.jpg");
+  background-size: cover;
+  background-repeat: no-repeat;
+  min-width: 750px;
   width: 100vw;
   height: 100vh;
-  padding-top: 50px; */
+  padding-top: 50px;
+} */
 
-  .main{
-    position: relative;
-    background-image: url("../../../assets/a-learning-designers-frist-meeting-with-a-client.jpg");
-    background-size: cover;
-    background-repeat: no-repeat;
-    padding-block: 50px;
-    height: 100vh;
-    width: 100%;
-
-  }
-
-
-
-.card {
+/* .card {
   position: absolute;
-  width: 650px;
-  height: auto;
-  margin-inline: 50px;
-  padding: 10px 70px;
-  right: 0;
+  width: 650px; */
+  /* height: 850px; */
+  /* margin: 50px 0; */
+  /* padding: 10px 70px;
+  right: 50px;
   background-color: white;
 
 
   border-radius: 10px;
   box-shadow: 6px 6px 5px -4px rgba(219, 208, 208, 0.75);
-}
+} */
 
 .logo {
   background-image: url("../../../assets/Picture1.png");
   background-size: contain;
   background-repeat: no-repeat;
-  margin: 35px 0 20px;
+  margin: 35px 0;
   background-position: 50%;
 }
 
@@ -80,10 +68,6 @@ input[type="text"], input[type="password"]  {
   margin-bottom: 20px;
   font-size: 18px;
   padding: 15px;
-}
-
-input::placeholder {
-  color: rgb(158, 158, 158);
 }
 
 select  {
@@ -147,16 +131,11 @@ button {
   background-color: var(--solv-blue);
   border: none;
   color: white;
+  /* font-weight: bold; */
   font-size: 18px;
   letter-spacing: 0.9px;
   border-radius: 9px;
   cursor: pointer;
-}
-
-
-button:disabled {
-  background-color: rgb(179, 178, 178);
-  cursor: not-allowed; 
 }
 
 form + p {
@@ -171,12 +150,21 @@ form + p {
 }
 
 /* @media screen and (min-width: 750px) and (max-width: 1200px) {
-
+  .card {
+    position:static;
+    margin: 10px auto;
+    padding: 10px 70px;
+  }
 } */
 
 /* Media query for screen sizes 577px to 768px */
 @media screen and (min-width: 577px) and (max-width: 750px) {
-
+  /* .card {
+    position: static;
+    width: 80%;
+    height: 750px;
+    margin: 0 auto;
+  } */
 
   .logo {
     font-size: 36px;
@@ -209,7 +197,6 @@ form + p {
 @media screen and (max-width: 576px) {
   /* .main {
     padding: 10px;
-    min-width: 580px;
   } */
 
   /* .card {
@@ -244,26 +231,12 @@ form + p {
     margin-bottom: 8px;
   }
 
-  button [type="submit"] {
+  button {
     margin: 20px auto;
     width: 100%;
   }
 
-
   .links {
     font-size: 12px; /* Adjust the font size of the links */
   }
-
-  .links span {
-    cursor: pointer;
-  }
 }
-/* Extra Small (xs): 0px to 576px - This range is typically for mobile devices in portrait mode. */
-
-/* Small (sm): 577px to 768px - Covers small devices in landscape mode and larger smartphones. */
-
-/* Medium (md): 769px to 992px - Targets tablets and larger mobile devices in landscape mode. */
-
-/* Large (lg): 993px to 1200px - Suitable for laptops and smaller desktop screens. */
-
-/* Extra Large (xl): 1201px and above - Covers larger desktop screens and monitors. */

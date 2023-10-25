@@ -3,14 +3,14 @@
   <div class="card">
     <h1 class="logo">&nbsp;</h1>
     <p id="welcome"> Welcome to the <span>SOLV Admin Dashboard</span></p>
-    <p>Sign In</p>
+    <a routerLink="master-anchor-login"><p>Sign In</p></a>
     <p>Enter your SOLV Email ID and Password to Sign In</p>
 
-    <form action="">
-      <input type="text" placeholder="Email Address">
-      <input type="password" placeholder="Enter your password">
+    <form [formGroup]="signInForm">
+      <input type="text" placeholder="Enter your Email ID" formControlName ="user_email">
+      <input type="password" placeholder="Enter your Password" formControlName = 'user_password'>
 
-      <select name="role" id="admin-role">
+      <select name="role" id="admin-role" formControlName="user_role">
         <option value="Super Admin">Super Admin</option>
         <option value="Maker Admin">Maker Admin</option>
         <option value="Checker Admin">Checker Admin</option>
@@ -18,14 +18,14 @@
 
       <section>
         <div>
-          <input type="checkbox" name="remember-me" id="remember-me">
+          <input type="checkbox" name="remember-me" id="remember-me" formControlName="remember_me">
           <label for="remember-me">Remember Me</label>
         </div>
         <p>Forgot password?</p>
         <span>&nbsp;</span>
       </section>
 
-      <button type="submit">Sign In</button>
+      <button type="submit" (click)="onSubmit()" [disabled]="signInForm.invalid">Sign In</button>
     </form>
 
     <p class="links"> <span>Solv Ghana</span> | <span>Privacy Policy</span> | <span>Terms & Conditions</span></p>

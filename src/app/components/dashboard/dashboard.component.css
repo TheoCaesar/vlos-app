@@ -1,0 +1,22 @@
+/*have navbar overlap logo*/
+.sidebar-container {
+  position: relative;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+}
+
+.expand-sidebar {
+  position: absolute;
+  top: 5px;
+  font-size: 15px;
+  padding: 4px 4px;
+  left: 78px;
+  z-index: 1;
+  border-radius: 30px;
+  border: solid 0px var(--solv-blue);
+  background: rgb(255, 255, 255);
+  box-shadow: 4px 1px 4px 0px rgba(0,0,0,0.35);
+
+}

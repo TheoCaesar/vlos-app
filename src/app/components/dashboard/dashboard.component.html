@@ -1,0 +1,17 @@
+<app-header></app-header>
+<mat-sidenav-container
+  class="sidebar-container"
+  (backdropClick)="close()"
+>
+  <mat-sidenav #sidebar closed>
+    <!-- <p><button mat-button (click)="sidebar.close()">Close</button></p> -->
+    <app-sidebar-ext></app-sidebar-ext>
+  </mat-sidenav>
+
+  <!-- Body -->
+  <mat-sidenav-content>
+    <mat-icon (click)="sidebar.open()" class="mat-18 expand-sidebar">settings_ethernet</mat-icon>
+
+    <app-sidebar></app-sidebar>
+  </mat-sidenav-content>
+</mat-sidenav-container>
