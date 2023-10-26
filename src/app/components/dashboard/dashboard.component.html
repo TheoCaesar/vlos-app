@@ -11,7 +11,12 @@
   <!-- Body -->
   <mat-sidenav-content>
     <mat-icon (click)="sidebar.open()" class="mat-18 expand-sidebar">settings_ethernet</mat-icon>
-
-    <app-sidebar></app-sidebar>
+    <!-- <app-home></app-home> -->
+    <div class="sidebar">
+      <app-sidebar></app-sidebar>
+    </div>
+    <div class="main">
+      <app-home></app-home>
+    </div>
   </mat-sidenav-content>
 </mat-sidenav-container>

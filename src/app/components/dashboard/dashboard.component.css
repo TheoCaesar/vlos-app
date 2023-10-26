@@ -20,3 +20,17 @@
   box-shadow: 4px 1px 4px 0px rgba(0,0,0,0.35);
 
 }
+
+mat-sidenav-content {
+  display: flex;
+}
+
+.main {
+  margin: 20px 40px;
+  width: 100%;
+}
+
+app-home {
+  -webkit-box-shadow: 4px 2px 2px 2px rgba(0,0,0,0.45);
+  box-shadow: 4px 2px 2px 2px rgba(0,0,0,0.45);
+}

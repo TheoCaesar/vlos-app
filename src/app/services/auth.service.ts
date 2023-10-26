@@ -10,21 +10,24 @@ export class AuthService {
   adminUsers: User[] = [
     {
       id:1,
-      username:"Mike Kweku Assem",
+      firstname:"Mike",
+      lastname: "Assem",
       email: "michael.assem@solv.com.gh",
       password: "idnsokfa",
       role:"Checker Admin"
     },
     {
       id:2,
-      username:"Joel Kwame Ofosu",
+      firstname:"Joel",
+      lastname: "Kwame Ofosu",
       email: "joel.ofosu@solv.com.gh",
       password: "klq14eqwe",
       role:"Super Admin"
     },
     {
       id:3,
-      username:"William Daniels",
+      firstname:"William",
+      lastname:"Daniels",
       email: "william.daniels@solv.com.gh",
       password: "dqpd24ea",
       role:"Maker Admin"
@@ -42,7 +45,7 @@ export class AuthService {
     )
 
     if(isLoggedUserAdmin) {
-      this.session = isLoggedUserAdmin.username;// + "_" + password;
+      this.session = isLoggedUserAdmin.firstname+ "_" + isLoggedUserAdmin.lastname;
       localStorage.setItem("session", JSON.stringify(this.session));
     }
     console.log( isLoggedUserAdmin);
@@ -54,4 +57,5 @@ export class AuthService {
     localStorage.removeItem("session");
     this.serviceRouter.navigateByUrl("/");
   }
+
 }
