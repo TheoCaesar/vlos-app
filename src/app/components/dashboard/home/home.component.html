@@ -6,16 +6,31 @@
     <!-- <button></button> -->
   </div>
 
-
-  <div class="header">
-    <mat-form-field>
-      <mat-label>Filter</mat-label>
-      <input matInput (keyup)="applyFilter($event)" placeholder="Ex. Mia" #input>
-    </mat-form-field>
+  <div class="content">
+    <div class="header">
+      <p>SOLV Super Admin Dashboard</p>
+      <div class="controls">
+        <div class="search">
+          <mat-icon class="mat-18">search</mat-icon>
+          <input #input (keyup)="applyFilter($event)" placeholder="search">
+        </div>
+        <div class="filter">
+          Sort by:
+          <select>
+            <option value="option">Newest</option>
+            <option value="option">Oldest</option>
+          </select>
+        </div>
+      </div>
+    </div>
+    <div class="tabs">
+      <p class="tab">Maker</p>
+      <p class="tab">checker</p>
+      <p class="tab">fi/Bank</p>
+    </div>
 
     <div class="mat-elevation-z8">
       <table mat-table [dataSource]="dataSource" matSort>
-
         <!-- ID Column -->
         <ng-container matColumnDef="ID">
           <th mat-header-cell *matHeaderCellDef mat-sort-header> ID </th>
@@ -69,11 +84,10 @@
 
         <!-- Row shown when there is no matching data. -->
         <tr class="mat-row" *matNoDataRow>
-          <td class="mat-cell" colspan="4">No data matching the filter "{{input.value}}"</td>
+          <td class="mat-cell" colspan="7">No data matching the filter "{{input.value}}"</td>
         </tr>
       </table>
-
-      <mat-paginator [pageSizeOptions]="[5, 10, 25, 100]" aria-label="Select page of users"></mat-paginator>
+      <mat-paginator [pageSizeOptions]="[10, 25, 50, 100]" aria-label="Select page of users"></mat-paginator>
   </div>
   <!-- <div class="cards"></div> -->
 

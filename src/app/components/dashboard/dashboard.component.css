@@ -32,5 +32,8 @@ mat-sidenav-content {
 
 app-home {
   -webkit-box-shadow: 4px 2px 2px 2px rgba(0,0,0,0.45);
-  box-shadow: 4px 2px 2px 2px rgba(0,0,0,0.45);
+   height: 100vh;
+  margin-bottom: 200px;
+  overflow-y: scroll;
+  /* box-shadow: 4px 2px 2px 2px rgba(0,0,0,0.45); */
 }
