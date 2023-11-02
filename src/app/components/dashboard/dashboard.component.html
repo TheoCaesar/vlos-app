@@ -1,22 +1,39 @@
-<app-header></app-header>
-<mat-sidenav-container
-  class="sidebar-container"
-  (backdropClick)="close()"
->
+<!-- <app-header></app-header>
+<mat-sidenav-container  class="sidebar-container"  (backdropClick)="close()">
   <mat-sidenav #sidebar closed>
-    <!-- <p><button mat-button (click)="sidebar.close()">Close</button></p> -->
     <app-sidebar-ext></app-sidebar-ext>
   </mat-sidenav>
 
-  <!-- Body -->
   <mat-sidenav-content>
-    <mat-icon (click)="sidebar.open()" class="mat-18 expand-sidebar">settings_ethernet</mat-icon>
-    <!-- <app-home></app-home> -->
     <div class="sidebar">
-      <app-sidebar></app-sidebar>
+      <app-sidebar ></app-sidebar>
     </div>
     <div class="main">
       <app-home></app-home>
     </div>
   </mat-sidenav-content>
-</mat-sidenav-container>
+</mat-sidenav-container> -->
+<ng-container >
+  <app-header></app-header>
+  <mat-sidenav-container class="sidebar-example-container">
+    <mat-sidenav
+      #sidenav
+      mode="side"
+      opened
+      class="example-sidenav"
+    >
+      <!-- Non-fixed Sidenav -->
+      <app-sidebar></app-sidebar>
+    </mat-sidenav>
+
+    <mat-sidenav-content >
+      <!-- <p></p> -->
+      <div class="main">
+        <app-home></app-home>
+      </div>
+      <!-- <p><button mat-button (click)="sidenav.toggle()">Toggle</button></p> -->
+    </mat-sidenav-content>
+  </mat-sidenav-container>
+
+  <!-- <mat-toolbar class="example-footer">Footer</mat-toolbar> -->
+</ng-container>

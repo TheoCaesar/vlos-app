@@ -4,7 +4,7 @@ export interface User {
   lastname?:string,
   phoneNumber?: string,
   email?:string,
-  role?:string,
+  role:string,
   createdBy?: string,
   createdDate?:string,
   password?:string,

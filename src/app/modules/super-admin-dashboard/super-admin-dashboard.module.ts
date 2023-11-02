@@ -10,14 +10,23 @@ import { MatListModule } from '@angular/material/list';
 import {MatButtonModule} from '@angular/material/button'
 import { SidebarExtComponent } from 'src/app/components/dashboard/sidebar-ext/sidebar-ext.component';
 import { HomeComponent } from 'src/app/components/dashboard/home/home.component';
-import { MatSelectModule } from '@angular/material/select';
+import { CheckerComponent } from 'src/app/components/dashboard/checker/checker.component';
+import { FiBanksComponent } from 'src/app/components/dashboard/fi-banks/fi-banks.component';
+import { MakerComponent } from 'src/app/components/dashboard/maker/maker.component';
 
+// services
+import { UserService } from 'src/app/services/user.service';
+
+//modules
+import { Router, RouterModule } from '@angular/router';
+import { MatSelectModule } from '@angular/material/select';
 import {MatPaginatorModule} from '@angular/material/paginator';
 import {MatSortModule} from '@angular/material/sort';
 import {MatTableModule} from '@angular/material/table';
 import {MatInputModule} from '@angular/material/input';
 import {MatFormFieldModule} from '@angular/material/form-field';
-import { UserService } from 'src/app/services/user.service';
+import {MatDialogModule} from '@angular/material/dialog';
+import {MatMenuModule} from '@angular/material/menu';
 
 @NgModule({
   declarations: [
@@ -26,16 +35,22 @@ import { UserService } from 'src/app/services/user.service';
     SidebarComponent,
     SidebarExtComponent,
     HomeComponent,
+    CheckerComponent,
+    MakerComponent,
+    FiBanksComponent,
   ],
   imports: [
     CommonModule,
     MatIconModule,
     MatSidenavModule,MatListModule, MatButtonModule,
-    MatSelectModule,MatFormFieldModule, MatInputModule, MatTableModule, MatSortModule, MatPaginatorModule
+    MatSelectModule,MatFormFieldModule, MatInputModule, MatTableModule, MatSortModule, MatPaginatorModule,
+    MatMenuModule,MatDialogModule, RouterModule
   ],
   exports: [
     DashboardComponent,
-    HeaderComponent,
+    MakerComponent,
+    HeaderComponent,CheckerComponent,
+    FiBanksComponent,
     SidebarComponent, SidebarExtComponent
   ],
   providers: [

@@ -1,20 +1,21 @@
 import { AfterViewChecked, AfterViewInit, Component, ViewChild} from '@angular/core';
-import {MatPaginator, } from '@angular/material/paginator';
-import {MatSort, } from '@angular/material/sort';
+import {MatPaginator, } from '@angular/material/paginator';import {MatSort, } from '@angular/material/sort';
 import {MatTableDataSource} from '@angular/material/table';
 import { User } from 'src/app/interfaces/user';
 import { UserService } from 'src/app/services/user.service';
-import { Router } from '@angular/router';
-import { makeBindingParser } from '@angular/compiler';
-
-
 
 @Component({
-  selector: 'app-home',
-  templateUrl: './home.component.html',
-  styleUrls: ['./home.component.css']
+  selector: 'app-checker',
+  templateUrl: './checker.component.html',
+  styleUrls: [
+    './checker.component.css',
+  ]
 })
-export class HomeComponent implements AfterViewInit {
+export class CheckerComponent implements AfterViewInit {
+  editIcon:string = "./../../../../assets/icons/dashboard/edit.svg"
+  deleteIcon:string = "./../../../../assets/icons/dashboard/delete.svg"
+  emptyList:string = "./../../../../assets/icons/dashboard/No-data-found.svg";
+
   tableHeaders:String[] = ['First Name', "Last Name", "Phone Number", "Email", "Created By", "Created Date", "Status", "Edit", "Delete"]
   dataSource!: MatTableDataSource<User>;
   varUsers!: User[];
@@ -22,37 +23,13 @@ export class HomeComponent implements AfterViewInit {
   @ViewChild(MatPaginator) paginator!: MatPaginator;
   @ViewChild(MatSort) sort!: MatSort;
 
-
-  MakerIsActive = true
-  CheckerIsActive = false
-  BankIsActive = true
-
   constructor(private homeService:UserService) {
     // Fetch our 100 users
-    const users = this.homeService.makers;
-    this.varUsers = users;
+    this.varUsers = this.homeService.checkers;
     // Assign the data to the data source for the table to render
-    this.dataSource = new MatTableDataSource(users);
-    console.log(users)
+    this.dataSource = new MatTableDataSource(this.varUsers);
   }
 
-  toggleActiveStateMaker() {
-    this.MakerIsActive = true;
-    this.CheckerIsActive = false;
-    this.BankIsActive = false;
-  }
-
-  // toggleActiveStateChecker() {
-  //   this.CheckerIsActive = !this.CheckerIsActive;
-  //   this.BankIsActive = false;
-  //   this.MakerIsActive = false;
-  // }
-
-  // toggleActiveStateBank() {
-  //   this.BankIsActive = !this.BankIsActive;
-  //   this.MakerIsActive = false;
-  //   this.CheckerIsActive = false;
-  // }
   ngAfterViewInit() {
     this.dataSource.paginator = this.paginator;
     this.dataSource.sort = this.sort;

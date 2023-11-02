@@ -1,28 +1,112 @@
-<mat-nav-list dense>
+<mat-nav-list dense (mouseenter)="showDetails()" (mouseleave)="hideDetails()" [ngClass]="{'extend': ext_sidebar}">
     <!-- <mat-icon class="mat-18 expand-sidebar">settings_ethernet</mat-icon> -->
   <div class="sidebar-links">
     <mat-list-item>
-      <mat-icon class="mat-18">home</mat-icon>
+      <div class="menu-item">
+        <img [src]="homeIcon" alt="home-icon">
+        <div>
+          <span *ngIf="ext_sidebar" >Home</span>
+          <span *ngIf="ext_sidebar"> <img [src]="arrowIcon" alt="left-arrow-icon"></span>
+        </div>
+      </div>
     </mat-list-item>
     <mat-list-item>
-      <mat-icon class="mat-18">live_help</mat-icon>
+      <div class="menu-item">
+        <img [src]="faqIcon" alt="home-icon">
+        <div>
+          <span *ngIf="ext_sidebar" >FAQ</span>
+          <span *ngIf="ext_sidebar"> <img [src]="arrowIcon" alt="left-arrow-icon"></span>
+        </div>
+      </div>
     </mat-list-item>
     <mat-list-item>
-      <mat-icon class="mat-18">group_add</mat-icon>
+      <div class="menu-item">
+        <img [src]="makerIcon" alt="home-icon">
+        <div>
+          <span *ngIf="ext_sidebar" >Maker</span>
+          <span *ngIf="ext_sidebar"> <img [src]="arrowIcon" alt="left-arrow-icon"></span>
+        </div>
+      </div>
     </mat-list-item>
     <mat-list-item>
-      <mat-icon class="mat-18">verified_user</mat-icon>
+      <div class="menu-item">
+        <img [src]="checkerIcon" alt="home-icon">
+        <div>
+          <span *ngIf="ext_sidebar" >Checker</span>
+          <span *ngIf="ext_sidebar"> <img [src]="arrowIcon" alt="left-arrow-icon"></span>
+        </div>
+      </div>
     </mat-list-item>
     <mat-list-item>
-      <mat-icon class="mat-18">account_balance</mat-icon>
+      <div class="menu-item">
+        <img [src]="bankIcon" alt="home-icon">
+        <div>
+          <span *ngIf="ext_sidebar" >FI/Bank</span>
+          <span *ngIf="ext_sidebar"> <img [src]="arrowIcon" alt="left-arrow-icon"></span>
+        </div>
+      </div>
     </mat-list-item>
     <mat-list-item>
-      <mat-icon class="mat-18">settings</mat-icon>
+      <div class="menu-item">
+        <img [src]="settingsIcon" alt="home-icon">
+        <div>
+          <span *ngIf="ext_sidebar" >Setting</span>
+          <span *ngIf="ext_sidebar"> <img [src]="arrowIcon" alt="left-arrow-icon"></span>
+        </div>
+      </div>
     </mat-list-item>
   </div>
   <div class="about">
     <mat-list-item>
-      <mat-icon class="mat-18">account_box</mat-icon>
+      <div class="menu-item">
+        <img [src]="userIcon" width="27px" alt="home-icon">
+        <div>
+          <span *ngIf="ext_sidebar" >Super Admin</span>
+          <!-- <span *ngIf="ext_sidebar"> <img [src]="arrowIcon" alt="left-arrow-icon"></span> -->
+        </div>
+      </div>
+
     </mat-list-item>
   </div>
 </mat-nav-list>
+
+<!--
+<mat-drawer-container class="example-container" autosize>
+  <mat-drawer #drawer class="example-sidenav" mode="side">
+    <mat-nav-list dense (mouseenter)="showDetails()" (mouseleave)="hideDetails()">
+        <-- <mat-icon class="mat-18 expand-sidebar">settings_ethernet</mat-icon> --
+      <div class="sidebar-links">
+        <mat-list-item>
+          <mat-icon class="mat-18">home</mat-icon>
+          <p *ngIf="ext_sidebar">Lorem, ipsum dolor sit amet consectetur.</p>
+        </mat-list-item>
+        <mat-list-item>
+          <mat-icon class="mat-18">live_help</mat-icon>
+          <p *ngIf="ext_sidebar">Lorem, ipsum dolor sit amet consectetur.</p>
+        </mat-list-item>
+        <mat-list-item>
+          <mat-icon class="mat-18">group_add</mat-icon>
+          <p *ngIf="ext_sidebar">Lorem, ipsum dolor sit amet consectetur.</p>
+        </mat-list-item>
+        <mat-list-item>
+          <mat-icon class="mat-18">verified_user</mat-icon>
+          <p *ngIf="ext_sidebar">Lorem, ipsum dolor sit amet consectetur.</p>
+        </mat-list-item>
+        <mat-list-item>
+          <mat-icon class="mat-18">account_balance</mat-icon>
+          <p *ngIf="ext_sidebar">Lorem, ipsum dolor sit amet consectetur.</p>
+        </mat-list-item>
+        <mat-list-item>
+          <mat-icon class="mat-18">settings</mat-icon>
+          <p *ngIf="ext_sidebar">Lorem, ipsum dolor sit amet consectetur.</p>
+        </mat-list-item>
+      </div>
+      <div class="about">
+        <mat-list-item>
+          <mat-icon class="mat-18">account_box</mat-icon>
+          <p *ngIf="ext_sidebar">Lorem, ipsum dolor sit amet consectetur.</p>
+        </mat-list-item>
+      </div>
+    </mat-nav-list>
+  </mat-drawer>
+</mat-drawer-container> -->

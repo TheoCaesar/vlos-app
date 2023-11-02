@@ -1,6 +1,6 @@
 /* You can add global styles to this file, and also import other style files */
 :root {
-  --solv-blue: #25529C;
+  --solv-blue: #0f4c8a;
   --solv-orange: #FF9636;
 }
 
@@ -8,7 +8,7 @@
   margin: 0;
   padding: 0;
   box-sizing: border-box;
-  font-family: sans-serif;
+  font-family: 'Poppins', sans-serif;
 }
 
 body
@@ -25,3 +25,61 @@ body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
   color: var(--solv-blue);
   font-size: 24px;
 }
+
+
+/* checker & maker styles */
+
+.mat-elevation-z8 {
+  width: 100%;
+  /* height: 100vh; */
+   overflow-y: scroll;
+   /* padding-bottom: 300px; */
+
+ }
+
+ .mat-mdc-form-field {
+   font-size: 14px;
+   width: 100%;
+ }
+
+ td.ten, th.ten {
+   width: 12%;
+ }
+
+ td.fourteen, th.fourteen {
+   width: 19%;
+ }
+
+ td mat-icon.delete {
+   color: red;
+   height: 24px;
+   width: 24px;
+   font-size: 12px;
+   text-align: center;
+   vertical-align: middle;
+   background-color: rgb(255, 186, 186);
+   border-radius: 45px;
+   padding-top: 5px;
+ }
+
+ td mat-icon.edit {
+   color: var(--solv-blue);
+   text-align: center;
+   vertical-align: middle;
+   height: 24px;
+   width: 24px;
+   font-size: 14px;
+   background-color: rgb(182, 198, 248);
+   border-radius: 45px;
+   padding-top: 5px;
+ }
+
+ mat-icon.edit {
+   display: inline-block;
+   /* margin: 2px auto !important; */
+ }
+
+
+ .footer {
+   margin-block: 20px;
+ }

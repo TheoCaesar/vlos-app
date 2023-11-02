@@ -5,5 +5,5 @@ import { Component } from '@angular/core';
   styleUrls: ['./header.component.css'],
 })
 export class HeaderComponent {
-  solv_logo = '../../../../assets/Picture1.png'
+  solv_logo = '../../../../assets/Picture1.png';
 }

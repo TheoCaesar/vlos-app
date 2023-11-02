@@ -1,0 +1,10 @@
+.no-data-info {
+  text-align: center;
+}
+
+.no-data-info p {
+  font-weight: 600;
+  font-size: 35px;
+  line-height: 52.5px;
+  color: var(--solv-blue);
+}

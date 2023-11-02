@@ -4,6 +4,18 @@
   </div>
   <div class="icons">
     <mat-icon class="mat-18" >notifications_active</mat-icon>
-    <mat-icon class="mat-18" color="blue">account_circle</mat-icon>
+      <mat-icon class="mat-18" color="blue"[matMenuTriggerFor]="menu">account_circle</mat-icon>
   </div>
+
 </div>
+<mat-menu #menu="matMenu" class="user-info">
+    <div class="user-info-details">
+      <p>User Role: Admin</p>
+      <p>admin@solv.com.gh</p>
+      <hr>
+      <div class="links">
+        <p>Settings</p>
+        <p>Logout</p>
+      </div>
+    </div>
+  </mat-menu>
