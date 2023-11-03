@@ -1,37 +1,12 @@
-<!-- <app-header></app-header>
-<mat-sidenav-container  class="sidebar-container"  (backdropClick)="close()">
-  <mat-sidenav #sidebar closed>
-    <app-sidebar-ext></app-sidebar-ext>
-  </mat-sidenav>
-
-  <mat-sidenav-content>
-    <div class="sidebar">
-      <app-sidebar ></app-sidebar>
-    </div>
-    <div class="main">
-      <app-home></app-home>
-    </div>
-  </mat-sidenav-content>
-</mat-sidenav-container> -->
 <ng-container >
   <app-header></app-header>
   <mat-sidenav-container class="sidebar-example-container">
-    <mat-sidenav
-      #sidenav
-      mode="side"
-      opened
-      class="example-sidenav"
-    >
-      <!-- Non-fixed Sidenav -->
+    <mat-sidenav #sidenav mode="side" opened class="example-sidenav">
       <app-sidebar></app-sidebar>
     </mat-sidenav>
 
     <mat-sidenav-content >
-      <!-- <p></p> -->
-      <div class="main">
-        <app-home></app-home>
-      </div>
-      <!-- <p><button mat-button (click)="sidenav.toggle()">Toggle</button></p> -->
+      <app-home></app-home>
     </mat-sidenav-content>
   </mat-sidenav-container>
 

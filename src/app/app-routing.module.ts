@@ -24,6 +24,7 @@ const routes: Routes = [
       //   path:"",
       //   component: HomeComponent,
       // },
+
       {
         path:"maker",
         component:MakerComponent,

@@ -23,9 +23,6 @@ export class HomeComponent implements AfterViewInit {
   @ViewChild(MatSort) sort!: MatSort;
 
 
-  MakerIsActive = true
-  CheckerIsActive = false
-  BankIsActive = true
 
   constructor(private homeService:UserService) {
     // Fetch our 100 users
@@ -36,23 +33,6 @@ export class HomeComponent implements AfterViewInit {
     console.log(users)
   }
 
-  toggleActiveStateMaker() {
-    this.MakerIsActive = true;
-    this.CheckerIsActive = false;
-    this.BankIsActive = false;
-  }
-
-  // toggleActiveStateChecker() {
-  //   this.CheckerIsActive = !this.CheckerIsActive;
-  //   this.BankIsActive = false;
-  //   this.MakerIsActive = false;
-  // }
-
-  // toggleActiveStateBank() {
-  //   this.BankIsActive = !this.BankIsActive;
-  //   this.MakerIsActive = false;
-  //   this.CheckerIsActive = false;
-  // }
   ngAfterViewInit() {
     this.dataSource.paginator = this.paginator;
     this.dataSource.sort = this.sort;

@@ -8,7 +8,6 @@ import {MatIconModule} from '@angular/material/icon'
 import {MatSidenavModule} from '@angular/material/sidenav';
 import { MatListModule } from '@angular/material/list';
 import {MatButtonModule} from '@angular/material/button'
-import { SidebarExtComponent } from 'src/app/components/dashboard/sidebar-ext/sidebar-ext.component';
 import { HomeComponent } from 'src/app/components/dashboard/home/home.component';
 import { CheckerComponent } from 'src/app/components/dashboard/checker/checker.component';
 import { FiBanksComponent } from 'src/app/components/dashboard/fi-banks/fi-banks.component';
@@ -33,7 +32,6 @@ import {MatMenuModule} from '@angular/material/menu';
     DashboardComponent,
     HeaderComponent,
     SidebarComponent,
-    SidebarExtComponent,
     HomeComponent,
     CheckerComponent,
     MakerComponent,
@@ -51,7 +49,7 @@ import {MatMenuModule} from '@angular/material/menu';
     MakerComponent,
     HeaderComponent,CheckerComponent,
     FiBanksComponent,
-    SidebarComponent, SidebarExtComponent
+    SidebarComponent,
   ],
   providers: [
     UserService,

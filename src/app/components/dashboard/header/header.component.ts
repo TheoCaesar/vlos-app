@@ -6,4 +6,7 @@ import { Component } from '@angular/core';
 })
 export class HeaderComponent {
   solv_logo = '../../../../assets/Picture1.png';
+  notificationIcon = './../../../../assets/icons/navbar/notification.svg'
+  userIcon = './../../../../assets/icons/navbar/user-grey.svg'
+
 }

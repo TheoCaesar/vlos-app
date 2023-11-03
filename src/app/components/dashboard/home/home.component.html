@@ -12,7 +12,7 @@
       <div class="controls">
         <div class="search">
           <mat-icon class="mat-18">search</mat-icon>
-          <input #input (keyup)="applyFilter($event)" placeholder="search">
+          <input #input (keyup)="applyFilter($event)" placeholder="Search">
         </div>
         <div class="filter">
           Sort by:
@@ -23,12 +23,14 @@
         </div>
       </div>
     </div>
-    <div class="tabs">
-      <a [routerLink]="['maker']" routerLinkActive="active" ><p class="tab">Maker</p> </a>
-      <a [routerLink]="'checker'" routerLinkActive="active"><p class="tab" >checker</p> </a>
-      <a routerLink="banks" routerLinkActive="active"><p class="tab" >fi/Bank</p> </a>
+    <div class="container">
+      <div class="tabs">
+        <a [routerLink]="['maker']" routerLinkActive="active" ><p class="tab">Maker</p> </a>
+        <a [routerLink]="'checker'" routerLinkActive="active"><p class="tab" >checker</p> </a>
+        <a routerLink="banks" routerLinkActive="active"><p class="tab" >fi/Bank</p> </a>
+      </div>
+      <router-outlet></router-outlet>
     </div>
-    <router-outlet></router-outlet>
     <div class="footer">
       <p>Copyright &copy; 2023</p>
     </div>

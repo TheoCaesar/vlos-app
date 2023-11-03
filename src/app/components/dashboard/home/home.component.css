@@ -1,20 +1,14 @@
 .home-container {
   display: flex;
   flex-direction: column;
-  justify-content: space-between;
-
-  height: 85vh;
- /*  margin-bottom: 200px;
-  overflow-y: scroll; */
-  /* z-index: 100; */
-  /* overflow: scroll; */
+  justify-content: flex-start;
+  height: auto;
+  padding: 20px 10px 10px 20px;
+  -webkit-box-shadow: -2px -2px 15px 1px rgba(0,0,0,0.3);
+  box-shadow: -2px -2px 15px 1px rgba(0,0,0,0.3);
+  /* border: 2px solid red; */
 }
 
-/* .content{
-  height: 100vh;
-  overflow-y: scroll;
-  margin-bottom: 100px;
-} */
 
 .button-container{
   display: flex;
@@ -26,10 +20,11 @@
 .button-container button {
   background-color: var(--solv-blue);
   color: white;
-  height: 50px;
+  height: 40px;
   width: 180px;
-  float: right;
-  font-size: 16px;
+  font-size: 13px;
+  font-weight: 700;
+  text-align: center;
 }
 
 button:nth-child(1) {
@@ -37,24 +32,21 @@ button:nth-child(1) {
 }
 
 .header {
-  /* border: 2px so lid black; */
+  /* border: 2px solid black; */
   margin-bottom: 15px;
   display: flex;
   justify-content: space-between;
-  /* min-width: 100%; */
+  align-content: center;
 }
 
 .header p {
-  font-weight: bold;
-  font-size: 24px;
-  letter-spacing: 0.05em;
+  margin-top: 12px;
+  font-weight: 600;
+  font-size: 22px;
+  margin-bottom: 0 ;/*overide material styling on p tag*/
 }
 
-.header mat-form-field {
-  width: 250px;
-  text-decoration: none;
-  border: 0.5px solid var(--solv-blue);
-}
+
 
 .controls {
   display: flex;
@@ -64,36 +56,39 @@ button:nth-child(1) {
 .controls input, .controls select {
   border: none;
   background-color: white;
-  height: 100%;
+  border-radius: 10px;
+  height: 150%;
 }
 
 .search{
   display: flex;
-  /* flex-direction: row; */
   justify-content: space-between;
   align-items: center;
-  height: 100%; width: 250px;
+  height: 40px; width: 220px;
   padding: 8px; margin-left: 15px;
   border: 1px solid var(--solv-blue);
+  border-radius: 10px;
+  font-size: 18px;
 }
 
-.search input {
-  width: 90%;
-}
 
 .filter {
   display: flex;
   justify-content: space-between;
-  height: 100%; width: 180px;
+  align-items: center;
+  height: 40px; width: 180px;
   padding: 8px; margin-left: 20px;
   border: 1px solid var(--solv-blue);
+  border-radius: 10px;
 }
 
-.search select {
-  width: 80%;
+.filter select {
+  width: 60%;
 }
 .controls input::placeholder {
-  text-align: right;
+  text-align: left;
+  color: #B5B7C0;
+
 }
 
 .active {
@@ -119,4 +114,22 @@ button:nth-child(1) {
 
 .tab a:visited {
   color: var(--solv-blue);
+}
+
+@media screen and (max-width:768px) {
+  .home-container {
+    min-width: 760px;
+    /* min-width: 900px; */
+  }
+
+  .header p {
+    margin-top: 0px !important;
+  }
+}
+
+@media screen and (max-width:1190px) {
+  .home-container {
+    max-width: 1100px;
+    /* min-width: 900px; */
+  }
 }

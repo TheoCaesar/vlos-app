@@ -6,6 +6,7 @@ mat-nav-list {
   box-shadow: 4px 1px 4px 0px rgba(0,0,0,0.35);
   height: 100vh;
   overflow-y: hidden;
+  /* border: 2px solid orange; */
 }
 
 .extend {
@@ -36,14 +37,13 @@ mat-nav-list {
   .sidebar-links mat-list-item {
     margin-block-end: 10px;
   }
-
 }
 
 /* Medium screens (e.g., tablets) */
 @media (min-height: 601px) and (max-height: 900px) {
   mat-nav-list {
     padding-block: 15px 25px;
-    height: 90vh;
+    height: 92.5vh;
   }
 
   .sidebar-links mat-list-item {
