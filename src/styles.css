@@ -1,7 +1,7 @@
 /* You can add global styles to this file, and also import other style files */
 :root {
   --solv-blue: #0f4c8a;
-  --solv-orange: #FF9636;
+  --solv-orange: #FF7A00;
 }
 
 * {
@@ -14,7 +14,7 @@
 body
 {
   /* min-width: 750px; */
-  width: 100%;
+  /* width: 100%; */
   height: 100vh;
   overflow: clip
 }
@@ -31,55 +31,105 @@ body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
 
 .mat-elevation-z8 {
   width: 100%;
-  /* height: 100vh; */
-   overflow-y: scroll;
-   /* padding-bottom: 300px; */
-
+  overflow-y: scroll;
  }
 
- .mat-mdc-form-field {
-   font-size: 14px;
-   width: 100%;
- }
+ .New {
+  display: inline-block;
+  width: 50px;
+  height: 25px;
+  padding: 2px 0 ;
+  font-size: 14px;
+  font-weight: 500;
+  text-align: center;
+  vertical-align:bottom;
+  text-transform: capitalize;
+  color: orange;
+  border: 1px solid var(--solv-orange);
+  border-radius: 4px;
+}
 
- td.ten, th.ten {
-   width: 12%;
- }
+.Active {
+  display: inline-block;
+  width: 60px;
+  height: 25px;
+  padding: 2px 0;
+  font-size: 14px;
+  font-weight: 500;
+  text-align: center;
+  text-transform: capitalize;
+  color: green;
+  border: 1px solid green;
+  border-radius: 4px;
+}
 
- td.fourteen, th.fourteen {
-   width: 19%;
- }
 
- td mat-icon.delete {
-   color: red;
-   height: 24px;
-   width: 24px;
-   font-size: 12px;
-   text-align: center;
-   vertical-align: middle;
-   background-color: rgb(255, 186, 186);
-   border-radius: 45px;
-   padding-top: 5px;
- }
-
- td mat-icon.edit {
-   color: var(--solv-blue);
-   text-align: center;
-   vertical-align: middle;
-   height: 24px;
-   width: 24px;
-   font-size: 14px;
-   background-color: rgb(182, 198, 248);
-   border-radius: 45px;
-   padding-top: 5px;
- }
-
- mat-icon.edit {
+.Blocked, .Deleted {
    display: inline-block;
-   /* margin: 2px auto !important; */
- }
+  width: 70px;
+  height: 25px;
+  padding: 2px 0;
+  font-size: 14px;
+  font-weight: 500;
+  text-align: center;
+  text-transform: capitalize;
+  color: red;
+  border: 1px solid red;
+  border-radius: 4px;
+}
 
+.Deactivated {
+  display: inline-block;
+  width: 105px;
+  height: 25px;
+  padding: 2px 0 ;
+  font-size: 14px;
+  font-weight: 500;
+  text-align: center;
+  vertical-align:bottom;
+  text-transform: capitalize;
+  color: orange;
+  border: 1px solid var(--solv-orange);
+  border-radius: 4px;
+}
 
- .footer {
-   margin-block: 20px;
- }
+.mat-mdc-form-field {
+  font-size: 14px;
+  width: 100%;
+}
+
+td.fourteen, th.fourteen {
+  width: 19%;
+}
+
+td:nth-child(1), th:nth-child(1),
+td:nth-child(2), th:nth-child(2),
+td:nth-child(3), th:nth-child(3),
+td:nth-child(5), th:nth-child(5) {
+  /* color:red; */
+  min-width: 140px ;
+  /* border: 2px solid black; */
+}
+
+td:nth-child(5), th:nth-child(5),
+td:nth-child(7), th:nth-child(7) {
+  /* color: blue; */
+  min-width: 100px;
+  /* border: 2px solid orange; */
+}
+
+th.fi_name, td.fi_name {
+  /* color: red; */
+  min-width: 150px;
+  /* border: 2px solid red; */
+}
+
+.fi_type, .date {
+  /* color: red; */
+  min-width: 200px;
+  /* border: 2px solid red; */
+}
+
+.footer {
+  margin-block: 20px;
+}

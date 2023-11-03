@@ -1,3 +1,12 @@
+.New {
+  width: 56;
+  height: 29;
+  font-size: 14px;
+  font-weight: 500;
+  color: orange;
+  border: 1px solid var(--solv-orange);
+  border-radius: 4px;
+}
 
 .no-data-info {
   text-align: center;

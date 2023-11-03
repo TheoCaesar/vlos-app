@@ -4,15 +4,11 @@ import { CommonModule } from '@angular/common';
 import { DashboardComponent } from 'src/app/components/dashboard/dashboard.component';
 import { HeaderComponent } from 'src/app/components/dashboard/header/header.component';
 import { SidebarComponent } from 'src/app/components/dashboard/sidebar/sidebar.component';
-import {MatIconModule} from '@angular/material/icon'
-import {MatSidenavModule} from '@angular/material/sidenav';
-import { MatListModule } from '@angular/material/list';
-import {MatButtonModule} from '@angular/material/button'
 import { HomeComponent } from 'src/app/components/dashboard/home/home.component';
 import { CheckerComponent } from 'src/app/components/dashboard/checker/checker.component';
 import { FiBanksComponent } from 'src/app/components/dashboard/fi-banks/fi-banks.component';
 import { MakerComponent } from 'src/app/components/dashboard/maker/maker.component';
-
+import { NewUserDialogComponent } from 'src/app/components/dashboard/home/new-user-dialog/new-user-dialog.component';
 // services
 import { UserService } from 'src/app/services/user.service';
 
@@ -26,6 +22,13 @@ import {MatInputModule} from '@angular/material/input';
 import {MatFormFieldModule} from '@angular/material/form-field';
 import {MatDialogModule} from '@angular/material/dialog';
 import {MatMenuModule} from '@angular/material/menu';
+import {MatIconModule} from '@angular/material/icon'
+import {MatSidenavModule} from '@angular/material/sidenav';
+import { MatListModule } from '@angular/material/list';
+import {MatButtonModule} from '@angular/material/button';
+import {MatRadioModule} from '@angular/material/radio';
+import { ReactiveFormsModule } from '@angular/forms';
+import { NewBankDialogComponent } from 'src/app/components/dashboard/home/new-bank-dialog/new-bank-dialog.component';
 
 @NgModule({
   declarations: [
@@ -36,19 +39,20 @@ import {MatMenuModule} from '@angular/material/menu';
     CheckerComponent,
     MakerComponent,
     FiBanksComponent,
+    NewUserDialogComponent, NewBankDialogComponent
   ],
   imports: [
     CommonModule,
     MatIconModule,
     MatSidenavModule,MatListModule, MatButtonModule,
     MatSelectModule,MatFormFieldModule, MatInputModule, MatTableModule, MatSortModule, MatPaginatorModule,
-    MatMenuModule,MatDialogModule, RouterModule
+    MatMenuModule,MatDialogModule, RouterModule, MatRadioModule, ReactiveFormsModule
   ],
   exports: [
     DashboardComponent,
     MakerComponent,
     HeaderComponent,CheckerComponent,
-    FiBanksComponent,
+    FiBanksComponent,NewUserDialogComponent,NewBankDialogComponent,
     SidebarComponent,
   ],
   providers: [

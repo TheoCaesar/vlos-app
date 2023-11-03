@@ -1,0 +1,43 @@
+<!-- <p>new-user-dialog works!</p> -->
+<div class="card">
+  <div class="content">
+    <p>Create New User</p>
+
+    <form action="">
+      <mat-label>First Name</mat-label>
+      <mat-form-field appearance="outline">
+        <input matInput>
+      </mat-form-field>
+
+      <mat-label>Last Name</mat-label>
+      <mat-form-field appearance="outline">
+        <input matInput>
+      </mat-form-field>
+
+      <mat-label>Email ID</mat-label>
+      <mat-form-field appearance="outline">
+        <input matInput placeholder="pat@example.com" [formControl]="email" required>
+        <mat-error *ngIf="email.invalid">{{getErrorMessage()}}</mat-error>
+      </mat-form-field>
+
+      <mat-label>&nbsp;</mat-label>
+      <mat-form-field floatLabel="always" appearance="outline">
+        <input matInput type="number" class="example-right-align" placeholder="Mobile Number">
+        <span matTextPrefix>+233&nbsp;|&nbsp;</span>
+      </mat-form-field>
+
+      <div class="centered">
+        <mat-radio-group class="center-radio-group">
+          <mat-radio-button value="maker">Maker</mat-radio-button>
+          <mat-radio-button value="always">Checker</mat-radio-button>
+        </mat-radio-group>
+      </div>
+
+
+      <div class="buttons centered">
+        <button>Cancel</button>
+        <button>Create User</button>
+      </div>
+    </form>
+  </div>
+</div>

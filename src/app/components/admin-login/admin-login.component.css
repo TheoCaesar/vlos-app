@@ -9,8 +9,8 @@
 
   .main{
     position: relative;
-    background-image: url("../../../assets/a-learning-designers-frist-meeting-with-a-client.jpg");
-    background-size: cover;
+    background-image: url("../../../assets/images/login-bg.svg");
+    background-size:cover;
     background-repeat: no-repeat;
     padding-block: 50px;
     height: 100vh;
@@ -156,7 +156,7 @@ button {
 
 button:disabled {
   background-color: rgb(179, 178, 178);
-  cursor: not-allowed; 
+  cursor: not-allowed;
 }
 
 form + p {
