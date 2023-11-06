@@ -1,0 +1,40 @@
+<div class="card">
+  <!-- <p>faq works!</p> -->
+  <mat-icon class="mat-18 close">close</mat-icon>
+  <div class="main">
+    <div class="heading">
+      <div class="headers">
+        <p class="header active">anchor</p>
+        <p class="header" >dealer</p>
+      </div>
+      <div class="buttons">
+        <button> Add FAQs</button>
+        <div class="filter">
+          <select (change)="onCategoryChange($event)">
+            <option value="">Manage FAQs</option>
+            <option value="general">General</option>
+            <option value="registration">Registration/Login</option>
+            <option value="invoices">Invoices</option>
+          </select>
+        </div>
+      </div>
+    </div>
+    <div class="content">
+      <span class="category">{{faqCategory}}</span>
+      <div class="container">
+        <div class="q_and_a" *ngFor="let faqItem of queriedFAQs; index as i">
+          <div class="text">
+            <p class="question">{{faqItem.question}}</p>
+            <p class="answer">
+              {{faqItem.answer}}
+            </p>
+          </div>
+          <div class="icons">
+            <img [src]="editIcon" alt="edit">
+            <img [src]="deleteIcon" alt="edit">
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

@@ -9,6 +9,11 @@ import { CheckerComponent } from 'src/app/components/dashboard/checker/checker.c
 import { FiBanksComponent } from 'src/app/components/dashboard/fi-banks/fi-banks.component';
 import { MakerComponent } from 'src/app/components/dashboard/maker/maker.component';
 import { NewUserDialogComponent } from 'src/app/components/dashboard/home/new-user-dialog/new-user-dialog.component';
+import { FaqComponent } from 'src/app/components/dashboard/faq/faq.component';
+import { DealerComponent } from 'src/app/components/dashboard/faq/dealer/dealer.component';
+import { AnchorComponent } from 'src/app/components/dashboard/faq/anchor/anchor.component';
+
+
 // services
 import { UserService } from 'src/app/services/user.service';
 
@@ -35,11 +40,14 @@ import { NewBankDialogComponent } from 'src/app/components/dashboard/home/new-ba
     DashboardComponent,
     HeaderComponent,
     SidebarComponent,
+    FaqComponent,
     HomeComponent,
     CheckerComponent,
     MakerComponent,
     FiBanksComponent,
-    NewUserDialogComponent, NewBankDialogComponent
+    NewUserDialogComponent, NewBankDialogComponent,
+    DealerComponent,
+    AnchorComponent,
   ],
   imports: [
     CommonModule,
@@ -51,9 +59,9 @@ import { NewBankDialogComponent } from 'src/app/components/dashboard/home/new-ba
   exports: [
     DashboardComponent,
     MakerComponent,
-    HeaderComponent,CheckerComponent,
+    HeaderComponent,CheckerComponent,FaqComponent,
     FiBanksComponent,NewUserDialogComponent,NewBankDialogComponent,
-    SidebarComponent,
+    SidebarComponent,DealerComponent,AnchorComponent,
   ],
   providers: [
     UserService,
