@@ -6,8 +6,8 @@
     <div class="main-group">
       <div class="group-one">
         <mat-form-field>
+          <mat-label>FI Type </mat-label>
           <mat-select>
-            <mat-label>FI Type </mat-label>
             <mat-option value="Bank">Bank"</mat-option>
             <mat-option value="Non Bank Financial Institution">Non Bank Financial Institution"</mat-option>
           </mat-select>
@@ -30,41 +30,36 @@
       </div>
 
       <div class="group-two">
-        <mat-label>Logo of FI</mat-label>
-        <mat-form-field>
-          <input required >
+        <div class="logo">
+          <div>
+            <label>Logo of FI</label>
+            <input  type="file" id="avatar" name="avatar" accept="image/png, image/jpeg" />
+          </div>
+          <p>Please upload the document of .jpg or .png format and Maximum size of 2MB</p>
+        </div>
+
+        <mat-label>Bank Account Number *</mat-label>
+        <mat-form-field appearance="outline">
+          <input matInput required>
+        </mat-form-field>
+
+        <mat-label>Bank Name</mat-label>
+        <mat-form-field appearance="outline">
+          <input matInput required>
+        </mat-form-field>
+
+
+        <mat-label>Swift Code</mat-label>
+        <mat-form-field appearance="outline">
+          <input matInput required>
         </mat-form-field>
       </div>
     </div>
 
-      <div class="buttons centered">
+      <div class="buttons">
         <button>Cancel</button>
         <button>Create User</button>
       </div>
     </form>
   </div>
 </div>
-<!--
-<div class="main-group">
-  <div class="group-two">
-    <mat-label>Logo of FI</mat-label>
-    <mat-form-field>
-      <input required >
-    </mat-form-field>
-
-    <mat-label>Bank Account Number</mat-label>
-    <mat-form-field appearance="outline">
-      <input matInput required>
-    </mat-form-field>
-
-    <mat-label>Bank Name</mat-label>
-    <mat-form-field appearance="outline">
-      <input matInput required>
-    </mat-form-field>
-
-    <mat-label>Swift Code</mat-label>
-    <mat-form-field appearance="outline">
-      <input matInput required>
-    </mat-form-field>
-  </div>
-</div> -->
