@@ -10,8 +10,7 @@ import { FiBanksComponent } from 'src/app/components/dashboard/fi-banks/fi-banks
 import { MakerComponent } from 'src/app/components/dashboard/maker/maker.component';
 import { NewUserDialogComponent } from 'src/app/components/dashboard/home/new-user-dialog/new-user-dialog.component';
 import { FaqComponent } from 'src/app/components/dashboard/faq/faq.component';
-import { DealerComponent } from 'src/app/components/dashboard/faq/dealer/dealer.component';
-import { AnchorComponent } from 'src/app/components/dashboard/faq/anchor/anchor.component';
+import { NewBankDialogComponent } from 'src/app/components/dashboard/home/new-bank-dialog/new-bank-dialog.component';
 
 
 // services
@@ -33,7 +32,8 @@ import { MatListModule } from '@angular/material/list';
 import {MatButtonModule} from '@angular/material/button';
 import {MatRadioModule} from '@angular/material/radio';
 import { ReactiveFormsModule } from '@angular/forms';
-import { NewBankDialogComponent } from 'src/app/components/dashboard/home/new-bank-dialog/new-bank-dialog.component';
+import {MatTabsModule} from '@angular/material/tabs';
+
 
 @NgModule({
   declarations: [
@@ -46,22 +46,21 @@ import { NewBankDialogComponent } from 'src/app/components/dashboard/home/new-ba
     MakerComponent,
     FiBanksComponent,
     NewUserDialogComponent, NewBankDialogComponent,
-    DealerComponent,
-    AnchorComponent,
+
   ],
   imports: [
     CommonModule,
     MatIconModule,
     MatSidenavModule,MatListModule, MatButtonModule,
     MatSelectModule,MatFormFieldModule, MatInputModule, MatTableModule, MatSortModule, MatPaginatorModule,
-    MatMenuModule,MatDialogModule, RouterModule, MatRadioModule, ReactiveFormsModule
+    MatMenuModule,MatDialogModule, RouterModule, MatRadioModule, ReactiveFormsModule, MatTabsModule
   ],
   exports: [
     DashboardComponent,
     MakerComponent,
     HeaderComponent,CheckerComponent,FaqComponent,
     FiBanksComponent,NewUserDialogComponent,NewBankDialogComponent,
-    SidebarComponent,DealerComponent,AnchorComponent,
+    SidebarComponent,
   ],
   providers: [
     UserService,

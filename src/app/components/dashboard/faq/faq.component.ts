@@ -1,6 +1,7 @@
 import { Component } from '@angular/core';
 import { DataService } from 'src/app/services/data.service';
 import { Faq } from 'src/app/interfaces/faq';
+// import {MatTabsModule} from '@angular/material/tabs';
 
 
 @Component({
@@ -16,11 +17,25 @@ export class FaqComponent {
 
   constructor (private dataService: DataService){}
 
+  isAnchorTab = true;
+  isDealerTab = false;
+
+  switchtoAnchorTab() {
+    this.isAnchorTab = true;
+    this.isDealerTab = false;
+ }
+
+  switchtoDealerTab() {
+    this.isAnchorTab = false;
+    this.isDealerTab = true;
+  }
 
   anchorFAQs = this.dataService.anchorFAQ;
   dealerFAQs = this.dataService.dealerFAQ;
 
-  queriedFAQs:Faq[] = this.filterObjectsByCategory(this.anchorFAQs, 'general');
+  queriedAnchorFAQs:Faq[] = this.filterObjectsByCategory(this.anchorFAQs, 'general');
+  queriedDealerFAQs:Faq[] = this.filterObjectsByCategory(this.dealerFAQs, 'general');
+
   faqCategory:string = 'general';
 
 
@@ -29,13 +44,12 @@ export class FaqComponent {
     const selectElement = event.target as HTMLSelectElement;
     const selectedCategory = selectElement.value;
     console.log(selectedCategory)
-    // Call your fetchFAQs method with the selected category
-    // this.fetchFAQs(selectedCategory);
-    this.queriedFAQs = this.filterObjectsByCategory(this.anchorFAQs, selectedCategory);
+
+    this.queriedAnchorFAQs = this.filterObjectsByCategory(this.anchorFAQs, selectedCategory);
     this.faqCategory = selectedCategory;
 
-    if (this.queriedFAQs.length < 1) {
-      this.queriedFAQs = this.filterObjectsByCategory(this.anchorFAQs, "general");
+    if (this.queriedAnchorFAQs.length < 1) {
+      this.queriedAnchorFAQs = this.filterObjectsByCategory(this.anchorFAQs, "general");
       this.faqCategory = "general";
     }
     // console.log(this.anchorFAQs)
