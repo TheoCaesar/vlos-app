@@ -1,5 +1,5 @@
-import { Component } from '@angular/core';
-import { MatDialog } from '@angular/material/dialog';
+import { Component, Inject } from '@angular/core';
+import { MatDialog, MAT_DIALOG_DATA } from '@angular/material/dialog';
 import { CancelPopupComponent } from '../cancel-popup/cancel-popup.component';
 import { SuccessPopupComponent } from '../success-popup/success-popup.component';
 
@@ -9,19 +9,25 @@ import { SuccessPopupComponent } from '../success-popup/success-popup.component'
   styleUrls: ['./delete-user-popup.component.css']
 })
 export class DeleteUserPopupComponent {
- constructor (public dialog:MatDialog){}
+ constructor (
+  public dialog:MatDialog,
+  @Inject(MAT_DIALOG_DATA) public delUserData:any){
+    console.log(delUserData)
+  }
 
- openLeavePagePopup() {
-  const dialogRef = this.dialog.open(CancelPopupComponent);
-  dialogRef.afterClosed().subscribe(result => {
-    console.log('Dialog result: ${result}')
-  })
-}
 
-openSuccessPopup() {
-  const dialogRef = this.dialog.open(SuccessPopupComponent);
-  dialogRef.afterClosed().subscribe(result => {
-    console.log('Dialog result: ${result}')
-  })
-}
+  //popups for buttons within delete user pop-up components
+  openLeavePagePopup() {
+    const dialogRef = this.dialog.open(CancelPopupComponent);
+      dialogRef.afterClosed().subscribe(result => {
+        console.log('Dialog result: ${result}')
+      })
+    }
+
+    openDeleteSuccessPopup() {
+      const dialogRef = this.dialog.open(SuccessPopupComponent);
+      dialogRef.afterClosed().subscribe(result => {
+        console.log('Dialog result: ${result}')
+      })
+    }
 }

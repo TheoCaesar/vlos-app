@@ -1,6 +1,6 @@
-import { Component } from '@angular/core';
+import { Component, Inject } from '@angular/core';
 import { FormBuilder,FormControl, FormGroup, Validators } from '@angular/forms';
-import { MatDialog } from '@angular/material/dialog';
+import { MatDialog, MAT_DIALOG_DATA } from '@angular/material/dialog';
 import { CancelPopupComponent } from '../../popups/cancel-popup/cancel-popup.component';
 import { SuccessPopupComponent } from '../../popups/success-popup/success-popup.component';
 
@@ -15,7 +15,8 @@ export class NewUserDialogComponent {
   email= new FormControl((""), [Validators.required, Validators.email])
   user_role= new FormControl((""), [Validators.required])
 
-  constructor(private _formBuilder: FormBuilder, private dialog:MatDialog) {}
+  constructor(private _formBuilder: FormBuilder, private dialog:MatDialog,
+    @Inject(MAT_DIALOG_DATA) private editUserData:any) {}
 
   getErrorMessage() {
     if (this.email.hasError('required')) {

@@ -6,6 +6,7 @@ import { AppComponent } from './app.component';
 import { SignInModule } from './modules/sign-in/sign-in.module';
 import { SuperAdminDashboardModule } from './modules/super-admin-dashboard/super-admin-dashboard.module';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+// import { EditUserComponentComponent } from './components/dashboard/popups/edit-user-component/edit-user-component.component';
 // import { CancelPopupComponent } from './components/dashboard/popups/cancel-popup/cancel-popup.component';
 // import { DeletePopupComponent } from './components/dashboard/popups/delete-popup/delete-popup.component';
 // import { SuccessPopupComponent } from './components/dashboard/popups/success-popup/success-popup.component';
@@ -13,7 +14,6 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 @NgModule({
   declarations: [
     AppComponent,
-
   ],
   imports: [
     BrowserModule,

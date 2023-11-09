@@ -8,6 +8,7 @@ import { MatDialog } from '@angular/material/dialog';
 import { NewUserDialogComponent } from '../home/new-user-dialog/new-user-dialog.component';
 import { SearchService } from 'src/app/services/search.service';
 import { SortService } from 'src/app/services/sort.service';
+import { EditUserComponentComponent } from '../popups/edit-user-component/edit-user-component.component';
 
 @Component({
   selector: 'app-checker',
@@ -88,11 +89,27 @@ export class CheckerComponent implements AfterViewInit {
     this.dataSource.paginator = this.paginator;
   }
 
-  deletePopUp() {
-    const dialogRef = this.dialog.open(DeleteUserPopupComponent)
+  deletePopUp(data:any) {
+    const dialogRef = this.dialog.open(DeleteUserPopupComponent, {
+      data: {
+        username: `${data.firstname} ${data.lastname}`,
+        role: data.role,
+        phone: data.phoneNumber,
+        mail: data.email,
+      }
+    })
   }
 
-  editPopUp() {
-    const dialogRef = this.dialog.open(NewUserDialogComponent)
+  editPopUp(data:any) {
+    const dialogRef = this.dialog.open(EditUserComponentComponent,
+      {
+        data:{
+          firstname: data.firstname,
+          lastname: data.lastname,
+          mail: data.email,
+          phone: data.phoneNumber,
+          role: data.role,
+        }
+      })
   }
 }

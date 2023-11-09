@@ -37,6 +37,9 @@ import { ReactiveFormsModule } from '@angular/forms';
 import {MatTabsModule} from '@angular/material/tabs';
 import { DeleteBankPopupComponent } from 'src/app/components/dashboard/popups/delete-bank-popup/delete-bank-popup.component';
 import { DeleteUserPopupComponent } from 'src/app/components/dashboard/popups/delete-user-popup/delete-user-popup.component';
+import { EditUserComponentComponent } from 'src/app/components/dashboard/popups/edit-user-component/edit-user-component.component';
+import { SortService } from 'src/app/services/sort.service';
+import { SearchService } from 'src/app/services/search.service';
 
 @NgModule({
   declarations: [
@@ -52,6 +55,7 @@ import { DeleteUserPopupComponent } from 'src/app/components/dashboard/popups/de
     CancelPopupComponent,
     DeletePopupComponent,
     SuccessPopupComponent,    DeleteUserPopupComponent,
+    EditUserComponentComponent,
     DeleteBankPopupComponent,
 
   ],
@@ -71,10 +75,11 @@ import { DeleteUserPopupComponent } from 'src/app/components/dashboard/popups/de
     CancelPopupComponent,
     DeletePopupComponent,    DeleteUserPopupComponent,
     DeleteBankPopupComponent,
+    EditUserComponentComponent,
     SuccessPopupComponent,
   ],
   providers: [
-    UserService,
+    UserService, SortService, SearchService
   ]
 })
 export class SuperAdminDashboardModule { }
