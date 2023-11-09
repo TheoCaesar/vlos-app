@@ -72,6 +72,12 @@ button:nth-child(1) {
 }
 
 
+/* .search input:focus {
+  padding-left: 10px;
+  border: none;
+  color: red;
+} */
+
 .filter {
   display: flex;
   justify-content: space-between;

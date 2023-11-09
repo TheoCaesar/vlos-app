@@ -7,6 +7,8 @@ import { UserService } from 'src/app/services/user.service';
 import { MatDialog } from '@angular/material/dialog';
 import { NewUserDialogComponent } from './new-user-dialog/new-user-dialog.component';
 import { NewBankDialogComponent } from './new-bank-dialog/new-bank-dialog.component';
+import { SearchService } from 'src/app/services/search.service';
+import { SortService } from 'src/app/services/sort.service';
 
 
 @Component({
@@ -22,13 +24,34 @@ export class HomeComponent implements AfterViewInit {
   @ViewChild(MatPaginator) paginator!: MatPaginator;
   @ViewChild(MatSort) sort!: MatSort;
 
-  constructor(private homeService:UserService, public dialog:MatDialog) {
+  constructor(private homeService:UserService, public dialog:MatDialog,
+    private searchService:SearchService, private sortService:SortService,
+    ) {
     // Fetch our 100 users
     this.varUsers = this.homeService.makers;
     // Assign the data to the data source for the table to render
     this.dataSource = new MatTableDataSource(this.varUsers);
   }
 
+  triggerSearch(event: Event) {
+    const filterValue = (event.target as HTMLInputElement).value;
+    console.log("hi",filterValue)
+    this.searchService.setSearchTerm(filterValue);
+
+    if (this.dataSource.paginator) {
+      this.dataSource.paginator.firstPage();
+    }
+  }
+
+  triggerFilter(event: Event) {
+    const filterValue = (event.target as HTMLInputElement).value;
+    console.log("hi",filterValue)
+    this.sortService.setSortOption(filterValue);
+
+    if (this.dataSource.paginator) {
+      this.dataSource.paginator.firstPage();
+    }
+  }
   openNewFIDialog() {
     const dialogRef = this.dialog.open(NewBankDialogComponent);
 
@@ -51,14 +74,7 @@ export class HomeComponent implements AfterViewInit {
     this.dataSource.sort = this.sort;
   }
 
-  applyFilter(event: Event) {
-    const filterValue = (event.target as HTMLInputElement).value;
-    this.dataSource.filter = filterValue.trim().toLowerCase();
 
-    if (this.dataSource.paginator) {
-      this.dataSource.paginator.firstPage();
-    }
-  }
 
 
 }

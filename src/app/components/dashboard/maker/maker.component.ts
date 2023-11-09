@@ -1,8 +1,11 @@
+import { NewUserDialogComponent } from 'src/app/components/dashboard/home/new-user-dialog/new-user-dialog.component';
+import { DeleteUserPopupComponent } from 'src/app/components/dashboard/popups/delete-user-popup/delete-user-popup.component';
 import { AfterViewChecked, AfterViewInit, Component, ViewChild} from '@angular/core';
 import {MatPaginator, } from '@angular/material/paginator';import {MatSort, } from '@angular/material/sort';
 import {MatTableDataSource} from '@angular/material/table';
 import { User } from 'src/app/interfaces/user';
 import { UserService } from 'src/app/services/user.service';
+import { MatDialog } from '@angular/material/dialog';
 
 @Component({
   selector: 'app-maker',
@@ -21,7 +24,7 @@ export class MakerComponent  implements AfterViewInit {
   @ViewChild(MatPaginator) paginator!: MatPaginator;
   @ViewChild(MatSort) sort!: MatSort;
 
-  constructor(private homeService:UserService) {
+  constructor(private homeService:UserService, public dialog:MatDialog) {
     this.varUsers = this.homeService.makers;
     // Assign the data to the data source for the table to render
     this.dataSource = new MatTableDataSource(this.varUsers);
@@ -41,5 +44,11 @@ export class MakerComponent  implements AfterViewInit {
     }
   }
 
+  deletePopUp() {
+    const dialogRef = this.dialog.open(DeleteUserPopupComponent)
+  }
 
+  editPopUp() {
+    const dialogRef = this.dialog.open(NewUserDialogComponent)
+  }
 }

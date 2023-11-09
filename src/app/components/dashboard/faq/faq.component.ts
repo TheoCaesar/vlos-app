@@ -1,7 +1,6 @@
 import { Component } from '@angular/core';
 import { DataService } from 'src/app/services/data.service';
 import { Faq } from 'src/app/interfaces/faq';
-// import {MatTabsModule} from '@angular/material/tabs';
 
 
 @Component({

@@ -6,7 +6,7 @@ export interface User {
   email?:string,
   role:string,
   createdBy?: string,
-  createdDate?:string,
+  createdDate:string,
   password?:string,
   remember?:boolean,
   status?:string

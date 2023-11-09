@@ -1,63 +1,63 @@
 <div class="mat-elevation-z8">
-  <table mat-table [dataSource]="dataSource" matSort>
+  <table mat-table [dataSource]="dataSource" matSort >
     <!-- ID Column -->
     <ng-container matColumnDef="ID">
-      <th mat-header-cell *matHeaderCellDef mat-sort-header> ID </th>
+      <th mat-header-cell *matHeaderCellDef > ID </th>
       <td mat-cell *matCellDef="let row"> {{row.id}} </td>
     </ng-container>
 
     <!-- First Name Column -->
     <ng-container matColumnDef="First Name">
-      <th mat-header-cell *matHeaderCellDef mat-sort-header class="ten"> First Name </th>
+      <th mat-header-cell *matHeaderCellDef class="ten"> First Name </th>
       <td mat-cell *matCellDef="let row"  class="ten"> {{row.firstname}} </td>
     </ng-container>
 
     <!-- Last Name Column -->
     <ng-container matColumnDef="Last Name">
-      <th mat-header-cell *matHeaderCellDef mat-sort-header class="ten"> Last Name </th>
+      <th mat-header-cell *matHeaderCellDef class="ten" > Last Name </th>
       <td mat-cell *matCellDef="let row" class="ten"> {{row.lastname}} </td>
     </ng-container>
 
     <!-- Phone Number column -->
     <ng-container matColumnDef="Phone Number">
-      <th mat-header-cell *matHeaderCellDef mat-sort-header class="ten"> Phone Number </th>
+      <th mat-header-cell *matHeaderCellDef class="ten" > Phone Number </th>
       <td mat-cell *matCellDef="let row" class="ten"> {{row.phoneNumber}} </td>
     </ng-container>
 
     <!-- Email Column -->
     <ng-container matColumnDef="Email">
-      <th mat-header-cell *matHeaderCellDef mat-sort-header class="fourteen"> Email </th>
+      <th mat-header-cell *matHeaderCellDef class="fourteen"> Email </th>
       <td mat-cell *matCellDef="let row" class="fourteen"> {{row.email}} </td>
     </ng-container>
 
     <!-- Created By Column -->
     <ng-container matColumnDef="Created By">
-      <th mat-header-cell *matHeaderCellDef mat-sort-header class="ten"> Created By </th>
+      <th mat-header-cell *matHeaderCellDef class="ten"> Created By </th>
       <td mat-cell *matCellDef="let row" class="ten"> {{row.createdBy}} </td>
     </ng-container>
 
     <!-- Created Date Column -->
     <ng-container matColumnDef="Created Date">
-      <th mat-header-cell *matHeaderCellDef mat-sort-header class="date"> Created Date </th>
+      <th mat-header-cell *matHeaderCellDef class="date"> Created Date </th>
       <td mat-cell *matCellDef="let row" class="date"> {{row.createdDate | date:"medium"}} </td>
     </ng-container>
 
     <!-- Status column -->
     <ng-container matColumnDef="Status">
-      <th mat-header-cell *matHeaderCellDef mat-sort-header class="ten"> Status </th>
+      <th mat-header-cell *matHeaderCellDef  class="ten"> Status </th>
       <td mat-cell *matCellDef="let row"  class="ten"> <span [ngClass]="row.status">{{row.status}} </span></td>
     </ng-container>
 
     <!-- edit icon -->
     <ng-container matColumnDef="Edit">
-      <th mat-header-cell *matHeaderCellDef mat-sort-header>  </th>
-      <td mat-cell *matCellDef="let row"> <img [src]="editIcon" alt="edit-icon"> </td>
+      <th mat-header-cell *matHeaderCellDef >  </th>
+      <td mat-cell *matCellDef="let row"> <img [src]="editIcon" alt="edit-icon" (click)="editPopUp()"> </td>
     </ng-container>
 
     <!-- delete icon -->
     <ng-container matColumnDef="Delete">
-      <th mat-header-cell *matHeaderCellDef mat-sort-header>  </th>
-      <td mat-cell *matCellDef="let row"> <img [src]="deleteIcon" alt="delete-icon"> </td>
+      <th mat-header-cell *matHeaderCellDef >  </th>
+      <td mat-cell *matCellDef="let row"> <img [src]="deleteIcon" (click)="deletePopUp()" alt="delete-icon"> </td>
     </ng-container>
 
     <tr mat-header-row *matHeaderRowDef="tableHeaders"></tr>

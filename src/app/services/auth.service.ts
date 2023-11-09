@@ -14,6 +14,7 @@ export class AuthService {
       lastname: "Assem",
       email: "michael.assem@solv.com.gh",
       password: "idnsokfa",
+      createdDate: "2023-09-12T02:09:22.672Z",
       role:"Checker Admin"
     },
     {
@@ -21,6 +22,7 @@ export class AuthService {
       firstname:"Joel",
       lastname: "Kwame Ofosu",
       email: "joel.ofosu@solv.com.gh",
+      createdDate: "2023-09-12T02:09:22.672Z",
       password: "klq14eqwe",
       role:"Super Admin"
     },
@@ -29,6 +31,7 @@ export class AuthService {
       firstname:"William",
       lastname:"Daniels",
       email: "william.daniels@solv.com.gh",
+      createdDate: "2023-09-12T02:09:22.672Z",
       password: "dqpd24ea",
       role:"Maker Admin"
     }

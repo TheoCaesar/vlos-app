@@ -4,14 +4,6 @@
   padding: 0 40px;
 }
 
-.close {
-  position: absolute;
-  top: 15px;
-  right: 20px;
-  color: var(--solv-orange) !important;
-  float: right;
-}
-
 .main {
   width: 822px;
   height: 511px;

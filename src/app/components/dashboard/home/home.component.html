@@ -1,9 +1,7 @@
 <div class="home-container">
-  <!-- <p>home works!</p> -->
   <div class="button-container">
     <button mat-raised-button (click)="openNewFIDialog()">Create New FI</button>
     <button mat-raised-button (click)="openNewUserDialog()">Create New Admin</button>
-    <!-- <button></button> -->
   </div>
 
   <div class="content">
@@ -12,11 +10,11 @@
       <div class="controls">
         <div class="search">
           <mat-icon class="mat-18">search</mat-icon>
-          <input #input (keyup)="applyFilter($event)" placeholder="Search">
+          <input #input (keyup)="triggerSearch($event)" placeholder="Search">
         </div>
         <div class="filter">
           Sort by:
-          <select>
+          <select (change)="triggerFilter($event)">
             <option value="newest">Newest</option>
             <option value="oldest">Oldest</option>
           </select>
@@ -36,3 +34,5 @@
     </div>
   </div>
 </div>
+
+

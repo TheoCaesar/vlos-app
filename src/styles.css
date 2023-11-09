@@ -2,6 +2,8 @@
 :root {
   --solv-blue: #0f4c8a;
   --solv-orange: #FF7A00;
+  --solv-grey: #A1A1AA;
+
 }
 
 * {
@@ -26,6 +28,13 @@ body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
   font-size: 24px;
 }
 
+.close-icon {
+  position: absolute;
+  top: 15px;
+  right: 20px;
+  color: var(--solv-orange) !important;
+  float: right;
+}
 
 /* checker & maker styles */
 

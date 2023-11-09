@@ -11,7 +11,9 @@ import { MakerComponent } from 'src/app/components/dashboard/maker/maker.compone
 import { NewUserDialogComponent } from 'src/app/components/dashboard/home/new-user-dialog/new-user-dialog.component';
 import { FaqComponent } from 'src/app/components/dashboard/faq/faq.component';
 import { NewBankDialogComponent } from 'src/app/components/dashboard/home/new-bank-dialog/new-bank-dialog.component';
-
+import { CancelPopupComponent } from 'src/app/components/dashboard/popups/cancel-popup/cancel-popup.component';
+import { SuccessPopupComponent } from 'src/app/components/dashboard/popups/success-popup/success-popup.component';
+import { DeletePopupComponent } from 'src/app/components/dashboard/popups/delete-popup/delete-popup.component';
 
 // services
 import { UserService } from 'src/app/services/user.service';
@@ -33,7 +35,8 @@ import {MatButtonModule} from '@angular/material/button';
 import {MatRadioModule} from '@angular/material/radio';
 import { ReactiveFormsModule } from '@angular/forms';
 import {MatTabsModule} from '@angular/material/tabs';
-
+import { DeleteBankPopupComponent } from 'src/app/components/dashboard/popups/delete-bank-popup/delete-bank-popup.component';
+import { DeleteUserPopupComponent } from 'src/app/components/dashboard/popups/delete-user-popup/delete-user-popup.component';
 
 @NgModule({
   declarations: [
@@ -46,6 +49,10 @@ import {MatTabsModule} from '@angular/material/tabs';
     MakerComponent,
     FiBanksComponent,
     NewUserDialogComponent, NewBankDialogComponent,
+    CancelPopupComponent,
+    DeletePopupComponent,
+    SuccessPopupComponent,    DeleteUserPopupComponent,
+    DeleteBankPopupComponent,
 
   ],
   imports: [
@@ -61,6 +68,10 @@ import {MatTabsModule} from '@angular/material/tabs';
     HeaderComponent,CheckerComponent,FaqComponent,
     FiBanksComponent,NewUserDialogComponent,NewBankDialogComponent,
     SidebarComponent,
+    CancelPopupComponent,
+    DeletePopupComponent,    DeleteUserPopupComponent,
+    DeleteBankPopupComponent,
+    SuccessPopupComponent,
   ],
   providers: [
     UserService,

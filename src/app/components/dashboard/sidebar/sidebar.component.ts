@@ -2,6 +2,8 @@ import { Component, ViewChild } from '@angular/core';
 import { MatDialog } from '@angular/material/dialog';
 import { FaqComponent } from '../faq/faq.component';
 
+import { DeleteUserPopupComponent } from '../popups/delete-user-popup/delete-user-popup.component';
+
 
 @Component({
   selector: 'app-sidebar',
@@ -35,5 +37,9 @@ export class SidebarComponent {
     dialogRef.afterClosed().subscribe(result => {
       console.log('Dialog result: ${result}')
     })
+  }
+
+  testPopUp() {
+    const dialogRef = this.dialog.open(DeleteUserPopupComponent)
   }
 }
