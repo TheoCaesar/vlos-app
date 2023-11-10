@@ -2,10 +2,11 @@ mat-nav-list {
   display: flex;
   flex-direction: column;
   justify-content: space-between;
-  width: 60px;
+  width: 80px;
   box-shadow: 4px 1px 4px 0px rgba(0,0,0,0.35);
   height: 100vh;
   overflow-y: hidden;
+  padding-inline: 10px;
   /* border: 2px solid orange; */
 }
 
@@ -27,6 +28,18 @@ mat-nav-list {
   display: flex;
   justify-content: space-between;
 }
+
+.active-link {
+  background-color: var(--solv-blue);
+  border-radius: 10px;
+}
+
+
+
+.active-link .menu-item div {
+  color: white;
+}
+
 
 @media (max-height: 600px) {
   mat-nav-list {

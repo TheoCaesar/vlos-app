@@ -10,45 +10,45 @@
         </div>
       </div>
     </mat-list-item>
-    <mat-list-item (click)="openFaqPage()">
+    <mat-list-item (click)="openFaqPage()" ><!-- [ngClass]="{'active-link':faqIsActive}" -->
       <div class="menu-item">
-        <img [src]="faqIcon" alt="home-icon">
+        <img [src]="faqIsActive ? activeFaqIcon : faqIcon" alt="faq-icon">
         <div>
           <span *ngIf="ext_sidebar" >FAQ</span>
           <span *ngIf="ext_sidebar"> <img [src]="arrowIcon" alt="left-arrow-icon"></span>
         </div>
       </div>
     </mat-list-item>
-    <mat-list-item>
+    <mat-list-item [routerLink]="['maker']" #makerLink="routerLinkActive" routerLinkActive="active-link">
       <div class="menu-item">
-        <img [src]="makerIcon" alt="home-icon">
+        <img [src]="makerLink.isActive ? activeMakerIcon : makerIcon" alt="maker-icon">
         <div>
           <span *ngIf="ext_sidebar" >Maker</span>
           <span *ngIf="ext_sidebar"> <img [src]="arrowIcon" alt="left-arrow-icon"></span>
         </div>
       </div>
     </mat-list-item>
-    <mat-list-item>
+    <mat-list-item routerLink="checker" #checkerLink = 'routerLinkActive' routerLinkActive="active-link">
       <div class="menu-item">
-        <img [src]="checkerIcon" alt="home-icon">
+        <img [src]="checkerLink.isActive ? activeCheckerIcon : checkerIcon" alt="checker-icon" >
         <div>
           <span *ngIf="ext_sidebar" >Checker</span>
           <span *ngIf="ext_sidebar"> <img [src]="arrowIcon" alt="left-arrow-icon"></span>
         </div>
       </div>
     </mat-list-item>
-    <mat-list-item>
-      <div class="menu-item">
-        <img [src]="bankIcon" alt="home-icon">
-        <div>
-          <span *ngIf="ext_sidebar" >FI/Bank</span>
-          <span *ngIf="ext_sidebar"> <img [src]="arrowIcon" alt="left-arrow-icon"></span>
-        </div>
+    <mat-list-item [routerLink]="'banks'" #bankLink="routerLinkActive" routerLinkActive="active-link">
+      <div class="menu-item"   >
+        <img [src]="bankLink.isActive ? activeBankIcon : bankIcon" alt="bank-icon" >
+      <div>
+        <span *ngIf="ext_sidebar" >FI/Bank</span>
+        <span *ngIf="ext_sidebar"> <img [src]="arrowIcon" alt="left-arrow-icon" ></span>
+      </div>
       </div>
     </mat-list-item>
     <mat-list-item>
       <div class="menu-item">
-        <img [src]="settingsIcon" alt="home-icon">
+        <img [src]="settingsIcon" alt="settings-icon">
         <div>
           <span *ngIf="ext_sidebar" >Setting</span>
           <span *ngIf="ext_sidebar"> <img [src]="arrowIcon" alt="left-arrow-icon"></span>
@@ -62,51 +62,9 @@
         <img [src]="userIcon" width="27px" alt="home-icon">
         <div>
           <span *ngIf="ext_sidebar" >Super Admin</span>
-          <!-- <span *ngIf="ext_sidebar"> <img [src]="arrowIcon" alt="left-arrow-icon"></span> -->
         </div>
       </div>
 
     </mat-list-item>
   </div>
 </mat-nav-list>
-
-<!--
-<mat-drawer-container class="example-container" autosize>
-  <mat-drawer #drawer class="example-sidenav" mode="side">
-    <mat-nav-list dense (mouseenter)="showDetails()" (mouseleave)="hideDetails()">
-        <-- <mat-icon class="mat-18 expand-sidebar">settings_ethernet</mat-icon> --
-      <div class="sidebar-links">
-        <mat-list-item>
-          <mat-icon class="mat-18">home</mat-icon>
-          <p *ngIf="ext_sidebar">Lorem, ipsum dolor sit amet consectetur.</p>
-        </mat-list-item>
-        <mat-list-item>
-          <mat-icon class="mat-18">live_help</mat-icon>
-          <p *ngIf="ext_sidebar">Lorem, ipsum dolor sit amet consectetur.</p>
-        </mat-list-item>
-        <mat-list-item>
-          <mat-icon class="mat-18">group_add</mat-icon>
-          <p *ngIf="ext_sidebar">Lorem, ipsum dolor sit amet consectetur.</p>
-        </mat-list-item>
-        <mat-list-item>
-          <mat-icon class="mat-18">verified_user</mat-icon>
-          <p *ngIf="ext_sidebar">Lorem, ipsum dolor sit amet consectetur.</p>
-        </mat-list-item>
-        <mat-list-item>
-          <mat-icon class="mat-18">account_balance</mat-icon>
-          <p *ngIf="ext_sidebar">Lorem, ipsum dolor sit amet consectetur.</p>
-        </mat-list-item>
-        <mat-list-item>
-          <mat-icon class="mat-18">settings</mat-icon>
-          <p *ngIf="ext_sidebar">Lorem, ipsum dolor sit amet consectetur.</p>
-        </mat-list-item>
-      </div>
-      <div class="about">
-        <mat-list-item>
-          <mat-icon class="mat-18">account_box</mat-icon>
-          <p *ngIf="ext_sidebar">Lorem, ipsum dolor sit amet consectetur.</p>
-        </mat-list-item>
-      </div>
-    </mat-nav-list>
-  </mat-drawer>
-</mat-drawer-container> -->
