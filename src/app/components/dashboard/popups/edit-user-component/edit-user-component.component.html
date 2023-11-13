@@ -28,15 +28,16 @@
 
       <div class="centered">
         <mat-radio-group class="center-radio-group" formControlName="editRole">
-          <mat-radio-button value="maker">Maker</mat-radio-button>
-          <mat-radio-button value="always">Checker</mat-radio-button>
+          <mat-radio-button value="maker" [checked]="editUserForm.get('editRole')?.value === 'maker'">Maker</mat-radio-button>
+          <mat-radio-button value="always" [checked]="editUserForm.get('editRole')?.value === 'checker'">Checker</mat-radio-button>
         </mat-radio-group>
       </div>
 
 
       <div class="buttons centered">
         <button (click)="openLeavePagePopup()">Cancel</button>
-        <button (click)="openSuccessPopup()">Create User</button>
+        <!-- <button (click)="openSuccessPopup()">Create User</button> -->
+        <button (click)="updateUser()">Create User</button>
       </div>
     </form>
   </div>

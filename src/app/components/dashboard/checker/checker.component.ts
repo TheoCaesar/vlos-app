@@ -28,9 +28,9 @@ export class CheckerComponent implements AfterViewInit {
 
   constructor(private searchService: SearchService, private sortService:SortService, private homeService:UserService, public dialog:MatDialog, ) {
     // Fetch our 100 users
-    this.varUsers = this.homeService.checkers;
+    // this.varUsers = this.homeService.checkers;
     // Assign the data to the data source for the table to render
-    this.dataSource = new MatTableDataSource(this.varUsers);
+    // this.dataSource = new MatTableDataSource(this.varUsers);
   }
 
   @ViewChild(MatPaginator) paginator!: MatPaginator;
@@ -40,6 +40,8 @@ export class CheckerComponent implements AfterViewInit {
   selectedSortOption: string = 'newest;'
 
   ngOnInit() {
+    this.onGetCheckers();
+
     this.searchService.search$.subscribe((searchTerm)=> {
       this.searchInput = searchTerm;
       this.applySearch();
@@ -51,9 +53,20 @@ export class CheckerComponent implements AfterViewInit {
     });
   }
 
+  onGetCheckers() {
+    this.homeService.getCheckerObjs().subscribe({
+      next:(query_response) => {
+        this.varUsers = query_response;
+        this.dataSource = new MatTableDataSource(this.varUsers);
+      },
+      error(err) {console.log(err, "Error in onGetCheckers()" )},
+      complete() {console.log("onGetCheckers() successful")}
+    })
+  }
+
   applySearch() {
     // Fetch your data from the data service
-    let data = this.homeService.checkers;
+    let data = this.varUsers;
 
     // Apply filter based on the search term
     if (this.searchInput) {
@@ -73,7 +86,7 @@ export class CheckerComponent implements AfterViewInit {
 
   applyFilter() {
     // Fetch your data from the data service
-     let data = this.homeService.checkers;
+     let data = this.varUsers;
 
       // Sort the data based on selectedSortOption
       if (this.selectedSortOption === 'newest') {
@@ -104,6 +117,7 @@ export class CheckerComponent implements AfterViewInit {
     const dialogRef = this.dialog.open(EditUserComponentComponent,
       {
         data:{
+          userID: data.id,
           firstname: data.firstname,
           lastname: data.lastname,
           mail: data.email,

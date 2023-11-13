@@ -139,6 +139,11 @@ th.fi_name, td.fi_name {
   /* border: 2px solid red; */
 }
 
+::ng-deep .mat-checkbox-checked {
+  background-color: var(--solv-orange) !important;
+}
+
+
 .footer {
   margin-block: 20px;
 }

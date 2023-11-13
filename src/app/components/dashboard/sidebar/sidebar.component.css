@@ -31,10 +31,8 @@ mat-nav-list {
 
 .active-link {
   background-color: var(--solv-blue);
-  border-radius: 10px;
+  border-radius: 7px;
 }
-
-
 
 .active-link .menu-item div {
   color: white;

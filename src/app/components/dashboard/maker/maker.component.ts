@@ -2,7 +2,7 @@ import { SearchService } from 'src/app/services/search.service';
 import { SortService } from 'src/app/services/sort.service';
 import { NewUserDialogComponent } from 'src/app/components/dashboard/home/new-user-dialog/new-user-dialog.component';
 import { DeleteUserPopupComponent } from 'src/app/components/dashboard/popups/delete-user-popup/delete-user-popup.component';
-import { AfterViewChecked, AfterViewInit, Component, ViewChild} from '@angular/core';
+import { AfterViewInit, Component, ViewChild} from '@angular/core';
 import {MatPaginator, } from '@angular/material/paginator';import {MatSort, } from '@angular/material/sort';
 import {MatTableDataSource} from '@angular/material/table';
 import { User } from 'src/app/interfaces/user';
@@ -26,10 +26,11 @@ export class MakerComponent  implements AfterViewInit {
   @ViewChild(MatPaginator) paginator!: MatPaginator;
   @ViewChild(MatSort) sort!: MatSort;
 
-  constructor(private sortService: SortService, private searchService:SearchService, private homeService:UserService, public dialog:MatDialog) {
-    this.varUsers = this.homeService.makers;
+  constructor(
+    private sortService: SortService, private searchService:SearchService, private homeService:UserService, public dialog:MatDialog) {
+    // this.varUsers = this.onGetMakers();
     // Assign the data to the data source for the table to render
-    this.dataSource = new MatTableDataSource(this.varUsers);
+    // this.dataSource = new MatTableDataSource(this.makers);
   }
 
  //search & sort
@@ -46,11 +47,28 @@ export class MakerComponent  implements AfterViewInit {
       this.selectedSortOption = option;
       this.applyFilter();
     });
+
+    this.onGetMakers();
+  }
+
+  makers!: User[]
+
+  onGetMakers() {
+    this.homeService.getMakerObjs().subscribe({
+      next:(query) => {
+        this.makers = query;
+        console.log("allUsers:-->", this.makers);
+      this.dataSource = new MatTableDataSource(this.makers);
+
+      },
+      error(err) { console.log(err) },                    //error - handling error sent to observable.
+      complete() { console.log('Done getting ');}         //fxn run on completion
+    });
   }
 
   applySearch() {
     // Fetch your data from the data service
-    let data = this.homeService.makers;
+    let data = this.makers;
 
     // Apply filter based on the search term
     if (this.searchInput) {
@@ -70,7 +88,7 @@ export class MakerComponent  implements AfterViewInit {
 
   applyFilter() {
     // Fetch your data from the data service
-     let data = this.homeService.makers;
+     let data = this.makers;
 
       // Sort the data based on selectedSortOption
       if (this.selectedSortOption === 'newest') {

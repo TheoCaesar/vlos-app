@@ -12,7 +12,7 @@
     </mat-list-item>
     <mat-list-item (click)="openFaqPage()" ><!-- [ngClass]="{'active-link':faqIsActive}" -->
       <div class="menu-item">
-        <img [src]="faqIsActive ? activeFaqIcon : faqIcon" alt="faq-icon">
+        <img [src]="faqIcon" alt="faq-icon">
         <div>
           <span *ngIf="ext_sidebar" >FAQ</span>
           <span *ngIf="ext_sidebar"> <img [src]="arrowIcon" alt="left-arrow-icon"></span>

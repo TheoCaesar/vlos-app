@@ -24,14 +24,11 @@ export class HomeComponent implements AfterViewInit {
   @ViewChild(MatPaginator) paginator!: MatPaginator;
   @ViewChild(MatSort) sort!: MatSort;
 
+  makers!:User[];
+
   constructor(private homeService:UserService, public dialog:MatDialog,
     private searchService:SearchService, private sortService:SortService,
-    ) {
-    // Fetch our 100 users
-    this.varUsers = this.homeService.makers;
-    // Assign the data to the data source for the table to render
-    this.dataSource = new MatTableDataSource(this.varUsers);
-  }
+    ) {}
 
   triggerSearch(event: Event) {
     const filterValue = (event.target as HTMLInputElement).value;
@@ -73,8 +70,4 @@ export class HomeComponent implements AfterViewInit {
     this.dataSource.paginator = this.paginator;
     this.dataSource.sort = this.sort;
   }
-
-
-
-
 }

@@ -1,6 +1,5 @@
 import { AfterViewChecked, AfterViewInit, Component, ViewChild} from '@angular/core';
 import {MatPaginator, } from '@angular/material/paginator';
-import {MatSort, } from '@angular/material/sort';
 import {MatTableDataSource} from '@angular/material/table';
 import { UserService } from 'src/app/services/user.service';
 import { FIUser } from './../../../interfaces/fiUser';
@@ -20,19 +19,15 @@ export class FiBanksComponent implements AfterViewInit {
   emptyList:string = "./../../../../assets/icons/dashboard/No-data-found.svg";
 
   tableHeaders:String[] = [
-    'FI Name', "FI Short Name", "FI Code", "FI Type", "Created By",
-    "Created Date", "Status", "Date Modified" ,"Edit", "Delete", "(de)activate"
+    'FI Name', "FI Short Name", "FI Code", "FI Type", "Created By", "Created Date", "Status", "Date Modified" ,"Edit", "Delete", "(de)activate"
   ]
   dataSource!: MatTableDataSource<FIUser>;
   varUsers!: FIUser[];
 
   @ViewChild(MatPaginator) paginator!: MatPaginator;
-  @ViewChild(MatSort) sort!: MatSort;
 
   constructor(private searchService: SearchService, private sortService:SortService, private homeService:UserService) {
-    this.varUsers = this.homeService.banks;
-    // Assign the data to the data source for the table to render
-    this.dataSource = new MatTableDataSource(this.varUsers);
+
   }
 
   isBankDeleted(status: string){
@@ -44,6 +39,8 @@ export class FiBanksComponent implements AfterViewInit {
  selectedSortOption: string = 'newest;'
 
   ngOnInit() {
+    this.onGetBanks();
+
     this.searchService.search$.subscribe((searchTerm)=> {
       this.searchInput = searchTerm;
       this.applySearch();
@@ -55,9 +52,20 @@ export class FiBanksComponent implements AfterViewInit {
     });
   }
 
+  onGetBanks() {
+    this.homeService.getBankObjs().subscribe({
+      next: (query_response) => {
+        this.varUsers = query_response;
+        this.dataSource= new MatTableDataSource(this.varUsers)
+      },
+      error(err) {console.log("OnGetBanks() returned an error!")},
+      complete() {console.log('OnGetBanks() successful. ')}
+    })
+  }
+
   applySearch() {
     // Fetch your data from the data service
-    let data = this.homeService.banks;
+    let data = this.varUsers;
 
     // Apply filter based on the search term
     if (this.searchInput) {
@@ -77,7 +85,7 @@ export class FiBanksComponent implements AfterViewInit {
 
   applyFilter() {
     // Fetch your data from the data service
-     let data = this.homeService.banks;
+     let data = this.varUsers;
 
       // Sort the data based on selectedSortOption
       if (this.selectedSortOption === 'newest') {
@@ -91,6 +99,5 @@ export class FiBanksComponent implements AfterViewInit {
 
   ngAfterViewInit() {
     this.dataSource.paginator = this.paginator;
-    this.dataSource.sort = this.sort;
   }
 }

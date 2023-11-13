@@ -22,7 +22,6 @@ export class SidebarComponent {
   activeCheckerIcon = './../../../../assets/icons/sidebar/checker-active-white.svg'
   bankIcon:string = './../../../../assets/icons/sidebar/bank.svg'
   activeBankIcon = './../../../../assets/icons/sidebar/bank-active-white.svg'
-
   settingsIcon:string = './../../../../assets/icons/sidebar/settings.svg'
   arrowIcon:string = './../../../../assets/icons/sidebar/arrow-right.svg'
   userIcon:string =  './../../../../assets/icons/sidebar/user-white.svg'
@@ -45,7 +44,6 @@ export class SidebarComponent {
     dialogRef.afterClosed().subscribe(result => {
       console.log('Dialog result: ${result}')
     })
-    this.faqIsActive = true;
   }
 
   testPopUp() {
