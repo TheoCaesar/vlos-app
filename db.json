@@ -1,24 +1,8 @@
 {
   "makers": [
     {
-      "id": 2,
-      "firstname": "Danielle",
-      "lastname": "Daniels",
-      "phoneNumber": "24445627",
-      "email": "Daniels2Daniel@gmail.com",
-      "role": "maker",
-      "createdBy": "Super Admin",
-      "createdDate": "2023-08-08T16:17:23.271Z",
-      "password": "lfhuBiDAda",
-      "remember": true,
-      "status": "Active",
-      "mail": "Daniels2Daniel@gmail.com",
-      "phone": "24445627",
-      "modifiedDate": "Fri Nov 17 2023 15:26:59 GMT+0000 (Coordinated Universal Time)"
-    },
-    {
       "id": 3,
-      "firstname": "Samaria",
+      "firstname": "Samariatss",
       "lastname": "Dagadu",
       "phoneNumber": "24445637",
       "email": "Dagadu3Samaria@gmail.com",
@@ -27,7 +11,10 @@
       "createdDate": "2023-03-24T07:12:47.859Z",
       "password": "PtmAciAycD",
       "remember": true,
-      "status": "Blocked"
+      "status": "Blocked",
+      "mail": "Dagadu3Samaria@gmail.com",
+      "phone": "24445637",
+      "modifiedDate": "Fri Nov 17 2023 16:03:39 GMT+0000 (Coordinated Universal Time)"
     },
     {
       "id": 4,
@@ -40,7 +27,10 @@
       "createdDate": "2023-03-19T23:51:48.541Z",
       "password": "WgDAVfqwNQ",
       "remember": true,
-      "status": "New"
+      "status": "New",
+      "mail": "Nuamah4Daniel@gmail.com",
+      "phone": "24445647",
+      "modifiedDate": "Fri Nov 17 2023 15:59:32 GMT+0000 (Coordinated Universal Time)"
     },
     {
       "id": 5,
@@ -53,7 +43,10 @@
       "createdDate": "2023-03-13T02:26:11.115Z",
       "password": "coxQUGrOMM",
       "remember": true,
-      "status": "New"
+      "status": "New",
+      "mail": "Anane5David@gmail.com",
+      "phone": "24445657",
+      "modifiedDate": "Fri Nov 17 2023 15:59:50 GMT+0000 (Coordinated Universal Time)"
     },
     {
       "id": 6,
@@ -66,7 +59,10 @@
       "createdDate": "2023-01-24T15:21:22.868Z",
       "password": "yBXSUhnbEB",
       "remember": true,
-      "status": "Active"
+      "status": "Active",
+      "mail": "Osei6Daniel@gmail.com",
+      "phone": "24445667",
+      "modifiedDate": "Fri Nov 17 2023 16:01:03 GMT+0000 (Coordinated Universal Time)"
     },
     {
       "id": 7,

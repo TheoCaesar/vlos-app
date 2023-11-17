@@ -1,16 +1,27 @@
 .card {
   width: 331px;
+  /* height: 274px; */
   height: 274px;
-  border-radius: 12px;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
+  overflow: hidden;
+  /* background-color: transparent; */
+  /* opacity: 0.1; */
 }
 /*
 .img-container {
   position: relative;
 
 } */
+.container {
+  border-radius: 12px;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  align-items: center;
+  margin: 20px 8px 5px;
+  border: 5px rgb(153, 51, 51);
+  color: red !important;
+  opacity: 1;
+}
 
 
 .content {
@@ -19,7 +30,7 @@
   margin: 10px auto;
   display: flex;
   flex-direction: column;
-  justify-content: space-between;
+  /* justify-content: space-between; */
   text-align: center;
 }
 

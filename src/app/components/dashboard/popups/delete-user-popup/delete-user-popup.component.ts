@@ -51,7 +51,15 @@ export class DeleteUserPopupComponent {
     }
 
   openDeleteSuccessPopup() {
-    const dialogRef = this.dialog.open(SuccessPopupComponent);
+    const dialogRef = this.dialog.open(SuccessPopupComponent, {
+      data : {
+        parent_component: 'delete-user',
+        img_path: "../../../../../assets/icons/popups/check-red.svg",
+        header: 'Success',
+        body : 'User deleted successfully',
+        btnText: 'Close'
+      }
+    });
 
     setTimeout(() => {
       dialogRef.close();

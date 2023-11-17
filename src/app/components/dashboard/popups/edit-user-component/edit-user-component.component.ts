@@ -120,7 +120,7 @@ export class EditUserComponentComponent implements OnInit {
     setTimeout(() => {
       this.dialog.closeAll();
       this.router.navigateByUrl(`dashboard/${this.queriedUserObj.role}`)
-    }, 2500);
+    }, 188500);
 
     dialogRef.afterClosed().subscribe(result => {
       console.log('Dialog result: ${result}')
