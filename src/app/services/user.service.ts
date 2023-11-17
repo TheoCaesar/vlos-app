@@ -29,17 +29,18 @@ export class UserService {
 
   //get instance
   getMakerObj(paramID:number):Observable<User> {
-    return this.userHttp.get<User>(this.makersURL + paramID);
+    return this.userHttp.get<User>(this.makersURL +"/" + paramID);
+  }
+
+  //edit field
+  updateMaker(id:number, paramUser:User):Observable<User> {
+    return this.userHttp.put<User>(this.makersURL +"/" + paramUser.id, paramUser);
   }
 
   getCheckerObj(paramID:number):Observable<User> {
     return this.userHttp.get<User>(this.checkersURL +"/" + paramID);
   }
 
-    //edit field
-  updateMaker(paramUser:User):Observable<User> {
-    return this.userHttp.put<User>(this.makersURL + paramUser.id, paramUser);
-  }
 
   updateChecker(id:number, paramUser:User):Observable<User> {
     return this.userHttp.put<User>(this.checkersURL +"/" + id, paramUser);

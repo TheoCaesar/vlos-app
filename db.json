@@ -2,7 +2,7 @@
   "makers": [
     {
       "id": 2,
-      "firstname": "Daniel",
+      "firstname": "Danielle",
       "lastname": "Daniels",
       "phoneNumber": "24445627",
       "email": "Daniels2Daniel@gmail.com",
@@ -11,7 +11,10 @@
       "createdDate": "2023-08-08T16:17:23.271Z",
       "password": "lfhuBiDAda",
       "remember": true,
-      "status": "Active"
+      "status": "Active",
+      "mail": "Daniels2Daniel@gmail.com",
+      "phone": "24445627",
+      "modifiedDate": "Fri Nov 17 2023 15:26:59 GMT+0000 (Coordinated Universal Time)"
     },
     {
       "id": 3,
@@ -291,7 +294,7 @@
     {
       "id": 6,
       "firstname": "Richeal",
-      "lastname": "Ofosu",
+      "lastname": "Fosuwaa",
       "phoneNumber": "24445667",
       "email": "Ofosu6Richeal@gmail.com",
       "role": "checker",
@@ -299,7 +302,10 @@
       "createdDate": "2023-05-03T11:33:50.724Z",
       "password": "AJAhbzIsQT",
       "remember": true,
-      "status": "Blocked"
+      "status": "Blocked",
+      "mail": "Ofosu6Richeal@gmail.com",
+      "phone": "24445667",
+      "modifiedDate": "Fri Nov 17 2023 13:59:13 GMT+0000 (Coordinated Universal Time)"
     },
     {
       "id": 7,

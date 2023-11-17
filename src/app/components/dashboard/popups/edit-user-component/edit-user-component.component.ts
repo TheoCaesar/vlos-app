@@ -43,25 +43,48 @@ export class EditUserComponentComponent implements OnInit {
 
   //get method
    onGetUserObj() {
-    this.homeService.getCheckerObj(this.editUserData.userID).subscribe({
-      next: (var_response) => {
-        this.queriedUserObj = var_response;
-        console.log("Queried User", this.queriedUserObj);
-      },
-      error(err) { console.log(err) },                    //error - handling error sent to observable.
-      complete() { console.log('Done getting user instance ')}         //fxn run on completion
-    });
+    console.log(this.editUserData.role)
+    if (this.editUserData.role === 'maker') {
+      this.homeService.getMakerObj(this.editUserData.userID).subscribe({
+        next: (var_response) => {
+          this.queriedUserObj = var_response;
+          console.log("Queried User", this.queriedUserObj);
+        },
+        error(err) { console.log(err) },                    //error - handling error sent to observable.
+        complete() { console.log('Done getting user instance ')}         //fxn run on completion
+      });
+    } else {
+      this.homeService.getCheckerObj(this.editUserData.userID).subscribe({
+        next: (var_response) => {
+          this.queriedUserObj = var_response;
+          console.log("Queried User", this.queriedUserObj);
+        },
+        error(err) { console.log(err) },                    //error - handling error sent to observable.
+        complete() { console.log('Done getting user instance ')}         //fxn run on completion
+      });
+    }
   }
 
   //put methods
   onUpdateUserObj(id:number, userData:User) {
-    this.homeService.updateChecker(id,userData).subscribe({
-      next(var_response){
-        console.log("updated subscription", var_response);        //next - process data sent by observable
-      },
-      error(err) { console.log(err,"ID=>",id )},                    //error - handling error sent to observable.
-      complete() { console.log('Done updating existing user ')}         //fxn run on completion
-    });
+    if (this.editUserData.role === 'maker') {
+      this.homeService.updateMaker(id,userData).subscribe({
+        next(var_response){
+          console.log("updated subscription", var_response);        //next - process data sent by observable
+        },
+        error(err) { console.log(err,"ID=>",id )},                    //error - handling error sent to observable.
+        complete() { console.log('Done updating existing user ')}         //fxn run on completion
+      })
+    } else {
+      this.homeService.updateChecker(id,userData).subscribe({
+        next(var_response){
+          console.log("updated subscription", var_response);        //next - process data sent by observable
+        },
+        error(err) { console.log(err,"ID=>",id )},                    //error - handling error sent to observable.
+        complete() { console.log('Done updating existing user ')}         //fxn run on completion
+      });
+    }
+
   }
 
 
@@ -83,13 +106,20 @@ export class EditUserComponentComponent implements OnInit {
       this.openSuccessPopup();
     }
   }
-
   openSuccessPopup() {
-    const dialogRef = this.dialog.open(SuccessPopupComponent);
+    const dialogRef = this.dialog.open(SuccessPopupComponent, {
+      data : {
+        parent_component: 'edit-user',
+        img_path: "../../../../../assets/icons/popups/check-green.svg",
+        header: 'Success',
+        body : 'User updated successfully',
+        btnText: 'Close'
+      }
+    } );
 
     setTimeout(() => {
       this.dialog.closeAll();
-      this.router.navigateByUrl('dashboard/checker')
+      this.router.navigateByUrl(`dashboard/${this.queriedUserObj.role}`)
     }, 2500);
 
     dialogRef.afterClosed().subscribe(result => {

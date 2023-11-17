@@ -8,6 +8,7 @@ import {MatTableDataSource} from '@angular/material/table';
 import { User } from 'src/app/interfaces/user';
 import { UserService } from 'src/app/services/user.service';
 import { MatDialog } from '@angular/material/dialog';
+import { EditUserComponentComponent } from '../popups/edit-user-component/edit-user-component.component';
 
 @Component({
   selector: 'app-maker',
@@ -127,6 +128,16 @@ export class MakerComponent  implements AfterViewInit {
   }
 
   editPopUp(data:any) {
-    const dialogRef = this.dialog.open(NewUserDialogComponent)
+    const dialogRef = this.dialog.open(EditUserComponentComponent,
+      {
+        data:{
+          userID: data.id,
+          firstname: data.firstname,
+          lastname: data.lastname,
+          mail: data.email,
+          phone: data.phoneNumber,
+          role: data.role,
+        }
+      })
   }
 }
