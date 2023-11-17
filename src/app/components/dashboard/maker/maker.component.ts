@@ -114,11 +114,19 @@ export class MakerComponent  implements AfterViewInit {
   //   }
   // }
 
-  deletePopUp() {
-    const dialogRef = this.dialog.open(DeleteUserPopupComponent)
+  deletePopUp(data:any) {
+    const dialogRef = this.dialog.open(DeleteUserPopupComponent, {
+      data: {
+        id: data.id,
+        username: `${data.firstname} ${data.lastname}`,
+        role: data.role,
+        phone: data.phoneNumber,
+        mail: data.email,
+      }
+    })
   }
 
-  editPopUp() {
+  editPopUp(data:any) {
     const dialogRef = this.dialog.open(NewUserDialogComponent)
   }
 }

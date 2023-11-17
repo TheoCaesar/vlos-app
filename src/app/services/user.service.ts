@@ -48,4 +48,8 @@ export class UserService {
   deleteChecker(id:number) {
     return this.userHttp.delete<User>(this.checkersURL + `/${id}`)
   }
+
+  deleteMaker(id:number) {
+    return this.userHttp.delete<User>(this.makersURL + `/${id}`)
+  }
 }

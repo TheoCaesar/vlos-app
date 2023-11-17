@@ -18,15 +18,28 @@ export class DeleteUserPopupComponent {
   }
 
   deleteUser() {
-    this.userService.deleteChecker(this.delUserData.id).subscribe({
-      next: (response) => {
-        console.log(response);
-      },
-      error(err) {console.log("delete User() error", err)},
-      complete() {console.log("DeleteUserComponent() successful")}
-    })
-    this.openDeleteSuccessPopup();
-    this.router.navigateByUrl('/dashboard/checker')
+    if (this.delUserData.role === 'maker') {
+      this.userService.deleteMaker(this.delUserData.id).subscribe({
+        next: (response) => {
+          console.log(response);
+        },
+        error(err) {console.log("delete User() error", err)},
+        complete() {console.log("DeleteUserComponent() successful")}
+      })
+      this.openDeleteSuccessPopup();
+      this.router.navigateByUrl('/dashboard/maker')
+    }
+    else {
+      this.userService.deleteChecker(this.delUserData.id).subscribe({
+        next: (response) => {
+          console.log(response);
+        },
+        error(err) {console.log("delete User() error", err)},
+        complete() {console.log("DeleteUserComponent() successful")}
+      })
+      this.openDeleteSuccessPopup();
+      this.router.navigateByUrl('/dashboard/checker')
+    }
   }
 
   //popups for buttons within delete user pop-up components
