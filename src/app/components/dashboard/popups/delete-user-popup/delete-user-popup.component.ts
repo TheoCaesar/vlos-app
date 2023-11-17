@@ -1,7 +1,9 @@
+import { Router } from '@angular/router';
 import { Component, Inject } from '@angular/core';
 import { MatDialog, MAT_DIALOG_DATA } from '@angular/material/dialog';
 import { CancelPopupComponent } from '../cancel-popup/cancel-popup.component';
 import { SuccessPopupComponent } from '../success-popup/success-popup.component';
+import { UserService } from 'src/app/services/user.service';
 
 @Component({
   selector: 'app-delete-user-popup',
@@ -9,12 +11,23 @@ import { SuccessPopupComponent } from '../success-popup/success-popup.component'
   styleUrls: ['./delete-user-popup.component.css']
 })
 export class DeleteUserPopupComponent {
- constructor (
+ constructor ( private userService:UserService, private router:Router,
   public dialog:MatDialog,
   @Inject(MAT_DIALOG_DATA) public delUserData:any){
     console.log(delUserData)
   }
 
+  deleteUser() {
+    this.userService.deleteChecker(this.delUserData.id).subscribe({
+      next: (response) => {
+        console.log(response);
+      },
+      error(err) {console.log("delete User() error", err)},
+      complete() {console.log("DeleteUserComponent() successful")}
+    })
+    this.openDeleteSuccessPopup();
+    this.router.navigateByUrl('/dashboard/checker')
+  }
 
   //popups for buttons within delete user pop-up components
   openLeavePagePopup() {
@@ -24,10 +37,17 @@ export class DeleteUserPopupComponent {
       })
     }
 
-    openDeleteSuccessPopup() {
-      const dialogRef = this.dialog.open(SuccessPopupComponent);
-      dialogRef.afterClosed().subscribe(result => {
-        console.log('Dialog result: ${result}')
-      })
-    }
+  openDeleteSuccessPopup() {
+    const dialogRef = this.dialog.open(SuccessPopupComponent);
+
+    setTimeout(() => {
+      dialogRef.close();
+    }, 2500);
+    dialogRef.afterClosed().subscribe(result => {
+      this.dialog.closeAll();
+      console.log('Dialog result: ${result}')
+    })
+  }
+
+
 }

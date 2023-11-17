@@ -8,6 +8,7 @@ import { HomeComponent } from './components/dashboard/home/home.component';
 import { CheckerComponent } from './components/dashboard/checker/checker.component';
 import { FiBanksComponent } from './components/dashboard/fi-banks/fi-banks.component';
 import { MakerComponent } from './components/dashboard/maker/maker.component';
+import { EditUserComponentComponent } from './components/dashboard/popups/edit-user-component/edit-user-component.component';
 
 const routes: Routes = [
   {path:"", component:AdminLoginComponent},
@@ -27,11 +28,12 @@ const routes: Routes = [
 
       {
         path:"maker",
-        component:MakerComponent,
+        component:MakerComponent
       },
       {
         path:"checker",
-        component:CheckerComponent
+        component:CheckerComponent,
+
       },
       {
         path:'banks',

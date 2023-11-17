@@ -5,18 +5,19 @@ import { CancelPopupComponent } from '../../popups/cancel-popup/cancel-popup.com
 import { SuccessPopupComponent } from '../../popups/success-popup/success-popup.component';
 import { UserService } from 'src/app/services/user.service';
 import { User } from 'src/app/interfaces/user';
+import { ActivatedRoute, Router } from '@angular/router';
 
 @Component({
   selector: 'app-edit-user-component',
   templateUrl: './edit-user-component.component.html',
   styleUrls: ['./edit-user-component.component.css']
 })
-export class EditUserComponentComponent {
+export class EditUserComponentComponent implements OnInit {
 
   editUserForm !: FormGroup;
   queriedUserObj!:User;
 
-  constructor(private homeService:UserService, private _formBuilder: FormBuilder, private dialog:MatDialog,
+  constructor(private router:Router ,private homeService:UserService, private _formBuilder: FormBuilder, private dialog:MatDialog,
     @Inject(MAT_DIALOG_DATA) private editUserData:any) {
       // console.log(editUserData)
       this.editUserForm = this._formBuilder.group({
@@ -53,10 +54,12 @@ export class EditUserComponentComponent {
   }
 
   //put methods
-  onUpdateUserObj() {
-    this.homeService.updateChecker(this.queriedUserObj).subscribe({
-      next(var_response){ console.log("updated subscription", var_response); },     //next - process data sent by observable
-      error(err) { console.log(err) },                    //error - handling error sent to observable.
+  onUpdateUserObj(id:number, userData:User) {
+    this.homeService.updateChecker(id,userData).subscribe({
+      next(var_response){
+        console.log("updated subscription", var_response);        //next - process data sent by observable
+      },
+      error(err) { console.log(err,"ID=>",id )},                    //error - handling error sent to observable.
       complete() { console.log('Done updating existing user ')}         //fxn run on completion
     });
   }
@@ -76,20 +79,22 @@ export class EditUserComponentComponent {
       };
 
       // Assuming your data service has an update method
-      this.onUpdateUserObj();
-
+      this.onUpdateUserObj(this.queriedUserObj.id, updatedUser);
       this.openSuccessPopup();
-
-      // Close the dialog or perform any other actions needed
     }
   }
 
   openSuccessPopup() {
     const dialogRef = this.dialog.open(SuccessPopupComponent);
+
+    setTimeout(() => {
+      this.dialog.closeAll();
+      this.router.navigateByUrl('dashboard/checker')
+    }, 2500);
+
     dialogRef.afterClosed().subscribe(result => {
       console.log('Dialog result: ${result}')
     })
 
-    this.dialog.closeAll();
   }
 }

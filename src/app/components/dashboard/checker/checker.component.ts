@@ -1,5 +1,5 @@
 import { DeleteUserPopupComponent } from 'src/app/components/dashboard/popups/delete-user-popup/delete-user-popup.component';
-import { AfterViewInit, Component, ViewChild} from '@angular/core';
+import { AfterViewInit, Component, OnInit, ViewChild} from '@angular/core';
 import {MatPaginator, } from '@angular/material/paginator';
 import {MatTableDataSource} from '@angular/material/table';
 import { User } from 'src/app/interfaces/user';
@@ -17,7 +17,7 @@ import { EditUserComponentComponent } from '../popups/edit-user-component/edit-u
     './checker.component.css',
   ]
 })
-export class CheckerComponent implements AfterViewInit {
+export class CheckerComponent implements OnInit {
   editIcon:string = "./../../../../assets/icons/dashboard/edit.svg"
   deleteIcon:string = "./../../../../assets/icons/dashboard/delete.svg"
   emptyList:string = "./../../../../assets/icons/dashboard/No-data-found.svg";
@@ -98,13 +98,14 @@ export class CheckerComponent implements AfterViewInit {
       this.dataSource = new MatTableDataSource(data);
   }
 
-  ngAfterViewInit() {
-    this.dataSource.paginator = this.paginator;
-  }
+  // ngAfterViewInit() {
+  //   this.dataSource.paginator = this.paginator;
+  // }
 
   deletePopUp(data:any) {
     const dialogRef = this.dialog.open(DeleteUserPopupComponent, {
       data: {
+        id: data.id,
         username: `${data.firstname} ${data.lastname}`,
         role: data.role,
         phone: data.phoneNumber,

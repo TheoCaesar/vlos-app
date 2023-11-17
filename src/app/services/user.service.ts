@@ -41,7 +41,11 @@ export class UserService {
     return this.userHttp.put<User>(this.makersURL + paramUser.id, paramUser);
   }
 
-  updateChecker(paramUser:User):Observable<User> {
-    return this.userHttp.patch<User>(this.checkersURL +"/" + paramUser.id, paramUser);
+  updateChecker(id:number, paramUser:User):Observable<User> {
+    return this.userHttp.put<User>(this.checkersURL +"/" + id, paramUser);
+  }
+
+  deleteChecker(id:number) {
+    return this.userHttp.delete<User>(this.checkersURL + `/${id}`)
   }
 }

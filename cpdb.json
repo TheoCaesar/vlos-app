@@ -302,6 +302,35 @@
   ],
   "checkers": [
     {
+      "id": 2,
+      "firstname": "Samaritan",
+      "lastname": "Daniels",
+      "phoneNumber": "24445627",
+      "email": "Daniels2Samaria@gmail.com",
+      "role": "checker",
+      "createdBy": "Super Admin",
+      "createdDate": "2023-07-22T17:10:53.987Z",
+      "password": "vSufWFcCWB",
+      "remember": true,
+      "status": "New",
+      "mail": "Daniels2Samaria@gmail.com",
+      "phone": "24445627",
+      "modifiedDate": "Fri Nov 17 2023 10:32:27 GMT+0000 (Coordinated Universal Time)"
+    },
+    {
+      "id": 3,
+      "firstname": "Prince",
+      "lastname": "Ofosu",
+      "phoneNumber": "24445637",
+      "email": "Ofosu3Prince@gmail.com",
+      "role": "checker",
+      "createdBy": "Super Admin",
+      "createdDate": "2023-04-20T01:07:34.991Z",
+      "password": "OvPlIbQKtA",
+      "remember": true,
+      "status": "New"
+    },
+    {
       "id": 4,
       "firstname": "David",
       "lastname": "Nyarko",
@@ -313,6 +342,19 @@
       "password": "OuNBjDyquB",
       "remember": true,
       "status": "Active"
+    },
+    {
+      "id": 5,
+      "firstname": "Joseph",
+      "lastname": "Daniels",
+      "phoneNumber": "24445657",
+      "email": "Daniels5Joseph@gmail.com",
+      "role": "checker",
+      "createdBy": "Super Admin",
+      "createdDate": "2023-03-27T20:57:18.187Z",
+      "password": "HQOTmbjuIt",
+      "remember": true,
+      "status": "Blocked"
     },
     {
       "id": 6,
