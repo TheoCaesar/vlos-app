@@ -46,7 +46,7 @@
     <!-- Status column -->
     <ng-container matColumnDef="Status">
       <th mat-header-cell *matHeaderCellDef class="ten"> Status </th>
-      <td mat-cell *matCellDef="let row"  class="ten"> <span [ngClass]="row.status">{{row.status}} </span> </td>
+      <td mat-cell *matCellDef="let row"  class="ten"> <span ngClass="fi-{{row.status}}">{{row.status}} </span> </td>
     </ng-container>
 
     <!-- Date Modified column -->
@@ -59,7 +59,7 @@
     <ng-container matColumnDef="Edit" >
       <th mat-header-cell *matHeaderCellDef>  </th>
       <td mat-cell *matCellDef="let row" >
-        <img *ngIf="!isBankDeleted(row.status)" [src]="editIcon" alt="edit-icon">
+        <img *ngIf="!isBankDeleted(row.status)" [src]="editIcon" alt="edit-icon" (click)="editFI(row)">
       </td>
     </ng-container>
 
@@ -67,7 +67,7 @@
     <ng-container matColumnDef="Delete">
       <th mat-header-cell *matHeaderCellDef>  </th>
       <td mat-cell *matCellDef="let row">
-        <img *ngIf="row.status !== 'Deleted'" [src]="deleteIcon" alt="delete-icon">
+        <img *ngIf="row.status !== 'deleted'" [src]="deleteIcon" alt="delete-icon" (click) = "deleteFI(row)">
       </td>
     </ng-container>
 
@@ -75,8 +75,8 @@
     <ng-container matColumnDef="(de)activate">
       <th mat-header-cell *matHeaderCellDef></th>
       <td mat-cell *matCellDef="let row" [ngSwitch]="row.status">
-          <img *ngSwitchCase = "'Deactivated'" [src]="reactivateIcon" alt="delete-icon">
-          <img *ngSwitchCase = "'Active'" [src]="deactivateIcon" alt="delete-icon">
+          <img *ngSwitchCase = "'deactivated'" [src]="reactivateIcon" alt="reactivate-icon" (click)="toggleStatus(row)">
+          <img *ngSwitchCase = "'active'" [src]="deactivateIcon" alt="deactivate-icon" (click)="toggleStatus(row)">
       </td>
     </ng-container>
 

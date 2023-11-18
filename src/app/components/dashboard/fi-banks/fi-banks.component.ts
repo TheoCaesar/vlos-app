@@ -5,6 +5,9 @@ import { UserService } from 'src/app/services/user.service';
 import { FIUser } from './../../../interfaces/fiUser';
 import { SearchService } from 'src/app/services/search.service';
 import { SortService } from 'src/app/services/sort.service';
+import { MatDialog } from '@angular/material/dialog';
+import { BankStatusPopupComponent } from '../popups/bank-status-popup/bank-status-popup.component';
+import { NewBankDialogComponent } from '../home/new-bank-dialog/new-bank-dialog.component';
 
 @Component({
   selector: 'app-fi-banks',
@@ -26,14 +29,65 @@ export class FiBanksComponent implements AfterViewInit {
 
   @ViewChild(MatPaginator) paginator!: MatPaginator;
 
-  constructor(private searchService: SearchService, private sortService:SortService, private homeService:UserService) {
+  constructor(private dialog:MatDialog ,private searchService: SearchService, private sortService:SortService, private homeService:UserService) {
 
   }
 
   isBankDeleted(status: string){
-    return status == "Deleted" ?  true : false;
+    return status == "deleted" ?  true : false;
   }
 
+  editFI(fiUser:any){
+    const fiDialog = this.dialog.open(NewBankDialogComponent, {
+      data: {
+        trigger: 'edit',
+        fiID: fiUser.id,
+        fiName: fiUser.fi_name,
+        type: fiUser.fi_type,
+        shortName: fiUser.fi_shortName,
+        code: fiUser.fi_code,
+        logo: fiUser.logo,
+        acctNumber: fiUser.accountNumber,
+        swift: fiUser.swiftCode,
+        bankName:fiUser.fi_name
+      }
+    })
+  }
+
+  deleteFI(fiUser:any){
+    const fiDialog = this.dialog.open(BankStatusPopupComponent, {
+      data: {
+        trigger: 'delete',
+        fiID: fiUser.id,
+        fiName: fiUser.fi_name,
+        type: fiUser.fi_type,
+        shortName: fiUser.fi_shortName,
+        code: fiUser.fi_code,
+        logo: fiUser.logo,
+        acctNumber: fiUser.accountNumber,
+        swift: fiUser.swiftCode,
+        bankName:fiUser.fi_name
+      }
+    })
+  }
+
+  toggleStatus(fiUser:any){
+    const fiDialog = this.dialog.open(BankStatusPopupComponent, {
+      data: {
+        trigger: 'toggle',
+        fiID: fiUser.id,
+        fiName: fiUser.fi_name,
+        type: fiUser.fi_type,
+        shortName: fiUser.fi_shortName,
+        code: fiUser.fi_code,
+        logo: fiUser.logo,
+        acctNumber: fiUser.accountNumber,
+        swift: fiUser.swiftCode,
+        bankName:fiUser.fi_name,
+        status: fiUser.status
+      }
+    })
+  }
    //search
  searchInput: string = '';
  selectedSortOption: string = 'newest;'

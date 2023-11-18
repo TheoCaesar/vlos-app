@@ -1,8 +1,34 @@
 {
   "makers": [
     {
+      "id": 1,
+      "firstname": "Sefakor",
+      "lastname": "Agbloyor",
+      "phoneNumber": "24445617",
+      "email": "Agbloyor1Sefakor@gmail.com",
+      "role": "maker",
+      "createdBy": "Super Admin",
+      "createdDate": "2023-09-12T02:09:22.672Z",
+      "password": "jsIMxlHbZy",
+      "remember": true,
+      "status": "Blocked"
+    },
+    {
+      "id": 2,
+      "firstname": "Daniel",
+      "lastname": "Daniels",
+      "phoneNumber": "24445627",
+      "email": "Daniels2Daniel@gmail.com",
+      "role": "maker",
+      "createdBy": "Super Admin",
+      "createdDate": "2023-08-08T16:17:23.271Z",
+      "password": "lfhuBiDAda",
+      "remember": true,
+      "status": "Active"
+    },
+    {
       "id": 3,
-      "firstname": "Samariatss",
+      "firstname": "Samaria",
       "lastname": "Dagadu",
       "phoneNumber": "24445637",
       "email": "Dagadu3Samaria@gmail.com",
@@ -11,10 +37,7 @@
       "createdDate": "2023-03-24T07:12:47.859Z",
       "password": "PtmAciAycD",
       "remember": true,
-      "status": "Blocked",
-      "mail": "Dagadu3Samaria@gmail.com",
-      "phone": "24445637",
-      "modifiedDate": "Fri Nov 17 2023 16:03:39 GMT+0000 (Coordinated Universal Time)"
+      "status": "Blocked"
     },
     {
       "id": 4,
@@ -27,10 +50,7 @@
       "createdDate": "2023-03-19T23:51:48.541Z",
       "password": "WgDAVfqwNQ",
       "remember": true,
-      "status": "New",
-      "mail": "Nuamah4Daniel@gmail.com",
-      "phone": "24445647",
-      "modifiedDate": "Fri Nov 17 2023 15:59:32 GMT+0000 (Coordinated Universal Time)"
+      "status": "New"
     },
     {
       "id": 5,
@@ -43,10 +63,7 @@
       "createdDate": "2023-03-13T02:26:11.115Z",
       "password": "coxQUGrOMM",
       "remember": true,
-      "status": "New",
-      "mail": "Anane5David@gmail.com",
-      "phone": "24445657",
-      "modifiedDate": "Fri Nov 17 2023 15:59:50 GMT+0000 (Coordinated Universal Time)"
+      "status": "New"
     },
     {
       "id": 6,
@@ -59,10 +76,7 @@
       "createdDate": "2023-01-24T15:21:22.868Z",
       "password": "yBXSUhnbEB",
       "remember": true,
-      "status": "Active",
-      "mail": "Osei6Daniel@gmail.com",
-      "phone": "24445667",
-      "modifiedDate": "Fri Nov 17 2023 16:01:03 GMT+0000 (Coordinated Universal Time)"
+      "status": "Active"
     },
     {
       "id": 7,
@@ -288,9 +302,64 @@
   ],
   "checkers": [
     {
+      "id": 2,
+      "firstname": "Samaritan",
+      "lastname": "Daniels",
+      "phoneNumber": "24445627",
+      "email": "Daniels2Samaria@gmail.com",
+      "role": "checker",
+      "createdBy": "Super Admin",
+      "createdDate": "2023-07-22T17:10:53.987Z",
+      "password": "vSufWFcCWB",
+      "remember": true,
+      "status": "New",
+      "mail": "Daniels2Samaria@gmail.com",
+      "phone": "24445627",
+      "modifiedDate": "Fri Nov 17 2023 10:32:27 GMT+0000 (Coordinated Universal Time)"
+    },
+    {
+      "id": 3,
+      "firstname": "Prince",
+      "lastname": "Ofosu",
+      "phoneNumber": "24445637",
+      "email": "Ofosu3Prince@gmail.com",
+      "role": "checker",
+      "createdBy": "Super Admin",
+      "createdDate": "2023-04-20T01:07:34.991Z",
+      "password": "OvPlIbQKtA",
+      "remember": true,
+      "status": "New"
+    },
+    {
+      "id": 4,
+      "firstname": "David",
+      "lastname": "Nyarko",
+      "phoneNumber": "24445647",
+      "email": "Nyarko4David@gmail.com",
+      "role": "checker",
+      "createdBy": "Super Admin",
+      "createdDate": "2023-09-10T09:22:42.345Z",
+      "password": "OuNBjDyquB",
+      "remember": true,
+      "status": "Active"
+    },
+    {
+      "id": 5,
+      "firstname": "Joseph",
+      "lastname": "Daniels",
+      "phoneNumber": "24445657",
+      "email": "Daniels5Joseph@gmail.com",
+      "role": "checker",
+      "createdBy": "Super Admin",
+      "createdDate": "2023-03-27T20:57:18.187Z",
+      "password": "HQOTmbjuIt",
+      "remember": true,
+      "status": "Blocked"
+    },
+    {
       "id": 6,
       "firstname": "Richeal",
-      "lastname": "Fosuwaa",
+      "lastname": "Ofosu",
       "phoneNumber": "24445667",
       "email": "Ofosu6Richeal@gmail.com",
       "role": "checker",
@@ -298,10 +367,7 @@
       "createdDate": "2023-05-03T11:33:50.724Z",
       "password": "AJAhbzIsQT",
       "remember": true,
-      "status": "Blocked",
-      "mail": "Ofosu6Richeal@gmail.com",
-      "phone": "24445667",
-      "modifiedDate": "Fri Nov 17 2023 13:59:13 GMT+0000 (Coordinated Universal Time)"
+      "status": "Blocked"
     },
     {
       "id": 7,

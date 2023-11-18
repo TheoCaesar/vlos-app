@@ -1,0 +1,91 @@
+.card {
+  width: 618px;
+  height: 692px;
+  display: flex;
+  /* align-items: center; */
+  justify-content: center;
+}
+
+
+
+.header {
+ /* border:  2px solid blue; */
+ width: 100%;
+}
+
+.heading {
+  color: var(--solv-blue);
+  font-weight: 600;
+  font-size: 30px;
+  line-height: 35px;
+}
+
+.sub-heading {
+  color: var(--solv-grey);
+  font-weight: 400;
+  font-size: 22px;
+  line-height: 25px;
+}
+
+.content  {
+  /* border: 2px solid red; */
+  width: 90%;
+  height: 99%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-evenly;
+}
+
+table {
+  width: 98%;
+  height: 350px;
+  color: var(--solv-grey);
+  font-weight: 600;
+  font-size: 22px;
+  line-height: 25.78px;
+  /* margin: 20px; */
+}
+
+tr {
+  margin-bottom: 20px;
+}
+
+td:last-child {
+text-align: right;
+}
+
+.buttons {
+  text-align: center;
+}
+
+button {
+  font-size: 22px;
+  font-weight: 700;
+  line-height: 25.78px;
+  width: 200px;
+  margin-inline: 20px;
+  height: 48px;
+  border-radius: 10px;
+  border: none;
+  text-transform: capitalize;
+}
+
+button:first-child {
+  color: var(--solv-blue);
+  border: 1px solid var(--solv-blue);
+  background-color: white;
+}
+
+button:last-child {
+  color: white;
+}
+
+button.delete, button.deactivate {
+  background-color: #FF0000;
+}
+
+button.reactivate {
+  background: #27AE60;
+
+}

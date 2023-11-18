@@ -53,4 +53,16 @@ export class UserService {
   deleteMaker(id:number) {
     return this.userHttp.delete<User>(this.makersURL + `/${id}`)
   }
+
+  getBankObj(paramID:number):Observable<FIUser> {
+    return this.userHttp.get<FIUser>(this.banksURL +"/" + paramID);
+  }
+
+  deleteBank(id:number) {
+    return this.userHttp.delete<FIUser>(this.banksURL + `/${id}`)
+  }
+
+  updateBank(id:number, paramUser:FIUser):Observable<FIUser> {
+    return this.userHttp.put<FIUser>(this.banksURL +"/" + paramUser.id, paramUser);
+  }
 }

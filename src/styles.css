@@ -58,7 +58,7 @@ body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
   border-radius: 4px;
 }
 
-.Active {
+.Active, .fi-active {
   display: inline-block;
   width: 60px;
   height: 25px;
@@ -73,7 +73,7 @@ body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
 }
 
 
-.Blocked, .Deleted {
+.Blocked, .Deleted, .fi-deleted {
    display: inline-block;
   width: 70px;
   height: 25px;
@@ -87,7 +87,7 @@ body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
   border-radius: 4px;
 }
 
-.Deactivated {
+.Deactivated , .fi-deactivated{
   display: inline-block;
   width: 105px;
   height: 25px;
@@ -100,6 +100,7 @@ body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
   color: orange;
   border: 1px solid var(--solv-orange);
   border-radius: 4px;
+  /* text-transform: capitalize; */
 }
 
 .mat-mdc-form-field {

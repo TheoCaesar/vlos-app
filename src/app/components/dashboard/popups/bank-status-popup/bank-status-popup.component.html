@@ -1,0 +1,46 @@
+<!-- <p>delete-user-popup works!</p> -->
+<div class="card">
+  <div class="content">
+    <div class="header">
+      <p class="heading">Delete User</p>
+      <p class="sub-heading">Are you sure you want to {{btn_text}} this bank?</p>
+    </div>
+
+    <table>
+      <tr>
+        <td>FI Name:</td>
+        <td>{{fi_name}}</td>
+      </tr>
+      <tr>
+        <td>FI Short Name:</td>
+        <td style="text-transform: capitalize;">{{fiShortName}}</td>
+      </tr>
+      <tr>
+        <td>FI Code:</td>
+        <td>{{fiCode}}</td>
+      </tr>
+      <tr>
+        <td>FI Type:</td>
+        <td>{{fiType}}</td>
+      </tr>
+      <tr>
+        <td>Beneficiary Account Number:</td>
+        <td>{{benAcctNum}}</td>
+      </tr>
+      <tr>
+        <td>Beneficiary Bank Name:</td>
+        <td style="text-transform: capitalize;">{{benBankName}}</td>
+      </tr>
+      <tr>
+        <td>Beneficiary Swift Code:</td>
+        <td>{{fiSwiftCode}}</td>
+      </tr>
+    </table>
+
+    <div class="buttons">
+      <button (click)="openLeavePagePopup()">Back </button>
+      <!-- <button (click)="openDeleteSuccessPopup()">Delete</button> -->
+      <button (click)="confirm()" ngClass="{{btn_text}}">{{btn_text}}</button>
+    </div>
+  </div>
+</div>

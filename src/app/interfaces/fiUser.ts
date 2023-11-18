@@ -4,6 +4,8 @@ export interface FIUser {
   fi_shortName:string,
   fi_code:string,
   fi_type:string,
+  accountNumber?:number,
+  swiftCode?:string,
   role:string,
   createdBy:string,
   createdDate:string,
