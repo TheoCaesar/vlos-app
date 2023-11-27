@@ -20,6 +20,22 @@ export class SuperAdminInterceptor implements HttpInterceptor {
         Authorization: `Bearer ${hardcodedToken}`
       }
     });
-    return next.handle(requestwfAuth)
+    return next.handle(requestwfAuth).pipe(
+      //retry on failure
+      retry(5),
+
+      //handle errors
+      catchError((varError:HttpErrorResponse) => {
+        //error handling logic
+        alert(`HTTP Error: ${request.url}`)
+        return throwError(varError);
+      }),
+
+      //profiling
+      finalize(()=>{
+        const profileMsg = `${request.method} "${request.urlWithParams}"`
+        console.log(profileMsg);
+      })
+    );
   }
 }
