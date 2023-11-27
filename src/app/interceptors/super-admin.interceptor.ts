@@ -3,9 +3,10 @@ import {
   HttpRequest,
   HttpHandler,
   HttpEvent,
-  HttpInterceptor
+  HttpInterceptor,
+  HttpErrorResponse
 } from '@angular/common/http';
-import { Observable } from 'rxjs';
+import { Observable, catchError, finalize, retry, throwError } from 'rxjs';
 
 @Injectable()
 export class SuperAdminInterceptor implements HttpInterceptor {
@@ -13,6 +14,12 @@ export class SuperAdminInterceptor implements HttpInterceptor {
   constructor() {}
 
   intercept(request: HttpRequest<unknown>, next: HttpHandler): Observable<HttpEvent<unknown>> {
-    return next.handle(request);
+    const hardcodedToken = '1d38d128-0671-4121-8084-f6332a992a40';
+    const requestwfAuth = request.clone({
+      setHeaders: {
+        Authorization: `Bearer ${hardcodedToken}`
+      }
+    });
+    return next.handle(requestwfAuth)
   }
 }

@@ -82,7 +82,7 @@ import { OtpComponent } from 'src/app/components/otp/otp.component';
     SuccessPopupComponent,BankStatusPopupComponent,
   ],
   providers: [
-    UserService, SortService, SearchService
+    UserService, SortService, SearchService,
   ]
 })
 export class SuperAdminDashboardModule { }
