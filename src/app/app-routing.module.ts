@@ -11,6 +11,8 @@ import { MakerComponent } from './components/dashboard/maker/maker.component';
 import { EditUserComponentComponent } from './components/dashboard/popups/edit-user-component/edit-user-component.component';
 import { MakerResolver } from './resolvers/maker-resolver';
 import { OtpComponent } from './components/otp/otp.component';
+import { CheckerResolver } from './resolvers/checker-resolver';
+import { FiResolver } from './resolvers/fi-resolver';
 
 const routes: Routes = [
   {path:"", component:AdminLoginComponent},
@@ -43,11 +45,17 @@ const routes: Routes = [
       {
         path:"checker",
         component:CheckerComponent,
+        resolve: {
+          checkerData:CheckerResolver
+        }
 
       },
       {
         path:'banks',
-        component:FiBanksComponent
+        component:FiBanksComponent,
+        resolve: {
+          fi_data: FiResolver
+        },
       },
     ]
   },
@@ -58,6 +66,6 @@ const routes: Routes = [
 @NgModule({
   imports: [RouterModule.forRoot(routes)],
   exports: [RouterModule],
-  providers: [MakerResolver,]
+  providers: [MakerResolver, CheckerResolver, FiResolver]
 })
 export class AppRoutingModule { }

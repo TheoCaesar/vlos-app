@@ -7,8 +7,8 @@ import { SearchService } from 'src/app/services/search.service';
 import { SortService } from 'src/app/services/sort.service';
 import { MatDialog } from '@angular/material/dialog';
 import { BankStatusPopupComponent } from '../popups/bank-status-popup/bank-status-popup.component';
-import { NewBankDialogComponent } from '../home/new-bank-dialog/new-bank-dialog.component';
 import { EditBankPopupComponent } from '../popups/edit-bank-popup/edit-bank-popup.component';
+import { ActivatedRoute } from '@angular/router';
 
 @Component({
   selector: 'app-fi-banks',
@@ -30,7 +30,7 @@ export class FiBanksComponent implements AfterViewInit {
 
   @ViewChild(MatPaginator) paginator!: MatPaginator;
 
-  constructor(private dialog:MatDialog ,private searchService: SearchService, private sortService:SortService, private homeService:UserService) {
+  constructor(private activ8dRoute: ActivatedRoute, private dialog:MatDialog ,private searchService: SearchService, private sortService:SortService, private homeService:UserService) {
 
   }
 
@@ -92,9 +92,18 @@ export class FiBanksComponent implements AfterViewInit {
    //search
  searchInput: string = '';
  selectedSortOption: string = 'newest;'
+ fiUsers!:FIUser[]
 
   ngOnInit() {
-    this.onGetBanks();
+    // this.onGetBanks();
+    this.activ8dRoute.data.subscribe(response => {
+      console.log("OnInit calling resolver", response, typeof(response))
+      this.fiUsers = response['fi_data']
+      this.dataSource = new MatTableDataSource(this.fiUsers);
+
+      console.log(this.fiUsers)
+    })
+
 
     this.searchService.search$.subscribe((searchTerm)=> {
       this.searchInput = searchTerm;
@@ -120,7 +129,7 @@ export class FiBanksComponent implements AfterViewInit {
 
   applySearch() {
     // Fetch your data from the data service
-    let data = this.varUsers;
+    let data = this.fiUsers;
 
     // Apply filter based on the search term
     if (this.searchInput) {
@@ -140,7 +149,7 @@ export class FiBanksComponent implements AfterViewInit {
 
   applyFilter() {
     // Fetch your data from the data service
-     let data = this.varUsers;
+     let data = this.fiUsers;
 
       // Sort the data based on selectedSortOption
       if (this.selectedSortOption === 'newest') {

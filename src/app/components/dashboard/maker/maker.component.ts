@@ -149,7 +149,6 @@ export class MakerComponent  implements OnInit, AfterViewInit  {
 
     dialogRef.afterClosed().subscribe(result => {
       if (result && result.refresh) {
-        // this.onGetMakers();
         this.ngOnInit()
       }
     })

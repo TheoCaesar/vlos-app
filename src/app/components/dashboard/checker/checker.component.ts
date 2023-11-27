@@ -9,6 +9,7 @@ import { NewUserDialogComponent } from '../home/new-user-dialog/new-user-dialog.
 import { SearchService } from 'src/app/services/search.service';
 import { SortService } from 'src/app/services/sort.service';
 import { EditUserComponentComponent } from '../popups/edit-user-component/edit-user-component.component';
+import { ActivatedRoute } from '@angular/router';
 
 @Component({
   selector: 'app-checker',
@@ -26,7 +27,7 @@ export class CheckerComponent implements OnInit {
   dataSource!: MatTableDataSource<User>;
   varUsers!: User[];
 
-  constructor(private searchService: SearchService, private sortService:SortService, private homeService:UserService, public dialog:MatDialog, ) {
+  constructor(private activ8dRoute:ActivatedRoute, private searchService: SearchService, private sortService:SortService, private homeService:UserService, public dialog:MatDialog, ) {
     // Fetch our 100 users
     // this.varUsers = this.homeService.checkers;
     // Assign the data to the data source for the table to render
@@ -38,9 +39,17 @@ export class CheckerComponent implements OnInit {
   //search
   searchInput: string = '';
   selectedSortOption: string = 'newest;'
+  checkers!:User[]
 
   ngOnInit() {
-    this.onGetCheckers();
+    // this.onGetCheckers();
+    this.activ8dRoute.data.subscribe(response => {
+      console.log("OnInit calling resolver", response, typeof(response))
+      this.checkers = response['checkerData']
+      this.dataSource = new MatTableDataSource(this.checkers);
+
+      console.log(this.checkers)
+    })
 
     this.searchService.search$.subscribe((searchTerm)=> {
       this.searchInput = searchTerm;
@@ -66,7 +75,7 @@ export class CheckerComponent implements OnInit {
 
   applySearch() {
     // Fetch your data from the data service
-    let data = this.varUsers;
+    let data = this.checkers;
 
     // Apply filter based on the search term
     if (this.searchInput) {
@@ -86,7 +95,7 @@ export class CheckerComponent implements OnInit {
 
   applyFilter() {
     // Fetch your data from the data service
-     let data = this.varUsers;
+     let data = this.checkers;
 
       // Sort the data based on selectedSortOption
       if (this.selectedSortOption === 'newest') {
@@ -98,9 +107,9 @@ export class CheckerComponent implements OnInit {
       this.dataSource = new MatTableDataSource(data);
   }
 
-  // ngAfterViewInit() {
-  //   this.dataSource.paginator = this.paginator;
-  // }
+  ngAfterViewInit() {
+    this.dataSource.paginator = this.paginator;
+  }
 
   deletePopUp(data:any) {
     const dialogRef = this.dialog.open(DeleteUserPopupComponent, {
@@ -124,6 +133,12 @@ export class CheckerComponent implements OnInit {
           mail: data.email,
           phone: data.phoneNumber,
           role: data.role,
+        }
+      })
+
+      dialogRef.afterClosed().subscribe(result => {
+        if (result && result.refresh) {
+          this.ngOnInit()
         }
       })
   }
