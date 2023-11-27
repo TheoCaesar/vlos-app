@@ -8,6 +8,7 @@ import { SortService } from 'src/app/services/sort.service';
 import { MatDialog } from '@angular/material/dialog';
 import { BankStatusPopupComponent } from '../popups/bank-status-popup/bank-status-popup.component';
 import { NewBankDialogComponent } from '../home/new-bank-dialog/new-bank-dialog.component';
+import { EditBankPopupComponent } from '../popups/edit-bank-popup/edit-bank-popup.component';
 
 @Component({
   selector: 'app-fi-banks',
@@ -38,7 +39,7 @@ export class FiBanksComponent implements AfterViewInit {
   }
 
   editFI(fiUser:any){
-    const fiDialog = this.dialog.open(NewBankDialogComponent, {
+    const fiDialog = this.dialog.open(EditBankPopupComponent, {
       data: {
         trigger: 'edit',
         fiID: fiUser.id,

@@ -6,6 +6,8 @@ import { SuccessPopupComponent } from '../../popups/success-popup/success-popup.
 import { UserService } from 'src/app/services/user.service';
 import { User } from 'src/app/interfaces/user';
 import { ActivatedRoute, Router } from '@angular/router';
+import { DialogRef } from '@angular/cdk/dialog';
+import { MatDialogRef } from '@angular/material/dialog';
 
 @Component({
   selector: 'app-edit-user-component',
@@ -88,7 +90,9 @@ export class EditUserComponentComponent implements OnInit {
   }
 
 
+
   updateUser() {
+    let queryID:any = this.queriedUserObj.id;
     if (this.editUserForm.valid) {
       const updatedUser = {
         ...this.queriedUserObj,
@@ -102,8 +106,10 @@ export class EditUserComponentComponent implements OnInit {
       };
 
       // Assuming your data service has an update method
-      this.onUpdateUserObj(this.queriedUserObj.id, updatedUser);
+      this.onUpdateUserObj(queryID, updatedUser);
       this.openSuccessPopup();
+
+
     }
   }
   openSuccessPopup() {
@@ -119,11 +125,11 @@ export class EditUserComponentComponent implements OnInit {
 
     setTimeout(() => {
       this.dialog.closeAll();
-      this.router.navigateByUrl(`dashboard/${this.queriedUserObj.role}`)
-    }, 188500);
+      window.location.reload();
+    }, 2500);
 
     dialogRef.afterClosed().subscribe(result => {
-      console.log('Dialog result: ${result}')
+      console.log('Dialog result: ${result}', window.location.toString() )
     })
 
   }

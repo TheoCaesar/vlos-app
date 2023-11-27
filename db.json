@@ -2,7 +2,7 @@
   "makers": [
     {
       "id": 1,
-      "firstname": "Sefakor",
+      "firstname": "Sefakorz",
       "lastname": "Agbloyor",
       "phoneNumber": "24445617",
       "email": "Agbloyor1Sefakor@gmail.com",
@@ -11,7 +11,10 @@
       "createdDate": "2023-09-12T02:09:22.672Z",
       "password": "jsIMxlHbZy",
       "remember": true,
-      "status": "Blocked"
+      "status": "blocked",
+      "mail": "Agbloyor1Sefakor@gmail.com",
+      "phone": "24445617",
+      "modifiedDate": "Mon Nov 20 2023 11:47:11 GMT+0000 (Coordinated Universal Time)"
     },
     {
       "id": 2,
@@ -24,12 +27,12 @@
       "createdDate": "2023-08-08T16:17:23.271Z",
       "password": "lfhuBiDAda",
       "remember": true,
-      "status": "Active"
+      "status": "active"
     },
     {
       "id": 3,
       "firstname": "Samaria",
-      "lastname": "Dagadu",
+      "lastname": "Dagadu Obeny",
       "phoneNumber": "24445637",
       "email": "Dagadu3Samaria@gmail.com",
       "role": "maker",
@@ -37,7 +40,10 @@
       "createdDate": "2023-03-24T07:12:47.859Z",
       "password": "PtmAciAycD",
       "remember": true,
-      "status": "Blocked"
+      "status": "blocked",
+      "mail": "Dagadu3Samaria@gmail.com",
+      "phone": "24445637",
+      "modifiedDate": "Mon Nov 20 2023 11:48:02 GMT+0000 (Coordinated Universal Time)"
     },
     {
       "id": 4,
@@ -50,7 +56,7 @@
       "createdDate": "2023-03-19T23:51:48.541Z",
       "password": "WgDAVfqwNQ",
       "remember": true,
-      "status": "New"
+      "status": "new"
     },
     {
       "id": 5,
@@ -63,7 +69,7 @@
       "createdDate": "2023-03-13T02:26:11.115Z",
       "password": "coxQUGrOMM",
       "remember": true,
-      "status": "New"
+      "status": "new"
     },
     {
       "id": 6,
@@ -76,7 +82,7 @@
       "createdDate": "2023-01-24T15:21:22.868Z",
       "password": "yBXSUhnbEB",
       "remember": true,
-      "status": "Active"
+      "status": "active"
     },
     {
       "id": 7,
@@ -89,7 +95,7 @@
       "createdDate": "2023-06-29T23:01:02.108Z",
       "password": "QIvqgkXwvf",
       "remember": true,
-      "status": "Active"
+      "status": "active"
     },
     {
       "id": 8,
@@ -102,7 +108,7 @@
       "createdDate": "2023-09-13T15:56:41.785Z",
       "password": "fFjzqoTpol",
       "remember": true,
-      "status": "New"
+      "status": "new"
     },
     {
       "id": 9,
@@ -115,7 +121,7 @@
       "createdDate": "2023-02-13T01:33:50.481Z",
       "password": "WiSyihZZAH",
       "remember": true,
-      "status": "Blocked"
+      "status": "blocked"
     },
     {
       "id": 10,
@@ -128,7 +134,7 @@
       "createdDate": "2023-05-03T23:47:20.772Z",
       "password": "WErcoumrFc",
       "remember": true,
-      "status": "Active"
+      "status": "active"
     },
     {
       "id": 11,
@@ -141,7 +147,7 @@
       "createdDate": "2023-04-16T07:49:47.339Z",
       "password": "uCMZqnDNFg",
       "remember": true,
-      "status": "Active"
+      "status": "active"
     },
     {
       "id": 12,
@@ -154,7 +160,7 @@
       "createdDate": "2023-03-08T09:34:04.793Z",
       "password": "AFrQuFVgun",
       "remember": true,
-      "status": "Active"
+      "status": "active"
     },
     {
       "id": 13,
@@ -167,7 +173,7 @@
       "createdDate": "2023-05-11T22:29:14.202Z",
       "password": "wjNVLtckeI",
       "remember": true,
-      "status": "Active"
+      "status": "active"
     },
     {
       "id": 14,
@@ -180,7 +186,7 @@
       "createdDate": "2023-06-01T14:25:04.512Z",
       "password": "CJJPnZKltD",
       "remember": true,
-      "status": "New"
+      "status": "new"
     },
     {
       "id": 15,
@@ -193,7 +199,7 @@
       "createdDate": "2023-01-05T16:06:52.593Z",
       "password": "KHmvkbYlBY",
       "remember": true,
-      "status": "Active"
+      "status": "active"
     },
     {
       "id": 16,
@@ -206,7 +212,7 @@
       "createdDate": "2023-08-24T14:22:45.538Z",
       "password": "uUACVfdncF",
       "remember": true,
-      "status": "Blocked"
+      "status": "blocked"
     },
     {
       "id": 17,
@@ -219,7 +225,7 @@
       "createdDate": "2023-06-20T11:46:31.940Z",
       "password": "MNISIFDMcu",
       "remember": true,
-      "status": "New"
+      "status": "new"
     },
     {
       "id": 18,
@@ -232,7 +238,7 @@
       "createdDate": "2023-06-23T19:25:41.565Z",
       "password": "URhjPAYPoW",
       "remember": true,
-      "status": "Blocked"
+      "status": "blocked"
     },
     {
       "id": 19,
@@ -245,7 +251,7 @@
       "createdDate": "2023-04-03T18:38:42.756Z",
       "password": "IPJGsTXNiM",
       "remember": true,
-      "status": "Active"
+      "status": "active"
     },
     {
       "id": 20,
@@ -258,7 +264,7 @@
       "createdDate": "2023-08-05T11:00:36.963Z",
       "password": "rMEXhDBJWi",
       "remember": true,
-      "status": "Active"
+      "status": "active"
     },
     {
       "id": 21,
@@ -271,7 +277,7 @@
       "createdDate": "2023-05-19T06:04:24.236Z",
       "password": "WXvgAxWDeX",
       "remember": true,
-      "status": "Blocked"
+      "status": "blocked"
     },
     {
       "id": 22,
@@ -284,7 +290,7 @@
       "createdDate": "2023-03-25T02:24:28.534Z",
       "password": "OjxTCNvBEF",
       "remember": true,
-      "status": "New"
+      "status": "new"
     },
     {
       "id": 23,
@@ -297,7 +303,7 @@
       "createdDate": "2023-04-05T17:28:29.678Z",
       "password": "zAZTypQLsQ",
       "remember": true,
-      "status": "New"
+      "status": "new"
     }
   ],
   "checkers": [
@@ -312,7 +318,7 @@
       "createdDate": "2023-07-22T17:10:53.987Z",
       "password": "vSufWFcCWB",
       "remember": true,
-      "status": "New",
+      "status": "new",
       "mail": "Daniels2Samaria@gmail.com",
       "phone": "24445627",
       "modifiedDate": "Fri Nov 17 2023 10:32:27 GMT+0000 (Coordinated Universal Time)"
@@ -328,7 +334,7 @@
       "createdDate": "2023-04-20T01:07:34.991Z",
       "password": "OvPlIbQKtA",
       "remember": true,
-      "status": "New"
+      "status": "new"
     },
     {
       "id": 4,
@@ -341,7 +347,7 @@
       "createdDate": "2023-09-10T09:22:42.345Z",
       "password": "OuNBjDyquB",
       "remember": true,
-      "status": "Active"
+      "status": "active"
     },
     {
       "id": 5,
@@ -354,7 +360,7 @@
       "createdDate": "2023-03-27T20:57:18.187Z",
       "password": "HQOTmbjuIt",
       "remember": true,
-      "status": "Blocked"
+      "status": "blocked"
     },
     {
       "id": 6,
@@ -367,7 +373,7 @@
       "createdDate": "2023-05-03T11:33:50.724Z",
       "password": "AJAhbzIsQT",
       "remember": true,
-      "status": "Blocked"
+      "status": "blocked"
     },
     {
       "id": 7,
@@ -380,7 +386,7 @@
       "createdDate": "2023-05-17T20:14:11.858Z",
       "password": "eCKBkUlIJo",
       "remember": true,
-      "status": "Active"
+      "status": "active"
     },
     {
       "id": 8,
@@ -393,7 +399,7 @@
       "createdDate": "2023-04-24T02:10:51.540Z",
       "password": "jmLpMBZywQ",
       "remember": true,
-      "status": "Blocked"
+      "status": "blocked"
     },
     {
       "id": 9,
@@ -406,7 +412,7 @@
       "createdDate": "2023-06-14T00:09:40.386Z",
       "password": "HInbynAVyL",
       "remember": true,
-      "status": "Blocked"
+      "status": "blocked"
     },
     {
       "id": 10,
@@ -419,7 +425,7 @@
       "createdDate": "2023-01-03T16:04:16.411Z",
       "password": "FgxohIZYsF",
       "remember": true,
-      "status": "Active"
+      "status": "active"
     },
     {
       "id": 11,
@@ -432,7 +438,7 @@
       "createdDate": "2023-06-05T04:39:02.296Z",
       "password": "ulADRmeOFe",
       "remember": true,
-      "status": "New"
+      "status": "new"
     },
     {
       "id": 12,
@@ -445,7 +451,7 @@
       "createdDate": "2023-01-12T21:21:45.370Z",
       "password": "YXLEiyVzOo",
       "remember": true,
-      "status": "Active"
+      "status": "active"
     },
     {
       "id": 13,
@@ -458,7 +464,7 @@
       "createdDate": "2023-05-22T16:19:08.826Z",
       "password": "eYcxLMIFvt",
       "remember": true,
-      "status": "Blocked"
+      "status": "blocked"
     },
     {
       "id": 14,
@@ -471,7 +477,7 @@
       "createdDate": "2023-04-08T13:00:20.904Z",
       "password": "JzKEMXAxwv",
       "remember": true,
-      "status": "Active"
+      "status": "active"
     },
     {
       "id": 15,
@@ -484,7 +490,7 @@
       "createdDate": "2023-09-20T05:36:14.800Z",
       "password": "UVFPEmsyof",
       "remember": true,
-      "status": "Active"
+      "status": "active"
     },
     {
       "id": 16,
@@ -497,7 +503,7 @@
       "createdDate": "2023-04-29T21:22:56.143Z",
       "password": "mBTNGvJrdo",
       "remember": true,
-      "status": "Active"
+      "status": "active"
     },
     {
       "id": 17,
@@ -510,7 +516,7 @@
       "createdDate": "2023-06-22T21:30:23.189Z",
       "password": "yjEjYnCVpP",
       "remember": true,
-      "status": "Blocked"
+      "status": "blocked"
     },
     {
       "id": 18,
@@ -523,7 +529,7 @@
       "createdDate": "2023-01-13T13:36:37.304Z",
       "password": "TTyhzDFPBL",
       "remember": true,
-      "status": "Active"
+      "status": "active"
     },
     {
       "id": 19,
@@ -536,7 +542,7 @@
       "createdDate": "2023-04-01T20:35:12.851Z",
       "password": "LzTjBtazAl",
       "remember": true,
-      "status": "Active"
+      "status": "active"
     },
     {
       "id": 20,
@@ -549,7 +555,7 @@
       "createdDate": "2023-07-06T18:28:09.354Z",
       "password": "VLHUDGkNNC",
       "remember": true,
-      "status": "Active"
+      "status": "active"
     },
     {
       "id": 21,
@@ -562,7 +568,7 @@
       "createdDate": "2023-08-26T21:07:26.913Z",
       "password": "JnzInOWkiA",
       "remember": true,
-      "status": "Active"
+      "status": "active"
     },
     {
       "id": 22,
@@ -575,7 +581,7 @@
       "createdDate": "2023-04-20T18:14:53.396Z",
       "password": "jDtkuTRmaW",
       "remember": true,
-      "status": "Active"
+      "status": "active"
     },
     {
       "id": 23,
@@ -588,7 +594,7 @@
       "createdDate": "2023-07-10T05:55:25.292Z",
       "password": "TgHWSdyFCV",
       "remember": true,
-      "status": "Blocked"
+      "status": "blocked"
     }
   ],
   "banks": [
@@ -602,7 +608,9 @@
       "createdBy": "SCF Admin",
       "createdDate": "2023-10-31T19:02:33.792Z",
       "password": "ytiWXdWhwr",
-      "status": "Deleted"
+      "status": "deleted",
+      "accountNumber": "190118533001",
+      "swiftCode": "NATB2352"
     },
     {
       "id": 2,
@@ -614,7 +622,11 @@
       "createdBy": "SCF Admin",
       "createdDate": "2023-10-31T19:02:33.792Z",
       "password": "gfkWshxcCV",
-      "status": "Active"
+      "status": "active",
+      "accountNumber": "285129345010",
+      "swiftCode": "UTDB5129",
+      "bankName": "United Bank",
+      "modifiedDate": "Wed Nov 22 2023 17:04:24 GMT+0000 (Coordinated Universal Time)"
     },
     {
       "id": 3,
@@ -626,7 +638,9 @@
       "createdBy": "SCF Admin",
       "createdDate": "2023-10-31T19:02:33.792Z",
       "password": "CEJJlXdfoT",
-      "status": "Deleted"
+      "status": "deleted",
+      "accountNumber": "803718937103",
+      "swiftCode": "COMM8037"
     },
     {
       "id": 4,
@@ -638,7 +652,9 @@
       "createdBy": "SCF Admin",
       "createdDate": "2023-10-31T19:02:33.792Z",
       "password": "msMEzAafJo",
-      "status": "Deactivated"
+      "status": "deactivated",
+      "accountNumber": "468291070606",
+      "swiftCode": "AGSL46829"
     },
     {
       "id": 5,
@@ -650,7 +666,9 @@
       "createdBy": "SCF Admin",
       "createdDate": "2023-10-31T19:02:33.792Z",
       "password": "TbKFkTQynV",
-      "status": "Active"
+      "status": "active",
+      "accountNumber": "256604694550",
+      "swiftCode": "NATB2352"
     },
     {
       "id": 6,
@@ -662,7 +680,9 @@
       "createdBy": "SCF Admin",
       "createdDate": "2023-10-31T19:02:33.792Z",
       "password": "LcxDOpzkEo",
-      "status": "Active"
+      "status": "active",
+      "accountNumber": "108719461774",
+      "swiftCode": "AGRB1087"
     },
     {
       "id": 7,
@@ -674,7 +694,9 @@
       "createdBy": "SCF Admin",
       "createdDate": "2023-10-31T19:02:33.792Z",
       "password": "IfauHIUDYx",
-      "status": "Deactivated"
+      "status": "deactivated",
+      "accountNumber": "670607947684",
+      "swiftCode": "DEVB6706"
     },
     {
       "id": 8,
@@ -686,7 +708,9 @@
       "createdBy": "SCF Admin",
       "createdDate": "2023-10-31T19:02:33.792Z",
       "password": "oULOQQeMmt",
-      "status": "Active"
+      "status": "active",
+      "accountNumber": "373271922490",
+      "swiftCode": "NATB2352"
     },
     {
       "id": 9,
@@ -698,7 +722,9 @@
       "createdBy": "SCF Admin",
       "createdDate": "2023-10-31T19:02:33.792Z",
       "password": "DXgtGvHcME",
-      "status": "Deactivated"
+      "status": "deactivated",
+      "accountNumber": "167674492445",
+      "swiftCode": "COMM8037"
     },
     {
       "id": 10,
@@ -710,7 +736,9 @@
       "createdBy": "SCF Admin",
       "createdDate": "2023-10-31T19:02:33.792Z",
       "password": "YGByMXvKZC",
-      "status": "Deactivated"
+      "status": "deactivated",
+      "accountNumber": "327125931487",
+      "swiftCode": "UTDB5129"
     },
     {
       "id": 11,
@@ -722,7 +750,9 @@
       "createdBy": "SCF Admin",
       "createdDate": "2023-10-31T19:02:33.793Z",
       "password": "TjVQqHoixU",
-      "status": "Deleted"
+      "status": "deleted",
+      "accountNumber": "631033264564",
+      "swiftCode": "NATB2352"
     },
     {
       "id": 12,
@@ -734,7 +764,9 @@
       "createdBy": "SCF Admin",
       "createdDate": "2023-10-31T19:02:33.793Z",
       "password": "yMClhRDLgP",
-      "status": "Active"
+      "status": "active",
+      "accountNumber": "538545751783",
+      "swiftCode": "CAPM5385"
     },
     {
       "id": 13,
@@ -746,7 +778,9 @@
       "createdBy": "SCF Admin",
       "createdDate": "2023-10-31T19:02:33.793Z",
       "password": "NaKoWHNCjh",
-      "status": "Active"
+      "status": "active",
+      "accountNumber": "538545751783",
+      "swiftCode": "COMM8037"
     },
     {
       "id": 14,
@@ -758,7 +792,9 @@
       "createdBy": "SCF Admin",
       "createdDate": "2023-10-31T19:02:33.793Z",
       "password": "FunJLyPEcE",
-      "status": "Active"
+      "status": "active",
+      "accountNumber": "905761450647",
+      "swiftCode": "AGRB1087"
     },
     {
       "id": 15,
@@ -770,7 +806,9 @@
       "createdBy": "SCF Admin",
       "createdDate": "2023-10-31T19:02:33.793Z",
       "password": "TNEJygQTPC",
-      "status": "Active"
+      "status": "active",
+      "accountNumber": "517107796151",
+      "swiftCode": "UTDM6151"
     }
   ]
 }

@@ -1,0 +1,52 @@
+<!-- <p>admin-login works!</p> -->
+<div class="main">
+  <div class="card">
+    <!-- <h1 class="logo">&nbsp;</h1> -->
+    <h2>Verification</h2>
+    <p>OTP has been sent to email</p>
+
+    <form>
+    <h2>Enter OTP</h2>
+
+    <!-- <div class="otp-block">
+      <input type="text" #input1 formControlName = "input1" maxlength="1" (keyup)="move($event, 'noPrev', input1, input2)"/>
+      <input type="text" #input2 formControlName = "input2" maxlength="1" (keyup)="move($event, input1, input2, input3)">
+      <input type="text" #input3 formControlName = "input3" maxlength="1" (keyup)="move($event, input2, input3, input4)">
+      <input type="text" #input4 formControlName = "input4" maxlength="1" (keyup)="move($event, input3, input4, 'noNxt')">
+    </div>       -->
+
+    <div class="otp-block">
+      <input type="number" #input1 maxlength="1" (keyup)="move($event, 'noPrev', input1, input2)"/>
+      <input type="number" #input2 maxlength="1" (keyup)="move($event, input1, input2, input3)">
+      <input type="number" #input3 maxlength="1" (keyup)="move($event, input2, input3, input4)">
+      <input type="number" #input4 maxlength="1" (keyup)="move($event, input3, input4, 'noNxt')">
+    </div>
+
+      <section>
+        <p>Didn't receive OTP?</p>
+        <p class="links">Resend OTP</p>
+        <!-- <span>&nbsp;</span> -->
+      </section>
+
+      <button #btn type="submit" (click)="onSubmit()" [disabled]=formValid>Verify</button>
+    </form>
+
+    <p class="links"> <span> Change Email Address </span></p>
+
+  </div>
+</div>
+
+<!-- <ng-container *ngIf="false">
+<form [formGroup]="otpForm">
+  <h2>Enter OTP</h2>
+
+  <div class="otp-block">
+    <input type="text" formControlName="input1" maxlength="1" (keyup)="move($event, 'noPrev', input1, input2)"/>
+    <input type="text" formControlName="input2" maxlength="1" (keyup)="move($event, input1, input2, input3)">
+    <input type="text" formControlName="input3" maxlength="1" (keyup)="move($event, input2, input3, input4)">
+    <input type="text" formControlName="input4" maxlength="1" (keyup)="move($event, input3, input4, 'noNxt')">
+  </div>
+
+  <button type="submit" (click)="onSubmit()" [disabled]="otpForm.invalid">Verify</button>
+</form>
+</ng-container> -->

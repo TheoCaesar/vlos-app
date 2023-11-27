@@ -43,7 +43,7 @@ body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
   overflow-y: scroll;
  }
 
- .New {
+ .user-new {
   display: inline-block;
   width: 50px;
   height: 25px;
@@ -58,7 +58,7 @@ body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
   border-radius: 4px;
 }
 
-.Active, .fi-active {
+.user-active, .fi-active {
   display: inline-block;
   width: 60px;
   height: 25px;
@@ -73,7 +73,7 @@ body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
 }
 
 
-.Blocked, .Deleted, .fi-deleted {
+.user-blocked, .user-deleted, .fi-deleted {
    display: inline-block;
   width: 70px;
   height: 25px;
@@ -87,7 +87,7 @@ body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
   border-radius: 4px;
 }
 
-.Deactivated , .fi-deactivated{
+.deactivated , .fi-deactivated{
   display: inline-block;
   width: 105px;
   height: 25px;

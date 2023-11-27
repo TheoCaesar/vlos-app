@@ -2,20 +2,21 @@ import { SearchService } from 'src/app/services/search.service';
 import { SortService } from 'src/app/services/sort.service';
 import { NewUserDialogComponent } from 'src/app/components/dashboard/home/new-user-dialog/new-user-dialog.component';
 import { DeleteUserPopupComponent } from 'src/app/components/dashboard/popups/delete-user-popup/delete-user-popup.component';
-import { AfterViewInit, Component, ViewChild} from '@angular/core';
+import { AfterViewInit, Component, ViewChild, OnInit } from '@angular/core';
 import {MatPaginator, } from '@angular/material/paginator';import {MatSort, } from '@angular/material/sort';
 import {MatTableDataSource} from '@angular/material/table';
 import { User } from 'src/app/interfaces/user';
 import { UserService } from 'src/app/services/user.service';
 import { MatDialog } from '@angular/material/dialog';
 import { EditUserComponentComponent } from '../popups/edit-user-component/edit-user-component.component';
+import { ActivatedRoute } from '@angular/router';
 
 @Component({
   selector: 'app-maker',
   templateUrl: './maker.component.html',
   styleUrls: ['./maker.component.css',]
 })
-export class MakerComponent  implements AfterViewInit {
+export class MakerComponent  implements OnInit, AfterViewInit  {
   editIcon:string = "./../../../../assets/icons/dashboard/edit.svg";
   deleteIcon:string = "./../../../../assets/icons/dashboard/delete.svg";
   emptyList:string = "./../../../../assets/icons/dashboard/No-data-found.svg";
@@ -25,9 +26,8 @@ export class MakerComponent  implements AfterViewInit {
   varUsers: User[] = [];
 
   @ViewChild(MatPaginator) paginator!: MatPaginator;
-  @ViewChild(MatSort) sort!: MatSort;
 
-  constructor(
+  constructor( private activ8dRoute: ActivatedRoute,
     private sortService: SortService, private searchService:SearchService, private homeService:UserService, public dialog:MatDialog) {
     // this.varUsers = this.onGetMakers();
     // Assign the data to the data source for the table to render
@@ -49,7 +49,14 @@ export class MakerComponent  implements AfterViewInit {
       this.applyFilter();
     });
 
-    this.onGetMakers();
+    // this.onGetMakers();
+    this.activ8dRoute.data.subscribe(response => {
+      console.log("OnInit calling resolver", response, typeof(response))
+      this.makers = response['data']
+      this.dataSource = new MatTableDataSource(this.makers);
+
+      console.log(this.makers)
+    })
   }
 
   makers!: User[]
@@ -103,7 +110,7 @@ export class MakerComponent  implements AfterViewInit {
 
   ngAfterViewInit() {
     this.dataSource.paginator = this.paginator;
-    this.dataSource.sort = this.sort;
+    // this.dataSource.sort = this.sort;
   }
 
   // applyFilter(event: Event) {
@@ -139,5 +146,12 @@ export class MakerComponent  implements AfterViewInit {
           role: data.role,
         }
       })
+
+    dialogRef.afterClosed().subscribe(result => {
+      if (result && result.refresh) {
+        // this.onGetMakers();
+        this.ngOnInit()
+      }
+    })
   }
 }

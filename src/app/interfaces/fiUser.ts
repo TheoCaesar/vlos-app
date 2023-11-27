@@ -1,5 +1,5 @@
 export interface FIUser {
-  id:number,
+  id?:number,
   fi_name:string,
   fi_shortName:string,
   fi_code:string,
@@ -12,4 +12,5 @@ export interface FIUser {
   modifiedDate?:string,
   password:string,
   status:string,
+  bankName?:string,
 }

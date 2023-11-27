@@ -40,6 +40,8 @@ import { EditUserComponentComponent } from 'src/app/components/dashboard/popups/
 import { SortService } from 'src/app/services/sort.service';
 import { SearchService } from 'src/app/services/search.service';
 import { BankStatusPopupComponent } from 'src/app/components/dashboard/popups/bank-status-popup/bank-status-popup.component';
+import { EditBankPopupComponent } from 'src/app/components/dashboard/popups/edit-bank-popup/edit-bank-popup.component';
+import { OtpComponent } from 'src/app/components/otp/otp.component';
 
 @NgModule({
   declarations: [
@@ -47,7 +49,9 @@ import { BankStatusPopupComponent } from 'src/app/components/dashboard/popups/ba
     HeaderComponent,
     SidebarComponent,
     FaqComponent,
+    EditBankPopupComponent,
     HomeComponent,
+    OtpComponent,
     CheckerComponent,
     MakerComponent,
     FiBanksComponent,
@@ -73,6 +77,7 @@ import { BankStatusPopupComponent } from 'src/app/components/dashboard/popups/ba
     SidebarComponent,
     CancelPopupComponent,
     DeletePopupComponent,    DeleteUserPopupComponent,
+    EditBankPopupComponent,
     EditUserComponentComponent,
     SuccessPopupComponent,BankStatusPopupComponent,
   ],

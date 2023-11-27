@@ -15,6 +15,18 @@ export class UserService {
   checkersURL = 'http://localhost:3000/checkers'
   banksURL = 'http://localhost:3000/banks'
 
+  createMakerObj(userObj:User):Observable<User> {
+    return this.userHttp.post<User>( this.makersURL , userObj)
+  }
+
+  createCheckerObj(userObj:User):Observable<User> {
+    return this.userHttp.post<User>(this.checkersURL, userObj)
+  }
+
+  createBankObj(bankObj:FIUser):Observable<FIUser> {
+    return this.userHttp.post<FIUser>(this.banksURL, bankObj)
+  }
+
   getMakerObjs():Observable<User[]> {
       return this.userHttp.get<User[]>(this.makersURL);
   }

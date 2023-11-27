@@ -26,11 +26,15 @@ export class BankStatusPopupComponent implements OnInit{
   benAcctNum = this.customData.acctNumber ?? 10935164329123;
   benBankName = this.customData.bankName ;
   fiSwiftCode = this.customData.swift ?? this.fiCode[3] + this.fiShortName;
-  btn_text = (this.customData.trigger === 'toggle') ? (this.customData.status === 'Deactivated') ? 'reactivate' : 'deactivate' : 'delete'
+  btn_text:string  = (this.customData.trigger === 'toggle') ? (this.customData.status === 'deactivated') ? 'reactivate' : 'deactivate' : 'delete'
 
   queriedBank!:FIUser;
 
   onGetBank() {
+    // if (this.customData.trigger = 'toggle') {
+    //   this.btn_text = (this.customData.status)
+
+    // }
     this.bankService.getBankObj(this.bankID).subscribe({
       next:(response) => {
         console.log(response);
@@ -55,6 +59,7 @@ export class BankStatusPopupComponent implements OnInit{
     const updatedBank = this.queriedBank;
 
     this.btn_text === 'reactivate' ? updatedBank.status = 'active' :  updatedBank.status = this.btn_text + 'd';
+    updatedBank.modifiedDate =new Date().toString()
 
     this.bankService.updateBank(this.bankID, updatedBank).subscribe({
       next:(response)=> {
@@ -64,7 +69,7 @@ export class BankStatusPopupComponent implements OnInit{
         const successDialog = this.dialog.open(SuccessPopupComponent, {
           data: {
             parent_component: 'update-bank-status',
-            img_path: "../../../../../assets/icons/popups/check-red.svg",
+            img_path: (updatedBank.status === 'active') ? "../../../../../assets/icons/popups/check-green.svg" : "../../../../../assets/icons/popups/check-red.svg",
             header: 'Success',
             body: `Bank ${this.btn_text}d successfully`,
             btnText: 'Close'

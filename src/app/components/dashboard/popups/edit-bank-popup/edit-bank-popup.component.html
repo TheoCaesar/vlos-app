@@ -1,13 +1,14 @@
+<!-- <p>edit-bank-popup works!</p> -->
 <div class="card">
   <div class="content">
-    <p>Create New FI</p>
+    <p>Edit FI Details</p>
 
-    <form action="" [formGroup]="create_bank_form">
+    <form action="" [formGroup]="editBankForm">
     <div class="main-group">
       <div class="group-one">
         <mat-form-field>
           <mat-label>FI Type </mat-label>
-          <mat-select formControlName = 'fiType'>
+          <mat-select formControlName = 'edit_fiType'>
             <mat-option value="Bank">Bank</mat-option>
             <mat-option value="Non Bank Financial">Non Bank Financial Institution</mat-option>
           </mat-select>
@@ -15,17 +16,17 @@
 
         <mat-label>FI Name</mat-label>
         <mat-form-field appearance="outline">
-          <input matInput required formControlName="fiName">
+          <input matInput required formControlName="edit_fiName">
         </mat-form-field>
 
         <mat-label>FI Short Name</mat-label>
         <mat-form-field appearance="outline">
-          <input matInput required formControlName="fiShortName">
+          <input matInput required formControlName="edit_fiShortName">
         </mat-form-field>
 
         <mat-label>FI Code</mat-label>
         <mat-form-field appearance="outline">
-          <input matInput required formControlName="fiCode">
+          <input matInput required formControlName="edit_fiCode">
         </mat-form-field>
       </div>
 
@@ -40,18 +41,18 @@
 
         <mat-label>Bank Account Number *</mat-label>
         <mat-form-field appearance="outline">
-          <input matInput required formControlName="bankAcctNum">
+          <input matInput required formControlName="edit_bankAcctNum">
         </mat-form-field>
 
         <mat-label>Bank Name</mat-label>
         <mat-form-field appearance="outline">
-          <input matInput required formControlName="bankName">
+          <input matInput required formControlName="edit_bankName">
         </mat-form-field>
 
 
         <mat-label>Swift Code</mat-label>
         <mat-form-field appearance="outline">
-          <input matInput required formControlName="swiftCode">
+          <input matInput required formControlName="edit_swiftCode">
         </mat-form-field>
       </div>
     </div>
@@ -59,7 +60,7 @@
       <div class="buttons">
         <button (click)="openLeavePagePopup()">Cancel</button>
         <!-- <button (click) ="openSuccessPopup()">Create User</button> -->
-        <button (click) ="createBank()">Create User</button>
+        <button (click) ="updateBank()">Update FI</button>
       </div>
     </form>
   </div>

@@ -2,6 +2,7 @@
   width: 570px;
   max-width: 50vw;
   height: 799px;
+
 }
 
 .content {
@@ -35,24 +36,30 @@ mat-form-field {
 }
 
 .buttons {
-  margin:60px 10px;
+  margin-block:60px;
+  display: flex;
+  column-gap: 20px;
+  flex-direction:row;
 }
-.centered button:nth-child(1) {
+.buttons button:nth-child(1) {
   color: var(--solv-blue);
   font-weight: 700;
   text-align: center;
-  width: 200px;
-  height: 48px;
+  /* width: 200px;
+  height: 48px; */
+  padding-inline: 30px;
   border-radius: 10px;
   border:1px solid var(--solv-blue);
   background: white;
 }
-.centered button:nth-child(2) {
+.buttons button:nth-child(2) {
   background: var(--solv-blue);
   font-weight: 700;
   text-align: center;
-  width: 200px;
-  height: 48px;
+  /* width: 200px;
+  height: 48px; */
+  padding-inline: 30px;
+  padding-block: 10px;
   border-radius: 10px;
   border:1px solid var(--solv-blue);
   color: white;
