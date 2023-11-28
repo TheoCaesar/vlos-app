@@ -1,0 +1,71 @@
+<!-- <p>maker-sidebar works!</p> -->
+<mat-nav-list dense (mouseenter)="showDetails()" (mouseleave)="hideDetails()" [ngClass]="{'extend': ext_sidebar}">
+  <!-- <mat-icon class="mat-18 expand-sidebar">settings_ethernet</mat-icon> -->
+<div class="sidebar-links">
+  <mat-list-item>
+    <div class="menu-item">
+      <img [src]="homeIcon" alt="home-icon">
+      <div>
+        <span *ngIf="ext_sidebar" >Home</span>
+        <span *ngIf="ext_sidebar"> <img [src]="arrowIcon" alt="left-arrow-icon"></span>
+      </div>
+    </div>
+  </mat-list-item>
+  <mat-list-item (click)="openFaqPage()" ><!-- [ngClass]="{'active-link':faqIsActive}" -->
+    <div class="menu-item">
+      <img [src]="faqIcon" alt="faq-icon">
+      <div>
+        <span *ngIf="ext_sidebar" >FAQ</span>
+        <span *ngIf="ext_sidebar"> <img [src]="arrowIcon" alt="left-arrow-icon"></span>
+      </div>
+    </div>
+  </mat-list-item>
+  <mat-list-item [routerLink]="['maker']" #makerLink="routerLinkActive" routerLinkActive="active-link">
+    <div class="menu-item">
+      <img [src]="makerLink.isActive ? activeAnchorIcon  : anchorIcon   " alt="maker-icon">
+      <div>
+        <span *ngIf="ext_sidebar" >Maker</span>
+        <span *ngIf="ext_sidebar"> <img [src]="arrowIcon" alt="left-arrow-icon"></span>
+      </div>
+    </div>
+  </mat-list-item>
+  <mat-list-item routerLink="checker" #checkerLink = 'routerLinkActive' routerLinkActive="active-link">
+    <div class="menu-item">
+      <img [src]="checkerLink.isActive ? activeDealerIcon : dealerIcon" alt="checker-icon" >
+      <div>
+        <span *ngIf="ext_sidebar" >Checker</span>
+        <span *ngIf="ext_sidebar"> <img [src]="arrowIcon" alt="left-arrow-icon"></span>
+      </div>
+    </div>
+  </mat-list-item>
+  <mat-list-item [routerLink]="'banks'" #bankLink="routerLinkActive" routerLinkActive="active-link">
+    <div class="menu-item"   >
+      <img [src]="bankLink.isActive ? activeMasteranchorIcon : masteranchorIcon" alt="bank-icon" >
+    <div>
+      <span *ngIf="ext_sidebar" >FI/Bank</span>
+      <span *ngIf="ext_sidebar"> <img [src]="arrowIcon" alt="left-arrow-icon" ></span>
+    </div>
+    </div>
+  </mat-list-item>
+  <mat-list-item>
+    <div class="menu-item">
+      <img [src]="settingsIcon" alt="settings-icon">
+      <div>
+        <span *ngIf="ext_sidebar" >Setting</span>
+        <span *ngIf="ext_sidebar"> <img [src]="arrowIcon" alt="left-arrow-icon"></span>
+      </div>
+    </div>
+  </mat-list-item>
+</div>
+<div class="about" (click)="testPopUp()">
+  <mat-list-item>
+    <div class="menu-item">
+      <img [src]="userIcon" width="27px" alt="home-icon">
+      <div>
+        <span *ngIf="ext_sidebar" >Super Admin</span>
+      </div>
+    </div>
+
+  </mat-list-item>
+</div>
+</mat-nav-list>

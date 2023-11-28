@@ -1,0 +1,13 @@
+<svg width="15" height="15" viewBox="0 0 15 15" fill="none" xmlns="http://www.w3.org/2000/svg">
+<mask id="mask0_1076_2501" style="mask-type:luminance" maskUnits="userSpaceOnUse" x="-1" y="-1" width="17" height="17">
+<path d="M4.375 2.5H10.625M4.375 12.5H10.625" stroke="white" stroke-width="4" stroke-linecap="round"/>
+<path d="M13.125 1.25H11.875C11.5298 1.25 11.25 1.52982 11.25 1.875V3.125C11.25 3.47018 11.5298 3.75 11.875 3.75H13.125C13.4702 3.75 13.75 3.47018 13.75 3.125V1.875C13.75 1.52982 13.4702 1.25 13.125 1.25Z" fill="white" stroke="white" stroke-width="4" stroke-linejoin="round"/>
+<path d="M3.125 1.25H1.875C1.52982 1.25 1.25 1.52982 1.25 1.875V3.125C1.25 3.47018 1.52982 3.75 1.875 3.75H3.125C3.47018 3.75 3.75 3.47018 3.75 3.125V1.875C3.75 1.52982 3.47018 1.25 3.125 1.25Z" fill="white" stroke="white" stroke-width="4" stroke-linejoin="round"/>
+<path d="M13.125 11.25H11.875C11.5298 11.25 11.25 11.5298 11.25 11.875V13.125C11.25 13.4702 11.5298 13.75 11.875 13.75H13.125C13.4702 13.75 13.75 13.4702 13.75 13.125V11.875C13.75 11.5298 13.4702 11.25 13.125 11.25Z" fill="white" stroke="white" stroke-width="4" stroke-linejoin="round"/>
+<path d="M3.125 11.25H1.875C1.52982 11.25 1.25 11.5298 1.25 11.875V13.125C1.25 13.4702 1.52982 13.75 1.875 13.75H3.125C3.47018 13.75 3.75 13.4702 3.75 13.125V11.875C3.75 11.5298 3.47018 11.25 3.125 11.25Z" fill="white" stroke="white" stroke-width="4" stroke-linejoin="round"/>
+<path d="M12.5 4.375V10.625M2.5 4.375V10.625" stroke="white" stroke-width="4" stroke-linecap="round"/>
+</mask>
+<g mask="url(#mask0_1076_2501)">
+<path d="M0 0H15V15H0V0Z" fill="white"/>
+</g>
+</svg>

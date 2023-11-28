@@ -13,6 +13,12 @@ import { MakerResolver } from './resolvers/maker-resolver';
 import { OtpComponent } from './components/otp/otp.component';
 import { CheckerResolver } from './resolvers/checker-resolver';
 import { FiResolver } from './resolvers/fi-resolver';
+import { MakerDashboardComponent } from './components/maker-admin-component/maker-dashboard/maker-dashboard.component';
+import { DealerDashboardComponent } from './components/maker-admin-component/maker-dashboard/dealer-dashboard/dealer-dashboard.component';
+import { AnchorDashboardComponent } from './components/maker-admin-component/maker-dashboard/anchor-dashboard/anchor-dashboard.component';
+import { MasterAnchorDashboardComponent } from './components/maker-admin-component/maker-dashboard/master-anchor-dashboard/master-anchor-dashboard.component';
+import { ProgramComponent } from './components/maker-admin-component/maker-dashboard/program/program.component';
+
 
 const routes: Routes = [
   {path:"", component:AdminLoginComponent},
@@ -59,7 +65,29 @@ const routes: Routes = [
       },
     ]
   },
-  {path:"temp", component: MakerComponent},
+  {
+    path:"maker-admin",
+    component: MakerDashboardComponent,
+    children: [
+      {
+        path: "dealer",
+        component: DealerDashboardComponent,
+      },
+      {
+        path: "anchor",
+        component: AnchorDashboardComponent,
+      },
+      {
+        path: "master-anchor",
+        component: MasterAnchorDashboardComponent,
+      },
+      {
+        path: "program",
+        component: ProgramComponent,
+      },
+
+    ]
+  },
   {path:"temp2", component: CheckerComponent},
 ];
 

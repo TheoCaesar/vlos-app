@@ -1,0 +1,22 @@
+<!-- <p>maker-header works!</p> -->
+<div class="navbar">
+  <div class="logo-container">
+    <img src="{{solv_logo}}" alt="" width="130px">
+  </div>
+  <div class="icons">
+    <img [src]="notificationIcon" alt="notification-icon" >
+    <img [src]="userIcon" alt="user-icon" [matMenuTriggerFor]="menu" >
+  </div>
+
+</div>
+<mat-menu #menu="matMenu" class="user-info">
+    <div class="user-info-details">
+      <p>User Role: Admin</p>
+      <p>admin@solv.com.gh</p>
+      <hr>
+      <div class="links">
+        <p>Settings</p>
+        <p>Logout</p>
+      </div>
+    </div>
+  </mat-menu>

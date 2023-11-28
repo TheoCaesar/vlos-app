@@ -6,7 +6,7 @@ import {
   HttpInterceptor,
   HttpErrorResponse
 } from '@angular/common/http';
-import { Observable, catchError, finalize, retry, throwError } from 'rxjs';
+import { Observable, catchError, delay, finalize, retry, throwError } from 'rxjs';
 
 @Injectable()
 export class SuperAdminInterceptor implements HttpInterceptor {
@@ -21,8 +21,9 @@ export class SuperAdminInterceptor implements HttpInterceptor {
       }
     });
     return next.handle(requestwfAuth).pipe(
+      // delay(2000),
       //retry on failure
-      retry(5),
+      retry(2),
 
       //handle errors
       catchError((varError:HttpErrorResponse) => {

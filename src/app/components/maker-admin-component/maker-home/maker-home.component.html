@@ -1,0 +1,65 @@
+
+<div class="home-container">
+  <div class="button-container">
+    <button mat-raised-button (click)="addMasterAnchor()">Create Master Anchor</button>
+    <button mat-raised-button (click)="addProgram()">Create New Program</button>
+  </div>
+
+  <div class="container">
+    <p class="heading">SOLV Maker Admin Dashboard</p>
+    <div class="header">
+      <div class="tabs">
+        <a [routerLink]="['dealer']" routerLinkActive="active" ><p class="tab">Dealer</p> </a>
+        <a [routerLink]="'anchor'" routerLinkActive="active"><p class="tab" >anchor</p> </a>
+        <a routerLink="master-anchor" routerLinkActive="active"><p class="tab" >master anchor</p> </a>
+        <a routerLink="program" routerLinkActive="active"><p class="tab" >Program</p> </a>
+      </div>
+      <div class="controls">
+        <div class="search">
+          <mat-icon class="mat-18">search</mat-icon>
+          <input #input (keyup)="triggerSearch($event)" placeholder="Search">
+        </div>
+        <div class="filter">
+          Sort by:
+          <select (change)="triggerFilter($event)">
+            <option value="newest">Newest</option>
+            <option value="oldest">Oldest</option>
+          </select>
+        </div>
+      </div>
+    </div>
+    <router-outlet></router-outlet>
+  </div>
+
+  <!-- <div class="content">
+    <div class="header">
+      <p>SOLV Super Admin Dashboard</p>
+      <div class="controls">
+        <div class="search">
+          <mat-icon class="mat-18">search</mat-icon>
+          <input #input (keyup)="triggerSearch($event)" placeholder="Search">
+        </div>
+        <div class="filter">
+          Sort by:
+          <select (change)="triggerFilter($event)">
+            <option value="newest">Newest</option>
+            <option value="oldest">Oldest</option>
+          </select>
+        </div>
+      </div>
+    </div>
+    <div class="container">
+      <div class="tabs">
+        <a [routerLink]="['maker']" routerLinkActive="active" ><p class="tab">Maker</p> </a>
+        <a [routerLink]="'checker'" routerLinkActive="active"><p class="tab" >checker</p> </a>
+        <a routerLink="banks" routerLinkActive="active"><p class="tab" >fi/Bank</p> </a>
+      </div>
+      <router-outlet></router-outlet>
+    </div>
+    <div class="footer">
+      <p>Copyright &copy; 2023</p>
+    </div>
+  </div> -->
+</div>
+
+

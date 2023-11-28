@@ -9,11 +9,12 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { HTTP_INTERCEPTORS, HttpClientModule } from '@angular/common/http';
 import {MatProgressSpinnerModule} from '@angular/material/progress-spinner';
 import { SuperAdminInterceptor } from './interceptors/super-admin.interceptor';
+import { MakerAdminDashboardModule } from './modules/maker-admin-dashboard/maker-admin-dashboard.module';
 
 @NgModule({
   declarations: [
     AppComponent,
-  ],
+ ],
   imports: [
     BrowserModule,
     AppRoutingModule,
@@ -21,6 +22,7 @@ import { SuperAdminInterceptor } from './interceptors/super-admin.interceptor';
     SuperAdminDashboardModule,
     BrowserAnimationsModule,
     HttpClientModule,
+    MakerAdminDashboardModule,
   ],
   providers: [
     {

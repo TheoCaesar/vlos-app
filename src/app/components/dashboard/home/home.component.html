@@ -1,3 +1,7 @@
+<div *ngIf="showLoader$" | async as showLoader>
+  <app-loader *ngIf="showLoader$"></app-loader>
+</div>
+
 <div class="home-container">
   <div class="button-container">
     <button mat-raised-button (click)="openNewFIDialog()">Create New FI</button>

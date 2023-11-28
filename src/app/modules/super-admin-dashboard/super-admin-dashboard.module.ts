@@ -42,10 +42,12 @@ import { SearchService } from 'src/app/services/search.service';
 import { BankStatusPopupComponent } from 'src/app/components/dashboard/popups/bank-status-popup/bank-status-popup.component';
 import { EditBankPopupComponent } from 'src/app/components/dashboard/popups/edit-bank-popup/edit-bank-popup.component';
 import { OtpComponent } from 'src/app/components/otp/otp.component';
+import { LoaderComponent } from 'src/app/components/core/loader/loader.component';
+
 
 @NgModule({
   declarations: [
-    DashboardComponent,
+    DashboardComponent, LoaderComponent,
     HeaderComponent,
     SidebarComponent,
     FaqComponent,
@@ -79,7 +81,7 @@ import { OtpComponent } from 'src/app/components/otp/otp.component';
     DeletePopupComponent,    DeleteUserPopupComponent,
     EditBankPopupComponent,
     EditUserComponentComponent,
-    SuccessPopupComponent,BankStatusPopupComponent,
+    SuccessPopupComponent,BankStatusPopupComponent,LoaderComponent
   ],
   providers: [
     UserService, SortService, SearchService,
