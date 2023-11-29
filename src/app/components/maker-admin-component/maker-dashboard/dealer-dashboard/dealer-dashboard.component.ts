@@ -1,30 +1,38 @@
-import { Component,AfterViewInit,  OnInit, ViewChild} from '@angular/core';
+import { Component, OnInit, ViewChild} from '@angular/core';
 import { DeleteUserPopupComponent } from 'src/app/components/dashboard/popups/delete-user-popup/delete-user-popup.component';
 import { EditUserComponentComponent } from 'src/app/components/dashboard/popups/edit-user-component/edit-user-component.component';
-import { } from '@angular/core';
 import {MatPaginator, } from '@angular/material/paginator';
 import {MatTableDataSource} from '@angular/material/table';
 import { User } from 'src/app/interfaces/user';
-import { UserService } from 'src/app/services/user.service';
 import { MatDialog } from '@angular/material/dialog';
 import { SearchService } from 'src/app/services/search.service';
 import { SortService } from 'src/app/services/sort.service';
 import { ActivatedRoute } from '@angular/router';
+import { TierService } from 'src/app/services/maker-admin/tier.service';
+import { Dealer } from 'src/app/interfaces/maker-admin/dealer';
 @Component({
   selector: 'app-dealer-dashboard',
   templateUrl: './dealer-dashboard.component.html',
   styleUrls: ['./dealer-dashboard.component.css']
 })
 export class DealerDashboardComponent implements OnInit {
+editPopUp(_t103: any) {
+throw new Error('Method not implemented.');
+}
+deletePopUp(_t115: any) {
+throw new Error('Method not implemented.');
+}
   editIcon:string = "./../../../../assets/icons/dashboard/edit.svg"
   deleteIcon:string = "./../../../../assets/icons/dashboard/delete.svg"
   emptyList:string = "./../../../../assets/icons/dashboard/No-data-found.svg";
 
-  tableHeaders:String[] = ['First Name', "Last Name", "Phone Number", "Email", "Created By", "Created Date", "Status", "Edit", "Delete"]
-  dataSource!: MatTableDataSource<User>;
-  varUsers!: User[];
+  // tableHeaders:String[] = ['ID','Dealer Name', "BIN", "Phone Number", "Email", "Recommended By", "Recommended Date", "Status"]
+  tableHeaders:String[] = ['Anchor Name', "Business Incorporation Number/Ghana Card Number", "Contact Number", "Email", "Created By", "Created Date", ]
 
-  constructor(private activ8dRoute:ActivatedRoute, private searchService: SearchService, private sortService:SortService, private homeService:UserService, public dialog:MatDialog, ) {
+  dataSource!: MatTableDataSource<Dealer>;
+  varUsers!: Dealer[];
+
+  constructor(private activ8dRoute:ActivatedRoute, private searchService: SearchService, private sortService:SortService, private makerService:TierService, public dialog:MatDialog, ) {
     // Fetch our 100 users
     // this.varUsers = this.homeService.checkers;
     // Assign the data to the data source for the table to render
@@ -36,43 +44,32 @@ export class DealerDashboardComponent implements OnInit {
   //search
   searchInput: string = '';
   selectedSortOption: string = 'newest;'
-  checkers!:User[]
+  dealers!:Dealer[]
 
   ngOnInit() {
     // this.onGetCheckers();
     this.activ8dRoute.data.subscribe(response => {
       console.log("OnInit calling resolver", response, typeof(response))
-      this.checkers = response['checkerData']
-      this.dataSource = new MatTableDataSource(this.checkers);
+      this.dealers = response['dealerData']
+      this.dataSource = new MatTableDataSource(this.dealers);
 
-      console.log(this.checkers)
+      console.log(this.dealers)
     })
 
-    this.searchService.search$.subscribe((searchTerm)=> {
-      this.searchInput = searchTerm;
-      this.applySearch();
-    })
+    // this.searchService.search$.subscribe((searchTerm)=> {
+    //   this.searchInput = searchTerm;
+    //   this.applySearch();
+    // })
 
-    this.sortService.sortOption$.subscribe((option) => {
-      this.selectedSortOption = option;
-      this.applyFilter();
-    });
-  }
-
-  onGetCheckers() {
-    this.homeService.getCheckerObjs().subscribe({
-      next:(query_response) => {
-        this.varUsers = query_response;
-        this.dataSource = new MatTableDataSource(this.varUsers);
-      },
-      error(err) {console.log(err, "Error in onGetCheckers()" )},
-      complete() {console.log("onGetCheckers() successful")}
-    })
+    // this.sortService.sortOption$.subscribe((option) => {
+    //   this.selectedSortOption = option;
+    //   this.applyFilter();
+    // });
   }
 
   applySearch() {
     // Fetch your data from the data service
-    let data = this.checkers;
+    let data = this.dealers;
 
     // Apply filter based on the search term
     if (this.searchInput) {
@@ -92,7 +89,7 @@ export class DealerDashboardComponent implements OnInit {
 
   applyFilter() {
     // Fetch your data from the data service
-     let data = this.checkers;
+     let data = this.dealers;
 
       // Sort the data based on selectedSortOption
       if (this.selectedSortOption === 'newest') {
@@ -108,35 +105,4 @@ export class DealerDashboardComponent implements OnInit {
     this.dataSource.paginator = this.paginator;
   }
 
-  deletePopUp(data:any) {
-    const dialogRef = this.dialog.open(DeleteUserPopupComponent, {
-      data: {
-        id: data.id,
-        username: `${data.firstname} ${data.lastname}`,
-        role: data.role,
-        phone: data.phoneNumber,
-        mail: data.email,
-      }
-    })
-  }
-
-  editPopUp(data:any) {
-    const dialogRef = this.dialog.open(EditUserComponentComponent,
-      {
-        data:{
-          userID: data.id,
-          firstname: data.firstname,
-          lastname: data.lastname,
-          mail: data.email,
-          phone: data.phoneNumber,
-          role: data.role,
-        }
-      })
-
-      // dialogRef.afterClosed().subscribe(result => {
-      //   if (result && result.refresh) {
-      //     this.ngOnInit()
-      //   }
-      // })
-  }
 }

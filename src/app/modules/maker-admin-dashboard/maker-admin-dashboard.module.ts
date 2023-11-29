@@ -31,6 +31,8 @@ import { DealerDashboardComponent } from 'src/app/components/maker-admin-compone
 import { AnchorDashboardComponent } from 'src/app/components/maker-admin-component/maker-dashboard/anchor-dashboard/anchor-dashboard.component';
 import { MasterAnchorDashboardComponent } from 'src/app/components/maker-admin-component/maker-dashboard/master-anchor-dashboard/master-anchor-dashboard.component';
 import { ProgramComponent } from 'src/app/components/maker-admin-component/maker-dashboard/program/program.component';
+import { SortService } from 'src/app/services/sort.service';
+import { SearchService } from 'src/app/services/search.service';
 
 
 @NgModule({
@@ -60,6 +62,9 @@ import { ProgramComponent } from 'src/app/components/maker-admin-component/maker
     AnchorDashboardComponent,
     MasterAnchorDashboardComponent,
     ProgramComponent,
+  ],
+  providers: [
+    UserService, SortService, SearchService,
   ]
 })
 export class MakerAdminDashboardModule { }

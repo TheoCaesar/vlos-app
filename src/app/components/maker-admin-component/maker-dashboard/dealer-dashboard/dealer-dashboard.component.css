@@ -1,0 +1,7 @@
+
+@media screen and (min-width:1273px){
+  .bin-column {
+    width: 200px;
+    /* border: 2px solid red */
+  }
+}

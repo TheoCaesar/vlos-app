@@ -18,6 +18,7 @@ import { DealerDashboardComponent } from './components/maker-admin-component/mak
 import { AnchorDashboardComponent } from './components/maker-admin-component/maker-dashboard/anchor-dashboard/anchor-dashboard.component';
 import { MasterAnchorDashboardComponent } from './components/maker-admin-component/maker-dashboard/master-anchor-dashboard/master-anchor-dashboard.component';
 import { ProgramComponent } from './components/maker-admin-component/maker-dashboard/program/program.component';
+import { DealerResolver } from './resolvers/maker-admin/dealer-resolver';
 
 
 const routes: Routes = [
@@ -72,10 +73,14 @@ const routes: Routes = [
       {
         path: "dealer",
         component: DealerDashboardComponent,
+        resolve: {
+          dealerData: DealerResolver
+        }
       },
       {
         path: "anchor",
         component: AnchorDashboardComponent,
+
       },
       {
         path: "master-anchor",
@@ -94,6 +99,6 @@ const routes: Routes = [
 @NgModule({
   imports: [RouterModule.forRoot(routes)],
   exports: [RouterModule],
-  providers: [MakerResolver, CheckerResolver, FiResolver]
+  providers: [MakerResolver, CheckerResolver, FiResolver, DealerResolver]
 })
 export class AppRoutingModule { }

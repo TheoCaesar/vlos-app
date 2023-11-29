@@ -22,7 +22,9 @@ export class AnchorDashboardComponent implements OnInit {
   deleteIcon:string = "./../../../../assets/icons/dashboard/delete.svg"
   emptyList:string = "./../../../../assets/icons/dashboard/No-data-found.svg";
 
-  tableHeaders:String[] = ['ID','Dealer Name', "Business Incorporation Number/Ghana Card Number", "Contact Number", "Email", "Created By", "Created Date", "Status", "Edit", "Delete"]
+  tableHeaders:String[] = ['ID','Anchor Name', "Business Incorporation Number/Ghana Card Number", "Contact Number", "Email", "Created By", "Created Date", ]
+  // tableHeaders:String[] = ['First Name', "Last Name", "Phone Number", "Email", "Created By", "Created Date", "Status", "Edit", "Delete"]
+
   dataSource!: MatTableDataSource<User>;
   varUsers!: User[];
 
