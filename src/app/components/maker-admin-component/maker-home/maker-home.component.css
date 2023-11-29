@@ -33,6 +33,23 @@ button:nth-child(1) {
   margin-right: 20px;
 }
 
+.top-section {
+  padding: 5px;
+  border: 2px solid red;
+}
+
+.cards {
+  padding: 10px 5px;
+  border:  2px solid blue;
+}
+
+.card {
+  padding: 30px 10px;
+  border: 2px solid rgb(120, 173, 39);
+  width: 250px;
+  height: 100px;
+}
+
 .header {
   /* border: 2px solid black; */
   margin-bottom: 15px;
