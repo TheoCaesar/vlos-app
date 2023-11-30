@@ -8,6 +8,7 @@ import { EditUserComponentComponent } from 'src/app/components/dashboard/popups/
 import { Anchor } from 'src/app/interfaces/maker-admin/anchor';
 import { Dealer } from 'src/app/interfaces/maker-admin/dealer';
 import { User } from 'src/app/interfaces/user';
+import { TierService } from 'src/app/services/maker-admin/tier.service';
 import { SearchService } from 'src/app/services/search.service';
 import { SortService } from 'src/app/services/sort.service';
 import { UserService } from 'src/app/services/user.service';
@@ -18,38 +19,30 @@ import { UserService } from 'src/app/services/user.service';
   styleUrls: ['./anchor-dashboard.component.css']
 })
 export class AnchorDashboardComponent implements OnInit {
-  editIcon:string = "./../../../../assets/icons/dashboard/edit.svg"
-  deleteIcon:string = "./../../../../assets/icons/dashboard/delete.svg"
+
   emptyList:string = "./../../../../assets/icons/dashboard/No-data-found.svg";
 
-  tableHeaders:String[] = ['ID','Anchor Name', "Business Incorporation Number/Ghana Card Number", "Contact Number", "Email", "Created By", "Created Date", ]
-  // tableHeaders:String[] = ['First Name', "Last Name", "Phone Number", "Email", "Created By", "Created Date", "Status", "Edit", "Delete"]
+  tableHeaders:String[] = ['Anchor Name', "Business Incorporation Number/Ghana Card Number", "Contact Number", "Email", "Created By", "Created Date", ]
 
-  dataSource!: MatTableDataSource<User>;
-  varUsers!: User[];
+  dataSource!: MatTableDataSource<Dealer>;
+  varUsers!: Dealer[];
 
-  constructor(private activ8dRoute:ActivatedRoute, private searchService: SearchService, private sortService:SortService, private homeService:UserService, public dialog:MatDialog, ) {
-    // Fetch our 100 users
-    // this.varUsers = this.homeService.checkers;
-    // Assign the data to the data source for the table to render
-    // this.dataSource = new MatTableDataSource(this.varUsers);
-  }
+  constructor(private activ8dRoute:ActivatedRoute, private searchService: SearchService, private sortService:SortService, private makerService:TierService, public dialog:MatDialog, ) {  }
 
   @ViewChild(MatPaginator) paginator!: MatPaginator;
 
   //search
   searchInput: string = '';
   selectedSortOption: string = 'newest;'
-  checkers!:User[]
+  anchors!:Dealer[]
 
   ngOnInit() {
-    // this.onGetCheckers();
     this.activ8dRoute.data.subscribe(response => {
       console.log("OnInit calling resolver", response, typeof(response))
-      this.checkers = response['checkerData']
-      this.dataSource = new MatTableDataSource(this.checkers);
+      this.anchors = response['anchorData']
+      this.dataSource = new MatTableDataSource(this.anchors);
 
-      console.log(this.checkers)
+      console.log(this.anchors)
     })
 
     this.searchService.search$.subscribe((searchTerm)=> {
@@ -63,20 +56,10 @@ export class AnchorDashboardComponent implements OnInit {
     });
   }
 
-  onGetCheckers() {
-    this.homeService.getCheckerObjs().subscribe({
-      next:(query_response) => {
-        this.varUsers = query_response;
-        this.dataSource = new MatTableDataSource(this.varUsers);
-      },
-      error(err) {console.log(err, "Error in onGetCheckers()" )},
-      complete() {console.log("onGetCheckers() successful")}
-    })
-  }
 
   applySearch() {
     // Fetch your data from the data service
-    let data = this.checkers;
+    let data = this.anchors;
 
     // Apply filter based on the search term
     if (this.searchInput) {
@@ -96,7 +79,7 @@ export class AnchorDashboardComponent implements OnInit {
 
   applyFilter() {
     // Fetch your data from the data service
-     let data = this.checkers;
+     let data = this.anchors;
 
       // Sort the data based on selectedSortOption
       if (this.selectedSortOption === 'newest') {

@@ -16,28 +16,16 @@ import { Dealer } from 'src/app/interfaces/maker-admin/dealer';
   styleUrls: ['./dealer-dashboard.component.css']
 })
 export class DealerDashboardComponent implements OnInit {
-editPopUp(_t103: any) {
-throw new Error('Method not implemented.');
-}
-deletePopUp(_t115: any) {
-throw new Error('Method not implemented.');
-}
-  editIcon:string = "./../../../../assets/icons/dashboard/edit.svg"
-  deleteIcon:string = "./../../../../assets/icons/dashboard/delete.svg"
+
+
   emptyList:string = "./../../../../assets/icons/dashboard/No-data-found.svg";
 
-  // tableHeaders:String[] = ['ID','Dealer Name', "BIN", "Phone Number", "Email", "Recommended By", "Recommended Date", "Status"]
   tableHeaders:String[] = ['Anchor Name', "Business Incorporation Number/Ghana Card Number", "Contact Number", "Email", "Created By", "Created Date", ]
 
   dataSource!: MatTableDataSource<Dealer>;
   varUsers!: Dealer[];
 
-  constructor(private activ8dRoute:ActivatedRoute, private searchService: SearchService, private sortService:SortService, private makerService:TierService, public dialog:MatDialog, ) {
-    // Fetch our 100 users
-    // this.varUsers = this.homeService.checkers;
-    // Assign the data to the data source for the table to render
-    // this.dataSource = new MatTableDataSource(this.varUsers);
-  }
+  constructor(private activ8dRoute:ActivatedRoute, private searchService: SearchService, private sortService:SortService, private makerService:TierService, public dialog:MatDialog, ) {  }
 
   @ViewChild(MatPaginator) paginator!: MatPaginator;
 
@@ -47,7 +35,6 @@ throw new Error('Method not implemented.');
   dealers!:Dealer[]
 
   ngOnInit() {
-    // this.onGetCheckers();
     this.activ8dRoute.data.subscribe(response => {
       console.log("OnInit calling resolver", response, typeof(response))
       this.dealers = response['dealerData']
@@ -56,15 +43,15 @@ throw new Error('Method not implemented.');
       console.log(this.dealers)
     })
 
-    // this.searchService.search$.subscribe((searchTerm)=> {
-    //   this.searchInput = searchTerm;
-    //   this.applySearch();
-    // })
+    this.searchService.search$.subscribe((searchTerm)=> {
+      this.searchInput = searchTerm;
+      this.applySearch();
+    })
 
-    // this.sortService.sortOption$.subscribe((option) => {
-    //   this.selectedSortOption = option;
-    //   this.applyFilter();
-    // });
+    this.sortService.sortOption$.subscribe((option) => {
+      this.selectedSortOption = option;
+      this.applyFilter();
+    });
   }
 
   applySearch() {

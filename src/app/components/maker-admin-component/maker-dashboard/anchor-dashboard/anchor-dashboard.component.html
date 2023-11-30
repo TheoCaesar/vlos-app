@@ -9,18 +9,18 @@
     <!-- First Name Column -->
     <ng-container matColumnDef="Anchor Name">
       <th mat-header-cell *matHeaderCellDef class="ten"> Anchor Name </th>
-      <td mat-cell *matCellDef="let row"  class="ten"> {{row.firstname}} </td>
+      <td mat-cell *matCellDef="let row"  class="ten"> {{row.name}} </td>
     </ng-container>
 
     <!-- Last Name Column -->
     <ng-container matColumnDef="Business Incorporation Number/Ghana Card Number">
-      <th mat-header-cell *matHeaderCellDef class="ten" >
+      <th mat-header-cell *matHeaderCellDef class="bin-column" >
         <pre>
-          Business Incorporation Number
-          /Ghana Card Number
+Business Incorporation Number
+/Ghana Card Number
         </pre>
       </th>
-      <td mat-cell *matCellDef="let row" class="ten"> {{row.lastname}} </td>
+      <td mat-cell *matCellDef="let row" class="ten"> {{row.bin}} </td>
     </ng-container>
 
     <!-- Phone Number column -->

@@ -80,6 +80,9 @@ const routes: Routes = [
       {
         path: "anchor",
         component: AnchorDashboardComponent,
+        resolve: {
+          anchorData: DealerResolver
+        }
 
       },
       {
