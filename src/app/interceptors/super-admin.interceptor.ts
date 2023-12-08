@@ -35,7 +35,7 @@ export class SuperAdminInterceptor implements HttpInterceptor {
       //profiling
       finalize(()=>{
         const profileMsg = `${request.method} "${request.urlWithParams}"`
-        console.log(profileMsg);
+        // console.log(profileMsg);
       })
     );
   }

@@ -43,7 +43,7 @@ export class OtpComponent {
       if (enteredOTP === staticOTP) {
         // OTP is correct, handle the verification success
         console.log('Verification successful');
-        this.router.navigateByUrl('dashboard/checker')
+        this.router.navigate(['dashboard/checker'])
       } else {
         // Incorrect OTP, handle the verification failure
         console.log('Verification failed', enteredOTP , staticOTP);

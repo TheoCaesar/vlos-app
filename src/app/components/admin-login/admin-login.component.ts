@@ -30,7 +30,7 @@ export class AdminLoginComponent {
       let role = String(this.signInForm.value.user_role);
 
       let myUser = this.adminAuthService.signIn(mail, password, role);
-      (myUser) ? this.routeUser.navigateByUrl("master-anchor-login") : alert("Invalid username or password!")
+      (myUser) ? this.routeUser.navigateByUrl("verify-admin-login") : alert("Invalid username or password!")
     }
   }
 }

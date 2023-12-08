@@ -6,9 +6,9 @@ import { ActivatedRoute } from '@angular/router';
 import { DeleteUserPopupComponent } from 'src/app/components/dashboard/popups/delete-user-popup/delete-user-popup.component';
 import { EditUserComponentComponent } from 'src/app/components/dashboard/popups/edit-user-component/edit-user-component.component';
 import { User } from 'src/app/interfaces/user';
+import { TierService } from 'src/app/services/maker-admin/tier.service';
 import { SearchService } from 'src/app/services/search.service';
 import { SortService } from 'src/app/services/sort.service';
-import { UserService } from 'src/app/services/user.service';
 
 @Component({
   selector: 'app-master-anchor-dashboard',
@@ -20,16 +20,12 @@ export class MasterAnchorDashboardComponent implements OnInit {
   deleteIcon:string = "./../../../../assets/icons/dashboard/delete.svg"
   emptyList:string = "./../../../../assets/icons/dashboard/No-data-found.svg";
 
-  tableHeaders:String[] = ['First Name', "Last Name", "Phone Number", "Email", "Created By", "Created Date", "Status", "Edit", "Delete"]
+  tableHeaders:String[] = ['Master Anchor Name', "BIN/ Ghana Card No.", "Program Name",  "Primary Contact Phone", "Email", "Mobile Number", "Created By", "Created Date", "Status", "Edit"]
   dataSource!: MatTableDataSource<User>;
   varUsers!: User[];
+  homeService: any;
 
-  constructor(private activ8dRoute:ActivatedRoute, private searchService: SearchService, private sortService:SortService, private homeService:UserService, public dialog:MatDialog, ) {
-    // Fetch our 100 users
-    // this.varUsers = this.homeService.checkers;
-    // Assign the data to the data source for the table to render
-    // this.dataSource = new MatTableDataSource(this.varUsers);
-  }
+  constructor(private activ8dRoute:ActivatedRoute, private searchService: SearchService, private sortService:SortService, private makerService:TierService, public dialog:MatDialog, ) { }
 
   @ViewChild(MatPaginator) paginator!: MatPaginator;
 
@@ -42,7 +38,7 @@ export class MasterAnchorDashboardComponent implements OnInit {
     // this.onGetCheckers();
     this.activ8dRoute.data.subscribe(response => {
       console.log("OnInit calling resolver", response, typeof(response))
-      this.checkers = response['checkerData']
+      this.checkers = response['masterAnchorData']
       this.dataSource = new MatTableDataSource(this.checkers);
 
       console.log(this.checkers)
@@ -59,16 +55,6 @@ export class MasterAnchorDashboardComponent implements OnInit {
     });
   }
 
-  onGetCheckers() {
-    this.homeService.getCheckerObjs().subscribe({
-      next:(query_response) => {
-        this.varUsers = query_response;
-        this.dataSource = new MatTableDataSource(this.varUsers);
-      },
-      error(err) {console.log(err, "Error in onGetCheckers()" )},
-      complete() {console.log("onGetCheckers() successful")}
-    })
-  }
 
   applySearch() {
     // Fetch your data from the data service

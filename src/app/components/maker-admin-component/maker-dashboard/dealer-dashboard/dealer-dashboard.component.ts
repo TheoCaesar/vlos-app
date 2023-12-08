@@ -1,4 +1,4 @@
-import { Component, OnInit, ViewChild} from '@angular/core';
+import { Component, OnInit, ViewChild, Output, EventEmitter} from '@angular/core';
 import { DeleteUserPopupComponent } from 'src/app/components/dashboard/popups/delete-user-popup/delete-user-popup.component';
 import { EditUserComponentComponent } from 'src/app/components/dashboard/popups/edit-user-component/edit-user-component.component';
 import {MatPaginator, } from '@angular/material/paginator';
@@ -16,17 +16,15 @@ import { Dealer } from 'src/app/interfaces/maker-admin/dealer';
   styleUrls: ['./dealer-dashboard.component.css']
 })
 export class DealerDashboardComponent implements OnInit {
-
-
   emptyList:string = "./../../../../assets/icons/dashboard/No-data-found.svg";
 
   tableHeaders:String[] = ['Anchor Name', "Business Incorporation Number/Ghana Card Number", "Contact Number", "Email", "Created By", "Created Date", ]
 
   dataSource!: MatTableDataSource<Dealer>;
   varUsers!: Dealer[];
+  @Output() sendStatusData = new EventEmitter()
 
   constructor(private activ8dRoute:ActivatedRoute, private searchService: SearchService, private sortService:SortService, private makerService:TierService, public dialog:MatDialog, ) {  }
-
   @ViewChild(MatPaginator) paginator!: MatPaginator;
 
   //search
@@ -36,11 +34,12 @@ export class DealerDashboardComponent implements OnInit {
 
   ngOnInit() {
     this.activ8dRoute.data.subscribe(response => {
-      console.log("OnInit calling resolver", response, typeof(response))
+      // console.log("OnInit calling resolver", response, typeof(response))
       this.dealers = response['dealerData']
       this.dataSource = new MatTableDataSource(this.dealers);
 
-      console.log(this.dealers)
+      // console.log(this.dealers)
+      // console.log('statuscounts',this.statusCounts)
     })
 
     this.searchService.search$.subscribe((searchTerm)=> {

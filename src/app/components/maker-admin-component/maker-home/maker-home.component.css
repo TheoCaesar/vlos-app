@@ -35,23 +35,54 @@ button:nth-child(1) {
 
 .top-section {
   padding: 5px;
-  border: 2px solid red;
+  /* border: 2px solid red; */
+  margin-bottom: 10px;
 }
 
 .cards {
-  padding: 10px 5px;
-  border:  2px solid blue;
+  margin-top: 10px;
+  padding: 10px 0px;
+  display: flex;
+  flex-direction: row;
+  overflow-x:scroll;
 }
 
-.card {
-  padding: 30px 10px;
-  border: 2px solid rgb(120, 173, 39);
-  width: 250px;
-  height: 100px;
+.cards::-webkit-scrollbar {
+  display: none;
 }
+.card {
+  padding: 10px 5px;
+  border: 2px solid var(--solv-grey);
+  border-radius: 12px;
+  margin: 0 10px 0 0;
+  min-width: 270px;
+  /* min-width: 300px; */
+  /* height: 100px; */
+  box-shadow: 0 6px 5px 0 #00000040;
+  display: flex;
+
+}
+
+.icon {
+  padding: 10px;
+  width: 32%;
+}
+
+.detail {
+  padding: 10px;
+  width: 68%;
+  text-align: left;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;;
+}
+.detail h1, h2 {
+  margin: 0;
+  text-transform: capitalize;
+}
+
 
 .header {
-  /* border: 2px solid black; */
   margin-bottom: 15px;
   display: flex;
   justify-content: space-between;
@@ -62,7 +93,7 @@ p.heading {
   margin-top: 12px;
   font-weight: 600;
   font-size: 22px;
-  margin-bottom: 0 ;/*overide material styling on p tag*/
+  margin-bottom: 0 ;
 }
 
 

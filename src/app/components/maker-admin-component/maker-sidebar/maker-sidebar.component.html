@@ -20,29 +20,30 @@
       </div>
     </div>
   </mat-list-item>
-  <mat-list-item [routerLink]="['maker']" #makerLink="routerLinkActive" routerLinkActive="active-link">
+  <mat-list-item routerLink="dealer" #dealerLink = 'routerLinkActive' routerLinkActive="active-link">
     <div class="menu-item">
-      <img [src]="makerLink.isActive ? activeAnchorIcon  : anchorIcon   " alt="maker-icon">
+      <img [src]="dealerLink.isActive ? activeDealerIcon : dealerIcon" alt="checker-icon" >
       <div>
-        <span *ngIf="ext_sidebar" >Maker</span>
+        <span *ngIf="ext_sidebar" >Dealer</span>
         <span *ngIf="ext_sidebar"> <img [src]="arrowIcon" alt="left-arrow-icon"></span>
       </div>
     </div>
   </mat-list-item>
-  <mat-list-item routerLink="checker" #checkerLink = 'routerLinkActive' routerLinkActive="active-link">
+  <mat-list-item [routerLink]="['anchor']" #anchorLink="routerLinkActive" routerLinkActive="active-link">
     <div class="menu-item">
-      <img [src]="checkerLink.isActive ? activeDealerIcon : dealerIcon" alt="checker-icon" >
+      <img [src]="anchorLink.isActive ? activeAnchorIcon  : anchorIcon   " alt="maker-icon">
       <div>
-        <span *ngIf="ext_sidebar" >Checker</span>
+        <span *ngIf="ext_sidebar" >Anchor</span>
         <span *ngIf="ext_sidebar"> <img [src]="arrowIcon" alt="left-arrow-icon"></span>
       </div>
     </div>
   </mat-list-item>
-  <mat-list-item [routerLink]="'banks'" #bankLink="routerLinkActive" routerLinkActive="active-link">
+
+  <mat-list-item [routerLink]="'master-anchor'" #MasterAnchorLink="routerLinkActive" routerLinkActive="active-link">
     <div class="menu-item"   >
-      <img [src]="bankLink.isActive ? activeMasteranchorIcon : masteranchorIcon" alt="bank-icon" >
+      <img [src]="MasterAnchorLink.isActive ? activeMasteranchorIcon : masteranchorIcon" alt="bank-icon" >
     <div>
-      <span *ngIf="ext_sidebar" >FI/Bank</span>
+      <span *ngIf="ext_sidebar" >Master Anchor</span>
       <span *ngIf="ext_sidebar"> <img [src]="arrowIcon" alt="left-arrow-icon" ></span>
     </div>
     </div>

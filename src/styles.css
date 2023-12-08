@@ -72,6 +72,20 @@ body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
   border-radius: 4px;
 }
 
+.user-inactive, .fi-active {
+  display: inline-block;
+  /* width: 60px;
+  height: 25px; */
+  padding: 2px 5px;
+  font-size: 14px;
+  font-weight: 500;
+  text-align: center;
+  text-transform: capitalize;
+  color: var(--solv-orange);
+  border: 1px solid var(--solv-orange);
+  border-radius: 4px;
+}
+
 
 .user-blocked, .user-deleted, .fi-deleted {
    display: inline-block;
@@ -87,7 +101,7 @@ body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
   border-radius: 4px;
 }
 
-.deactivated , .fi-deactivated{
+.deactivated,  .fi-deactivated{
   display: inline-block;
   width: 105px;
   height: 25px;

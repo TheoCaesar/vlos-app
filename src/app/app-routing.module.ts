@@ -19,6 +19,9 @@ import { AnchorDashboardComponent } from './components/maker-admin-component/mak
 import { MasterAnchorDashboardComponent } from './components/maker-admin-component/maker-dashboard/master-anchor-dashboard/master-anchor-dashboard.component';
 import { ProgramComponent } from './components/maker-admin-component/maker-dashboard/program/program.component';
 import { DealerResolver } from './resolvers/maker-admin/dealer-resolver';
+import { AnchorResolver } from './resolvers/maker-admin/anchor-resolver';
+import { MasterAnchorResolver } from './resolvers/maker-admin/master-anchor-resolver';
+import { StatusResolver } from './resolvers/maker-admin/status-resolver';
 
 
 const routes: Routes = [
@@ -52,9 +55,9 @@ const routes: Routes = [
       {
         path:"checker",
         component:CheckerComponent,
-        resolve: {
-          checkerData:CheckerResolver
-        }
+        // resolve: {
+        //   checkerData:CheckerResolver
+        // }
 
       },
       {
@@ -69,6 +72,9 @@ const routes: Routes = [
   {
     path:"maker-admin",
     component: MakerDashboardComponent,
+    resolve: {
+      statusData: StatusResolver,
+    },
     children: [
       {
         path: "dealer",
@@ -81,13 +87,17 @@ const routes: Routes = [
         path: "anchor",
         component: AnchorDashboardComponent,
         resolve: {
-          anchorData: DealerResolver
+          anchorData: AnchorResolver
         }
 
       },
       {
         path: "master-anchor",
         component: MasterAnchorDashboardComponent,
+        resolve: {
+          masterAnchorData: MasterAnchorResolver
+        }
+
       },
       {
         path: "program",
@@ -102,6 +112,6 @@ const routes: Routes = [
 @NgModule({
   imports: [RouterModule.forRoot(routes)],
   exports: [RouterModule],
-  providers: [MakerResolver, CheckerResolver, FiResolver, DealerResolver]
+  providers: [MakerResolver, CheckerResolver, FiResolver, DealerResolver, AnchorResolver, MasterAnchorResolver, StatusResolver]
 })
 export class AppRoutingModule { }

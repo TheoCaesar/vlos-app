@@ -9,7 +9,7 @@ export class DealerResolver implements Resolve<Dealer[]> {
   constructor(private tierSerivice: TierService){}
 
   resolve() {
-    console.log("Checker Resolver Fired");
+    // console.log("Dealer Resolver Fired");
     return this.tierSerivice.getDealerObjs();
   }
 

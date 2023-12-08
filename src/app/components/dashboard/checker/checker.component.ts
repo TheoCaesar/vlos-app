@@ -42,14 +42,14 @@ export class CheckerComponent implements OnInit {
   checkers!:User[]
 
   ngOnInit() {
-    // this.onGetCheckers();
-    this.activ8dRoute.data.subscribe(response => {
-      console.log("OnInit calling resolver", response, typeof(response))
-      this.checkers = response['checkerData']
-      this.dataSource = new MatTableDataSource(this.checkers);
+    this.onGetCheckers();
+    // this.activ8dRoute.data.subscribe(response => {
+    //   console.log("OnInit calling resolver", response, typeof(response))
+    //   this.checkers = response['checkerData']
+    //   this.dataSource = new MatTableDataSource(this.checkers);
 
-      console.log(this.checkers)
-    })
+    //   console.log(this.checkers)
+    // })
 
     this.searchService.search$.subscribe((searchTerm)=> {
       this.searchInput = searchTerm;

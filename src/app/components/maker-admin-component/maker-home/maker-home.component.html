@@ -5,12 +5,19 @@
     <button mat-raised-button (click)="addProgram()">Create New Program</button>
   </div>
 
-  <div class="top-section">
-    <p class="heading">User Overview</p>
-    <div class="cards">
-      <div class="card">
-        <div class="icon"></div>
-        <div class="text"></div>
+  <div *ngIf="statuses">
+    <div class="top-section">
+      <p class="heading">{{userTier}} Overview</p>
+      <div class ="cards">
+        <div *ngFor= "let status of statusObj">
+          <div class="card">
+            <div class="icon"> <img src=" {{status.icon}}" alt =""/></div>
+            <div class="detail">
+              <div class="count"><h1>{{status.count}}</h1></div>
+              <div class="text"><h2>{{status.name}}</h2> </div>
+            </div>
+          </div>
+        </div>
       </div>
     </div>
   </div>
@@ -40,36 +47,6 @@
     </div>
     <router-outlet></router-outlet>
   </div>
-
-  <!-- <div class="content">
-    <div class="header">
-      <p>SOLV Super Admin Dashboard</p>
-      <div class="controls">
-        <div class="search">
-          <mat-icon class="mat-18">search</mat-icon>
-          <input #input (keyup)="triggerSearch($event)" placeholder="Search">
-        </div>
-        <div class="filter">
-          Sort by:
-          <select (change)="triggerFilter($event)">
-            <option value="newest">Newest</option>
-            <option value="oldest">Oldest</option>
-          </select>
-        </div>
-      </div>
-    </div>
-    <div class="container">
-      <div class="tabs">
-        <a [routerLink]="['maker']" routerLinkActive="active" ><p class="tab">Maker</p> </a>
-        <a [routerLink]="'checker'" routerLinkActive="active"><p class="tab" >checker</p> </a>
-        <a routerLink="banks" routerLinkActive="active"><p class="tab" >fi/Bank</p> </a>
-      </div>
-      <router-outlet></router-outlet>
-    </div>
-    <div class="footer">
-      <p>Copyright &copy; 2023</p>
-    </div>
-  </div> -->
 </div>
 
 
